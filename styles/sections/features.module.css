@@ -1,0 +1,122 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: var(--space-3xl);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-top: 4px solid var(--primary);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.cardIcon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: var(--leading-snug);
+}
+
+.cardDesc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: var(--leading-relaxed);
+}
+
+.flowSteps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.flowStep {
+  text-align: center;
+  flex: 0 0 220px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all var(--duration-base) ease;
+}
+
+.flowStep:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.flowStepNum {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: var(--font-xl);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-primary);
+}
+
+.flowStepTitle {
+  font-size: var(--font-base);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.flowStepDesc {
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  line-height: var(--leading-relaxed);
+}
+
+.flowHeading {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flowSteps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flowStep {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 320px;
+  }
+}

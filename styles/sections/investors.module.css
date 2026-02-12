@@ -1,0 +1,215 @@
+.investFlow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+.investStep {
+  text-align: center;
+  flex: 0 0 220px;
+  padding: 32px 24px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border-top: 4px solid var(--accent-investor);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--accent-investor);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.investStep:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stepIcon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.stepTitle {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stepDesc {
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: var(--leading-relaxed);
+}
+
+.roiHeading {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+.roiTable {
+  max-width: 720px;
+  margin: 0 auto var(--space-xl);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.th {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.td {
+  padding: 16px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.table tr:last-child .td {
+  border-bottom: none;
+}
+
+.table tr:hover .td {
+  background: var(--bg-secondary);
+}
+
+.marketGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: var(--space-xl);
+}
+
+.marketCard {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all var(--duration-base) ease;
+}
+
+.marketCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.marketLabel {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+}
+
+.marketValue {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  color: var(--accent-investor);
+  letter-spacing: -0.02em;
+}
+
+.marketUnit {
+  font-size: 15px;
+  color: var(--text-sub);
+}
+
+.socialReturn {
+  margin: 0 auto var(--space-lg);
+  max-width: 700px;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--accent-investor);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--accent-investor);
+}
+
+.socialReturnTitle {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.socialReturnList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socialReturnList li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: var(--leading-relaxed);
+}
+
+.socialReturnList li::before {
+  content: '\2726';
+  position: absolute;
+  left: 0;
+  color: var(--accent-investor);
+}
+
+.legalNote {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: var(--space-xl);
+}
+
+.legalTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #92400E;
+  margin-bottom: 14px;
+}
+
+.legalItem {
+  font-size: var(--font-sm);
+  color: #78716C;
+  padding: 5px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: var(--leading-relaxed);
+}
+
+.legalItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background: #D97706;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .investFlow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marketGrid {
+    grid-template-columns: 1fr;
+  }
+}

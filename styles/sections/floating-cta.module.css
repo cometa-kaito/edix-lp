@@ -1,0 +1,50 @@
+.floatingCta {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 420px;
+  padding: 16px;
+  z-index: 998;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.floatingCta .btn {
+  width: 100%;
+  font-size: 16px;
+  padding: 18px 32px;
+  background: var(--gradient-cta);
+  box-shadow: 0 12px 48px rgba(249, 115, 22, 0.3), 0 4px 16px rgba(0, 0, 0, 0.12);
+  animation: floatPulse 3s ease-in-out infinite;
+}
+
+.floatingCta .btn:hover {
+  animation: none;
+  transform: scale(1.04);
+  box-shadow: 0 16px 64px rgba(249, 115, 22, 0.4), 0 6px 24px rgba(0, 0, 0, 0.16);
+}
+
+@keyframes floatPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@media (max-width: 768px) {
+  .visible {
+    bottom: 24px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingCta {
+    transition: none;
+  }
+  .floatingCta .btn {
+    animation: none;
+  }
+}

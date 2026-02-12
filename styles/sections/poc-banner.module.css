@@ -1,0 +1,142 @@
+.pocBanner {
+  background: linear-gradient(135deg, #1E3AB0 0%, var(--primary) 25%, #6366F1 50%, var(--accent-biz) 100%);
+  background-size: 300% 300%;
+  animation: gradientFlow 8s ease infinite;
+  color: var(--white);
+  padding: var(--space-2xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  33% { background-position: 50% 50%; }
+  66% { background-position: 100% 50%; }
+}
+
+/* Glass overlay */
+.pocBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pocBanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.subtext {
+  font-size: var(--font-lg);
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.oldPrice {
+  font-size: 18px;
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.newPrice {
+  font-size: var(--font-6xl);
+  font-weight: 900;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  letter-spacing: -0.03em;
+}
+
+.priceUnit {
+  font-size: var(--font-base);
+  opacity: 0.8;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.pocBadge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-full);
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.remain {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 20px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+  .pocBanner {
+    padding: var(--space-xl) 0;
+  }
+
+  .heading {
+    font-size: var(--font-2xl);
+  }
+
+  .newPrice {
+    font-size: var(--font-4xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pocBanner {
+    animation: none;
+  }
+
+  .remain {
+    animation: none;
+  }
+}

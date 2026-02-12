@@ -1,0 +1,87 @@
+.list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.item {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: all var(--duration-base) ease;
+}
+
+.item:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  user-select: none;
+  transition: background var(--duration-fast);
+}
+
+.question:hover {
+  background: var(--bg-secondary);
+}
+
+.targetBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.targetSchool {
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+.targetBiz {
+  background: #FFF7ED;
+  color: #C2410C;
+}
+
+.targetInvestor {
+  background: #FFFBEB;
+  color: #92400E;
+}
+
+.targetAll {
+  background: #EEF2FF;
+  color: #3730A3;
+}
+
+.arrow {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.active .arrow {
+  transform: rotate(180deg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.answerInner {
+  padding: 0 28px 24px;
+  font-size: 15px;
+  color: var(--text-sub);
+  line-height: var(--leading-relaxed);
+}
