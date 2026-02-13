@@ -216,6 +216,7 @@
   font-size: var(--font-xs);
   font-weight: 600;
   color: #C2410C;
+  white-space: nowrap;
 }
 
 .pricingNote {
