@@ -12,7 +12,7 @@ export default function Team() {
           <div className={styles.awardBanner}>
             <div className={styles.awardIcon}>🏆</div>
             <div className={styles.awardText}>
-              <h3 className={styles.awardTitle}>DigiTechQuest 2025 最優秀賞 受賞</h3>
+              <h3 className={styles.awardTitle}>DigiTechQuest 2026 最優秀賞 受賞</h3>
               <p className={styles.awardDesc}>高専・工業高校発のイノベーションプロジェクト</p>
             </div>
           </div>
