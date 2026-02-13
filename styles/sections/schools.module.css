@@ -106,4 +106,24 @@
   .infoGrid {
     grid-template-columns: 1fr;
   }
+
+  .costHighlight {
+    padding: 28px 20px;
+  }
+
+  .meritCard,
+  .infoBox {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .costTitle {
+    font-size: var(--font-xl);
+  }
+
+  .meritCard,
+  .infoBox {
+    padding: 20px;
+  }
 }

@@ -87,3 +87,24 @@
   color: #94A3B8;
   margin-bottom: 4px;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .monitorFrame {
+    padding: 12px;
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .monitorFrame {
+    padding: 8px;
+  }
+}

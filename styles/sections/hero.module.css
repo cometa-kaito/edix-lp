@@ -164,6 +164,16 @@
   51%, 100% { opacity: 0; }
 }
 
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--font-5xl);
+  }
+
+  .heroContent {
+    padding: 0 var(--space-md);
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding-top: calc(var(--header-h) + 48px);
@@ -193,6 +203,30 @@
 
   .scrollHint {
     margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 32px);
+    padding-bottom: 32px;
+  }
+
+  .title {
+    font-size: var(--font-2xl);
+  }
+
+  .sub {
+    font-size: var(--font-sm);
+  }
+
+  .badge {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+
+  .heroContent {
+    padding: 0 var(--space-sm);
   }
 }
 

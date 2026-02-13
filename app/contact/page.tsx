@@ -5,12 +5,18 @@ import LiveDemo from '@/components/sections/LiveDemo';
 
 export const metadata: Metadata = siteMetadata.contact;
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>;
+}) {
+  const { category } = await searchParams;
+
   return (
     <>
       <div style={{ paddingTop: 'var(--header-h)' }} />
       <LiveDemo />
-      <ContactSection />
+      <ContactSection defaultCategory={category} />
     </>
   );
 }

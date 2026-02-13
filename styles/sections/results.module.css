@@ -156,3 +156,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .highlight {
+    padding: 24px 16px;
+  }
+
+  .highlightTitle {
+    font-size: var(--font-xl);
+  }
+}

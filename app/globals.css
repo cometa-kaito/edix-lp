@@ -321,11 +321,25 @@ textarea:focus-visible {
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .section-padding { padding: var(--space-4xl) 0; }
+  .section-title { font-size: var(--font-3xl); }
+  .container { padding: 0 var(--space-md); }
+}
+
 @media (max-width: 768px) {
   :root { --header-h: 64px; }
   .section-padding { padding: var(--space-3xl) 0; }
   .section-title { font-size: var(--font-2xl); line-height: var(--leading-snug); }
   .section-subtitle { font-size: var(--font-base); margin-bottom: var(--space-xl); }
-  .container { padding: 0 var(--space-md); }
+  .container { padding: 0 var(--space-sm); }
   .flow-arrow { transform: rotate(90deg); }
+  .btn { padding: 14px 28px; font-size: var(--font-sm); min-width: 160px; }
+  .btn-accent { font-size: var(--font-base); padding: 16px 32px; }
+}
+
+@media (max-width: 480px) {
+  .section-padding { padding: var(--space-2xl) 0; }
+  .section-title { font-size: var(--font-xl); }
+  .section-subtitle { font-size: var(--font-sm); }
 }

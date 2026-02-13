@@ -196,3 +196,27 @@
     padding: 36px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: var(--font-xl);
+  }
+
+  .ctaBtn {
+    padding: 20px 16px;
+  }
+
+  .ctaBtnLabel {
+    font-size: var(--font-base);
+  }
+
+  .wrapper {
+    padding: 28px 16px;
+  }
+
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    padding: 12px 14px;
+  }
+}

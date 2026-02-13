@@ -102,9 +102,23 @@
   color: var(--text-sub);
 }
 
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
     max-width: 360px;
+  }
+
+  .awardBanner {
+    padding: 16px 24px;
+  }
+
+  .companyInfo {
+    padding: 20px;
   }
 }
