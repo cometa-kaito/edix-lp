@@ -15,8 +15,8 @@ export default async function ContactPage({
   return (
     <>
       <div style={{ paddingTop: 'var(--header-h)' }} />
-      <LiveDemo />
       <ContactSection defaultCategory={category} />
+      <LiveDemo />
     </>
   );
 }
