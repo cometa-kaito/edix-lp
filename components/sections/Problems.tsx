@@ -1,5 +1,6 @@
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
+import Phrase from '@/components/ui/Phrase';
 import styles from '@/styles/sections/problems.module.css';
 
 const SCHOOL_PROBLEMS = [
@@ -29,7 +30,7 @@ export default function Problems() {
               <div key={i} className={styles.item}>
                 <div className={styles.itemIcon}>{p.icon}</div>
                 <h4 className={styles.itemTitle}>{p.title}</h4>
-                <p className={styles.itemDesc}>{p.desc}</p>
+                <Phrase as="p" className={styles.itemDesc}>{p.desc}</Phrase>
               </div>
             ))}
           </FadeIn>
@@ -46,7 +47,7 @@ export default function Problems() {
               <div key={i} className={styles.item}>
                 <div className={styles.itemIcon}>{p.icon}</div>
                 <h4 className={styles.itemTitle}>{p.title}</h4>
-                <p className={styles.itemDesc}>{p.desc}</p>
+                <Phrase as="p" className={styles.itemDesc}>{p.desc}</Phrase>
               </div>
             ))}
           </FadeIn>

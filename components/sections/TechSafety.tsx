@@ -1,5 +1,6 @@
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
+import Phrase from '@/components/ui/Phrase';
 import styles from '@/styles/sections/tech.module.css';
 
 const TECH_ITEMS = [
@@ -32,7 +33,7 @@ export default function TechSafety() {
               {TECH_ITEMS.map((item, i) => (
                 <li key={i} className={styles.listItem}>
                   <span className={styles.techIcon}>{item.icon}</span>
-                  <div><strong>{item.title}</strong><br />{item.desc}</div>
+                  <div><strong>{item.title}</strong><br /><Phrase>{item.desc}</Phrase></div>
                 </li>
               ))}
             </ul>
@@ -43,7 +44,7 @@ export default function TechSafety() {
               {SAFETY_ITEMS.map((item, i) => (
                 <li key={i} className={styles.listItem}>
                   <span className={styles.techIcon}>{item.icon}</span>
-                  <div><strong>{item.title}</strong><br />{item.desc}</div>
+                  <div><strong>{item.title}</strong><br /><Phrase>{item.desc}</Phrase></div>
                 </li>
               ))}
             </ul>

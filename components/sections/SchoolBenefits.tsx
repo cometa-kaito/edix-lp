@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
+import Phrase from '@/components/ui/Phrase';
 import styles from '@/styles/sections/schools.module.css';
 
 const MERITS = [
@@ -41,7 +42,7 @@ export default function SchoolBenefits() {
             <FadeIn key={i} className={styles.meritCard}>
               <div className={styles.meritIcon}>{m.icon}</div>
               <h3 className={styles.meritTitle}>{m.title}</h3>
-              <p className={styles.meritDesc}>{m.desc}</p>
+              <Phrase as="p" className={styles.meritDesc}>{m.desc}</Phrase>
             </FadeIn>
           ))}
         </div>

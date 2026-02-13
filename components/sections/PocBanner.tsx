@@ -33,7 +33,7 @@ export default function PocBanner({ variant = 'full' }: PocBannerProps) {
           <span className={styles.pocBadge}>通常の50%OFF</span>
           <span className={styles.pocBadge}>フィードバック必須</span>
         </div>
-        <Link href="/for-advertisers" className="btn btn-accent">
+        <Link href={variant === 'full' ? '/contact?category=企業（広告出稿）' : '/for-advertisers#poc-banner'} className="btn btn-accent">
           特別価格で広告を出す →
         </Link>
         <p className={styles.remain}>

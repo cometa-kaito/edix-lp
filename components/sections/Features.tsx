@@ -1,5 +1,6 @@
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
+import Phrase from '@/components/ui/Phrase';
 import { OPERATION_FLOW } from '@/lib/constants';
 import styles from '@/styles/sections/features.module.css';
 
@@ -23,7 +24,7 @@ export default function Features() {
             <FadeIn key={i} className={styles.card}>
               <div className={styles.cardIcon}>{f.icon}</div>
               <h3 className={styles.cardTitle}>{f.title}</h3>
-              <p className={styles.cardDesc}>{f.desc}</p>
+              <Phrase as="p" className={styles.cardDesc}>{f.desc}</Phrase>
             </FadeIn>
           ))}
         </div>

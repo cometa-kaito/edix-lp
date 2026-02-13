@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
+import Phrase from '@/components/ui/Phrase';
 import { DEMO_URL } from '@/lib/constants';
 import styles from '@/styles/sections/results.module.css';
 
@@ -27,12 +28,12 @@ export default function Results() {
         <div className={styles.content}>
           <FadeIn className={styles.highlight}>
             <h3 className={styles.highlightTitle}>🏫 岐南工業高等学校</h3>
-            <p className={styles.highlightDesc}>校長先生へ説明・確認済み。1クラスでの試験運用を実施中。</p>
+            <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。1クラスでの試験運用を実施中。</Phrase>
             <div className={styles.details}>
               {DETAILS.map((d, i) => (
                 <div key={i} className={styles.detail}>
                   <h4 className={styles.detailTitle}>{d.title}</h4>
-                  <p className={styles.detailDesc}>{d.desc}</p>
+                  <Phrase as="p" className={styles.detailDesc}>{d.desc}</Phrase>
                 </div>
               ))}
             </div>
@@ -56,7 +57,7 @@ export default function Results() {
                 <div className={`${styles.roadmapStep} ${step.active ? styles.roadmapStepActive : ''}`}>
                   <div className={styles.phase}>{step.phase}</div>
                   <h4 className={styles.roadmapStepTitle}>{step.title}</h4>
-                  <p className={styles.roadmapStepDesc}>{step.desc}</p>
+                  <Phrase as="p" className={styles.roadmapStepDesc}>{step.desc}</Phrase>
                 </div>
               </span>
             ))}

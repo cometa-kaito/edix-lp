@@ -5,6 +5,7 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
 import CountUp from '@/components/ui/CountUp';
 import TiltCard from '@/components/ui/TiltCard';
+import Phrase from '@/components/ui/Phrase';
 import { AD_SPECS, AD_FLOW_STEPS, PRICING_PLANS } from '@/lib/constants';
 import styles from '@/styles/sections/advertisers.module.css';
 
@@ -31,7 +32,7 @@ export default function AdvertiserBenefits() {
             <div key={i} className={styles.meritCard}>
               <div className={styles.meritIcon}>{m.icon}</div>
               <h3 className={styles.meritTitle}>{m.title}</h3>
-              <p className={styles.meritDesc}>{m.desc}</p>
+              <Phrase as="p" className={styles.meritDesc}>{m.desc}</Phrase>
             </div>
           ))}
         </FadeIn>
