@@ -14,7 +14,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
   const data: Record<HeroVariant, { badges?: { text: string; gold?: boolean }[]; title: string; sub: string; buttons: { href: string; label: string; variant: string }[] }> = {
     home: {
       badges: [
-        { text: 'DigiTechQuest 2026 最優秀賞受賞', gold: true },
+        { text: 'DigiTechQuest 2025 最優秀賞受賞', gold: true },
         { text: '岐南工業高校で実証実験中' },
       ],
       title: `校務DX × 広告で、<br>学校のデジタル化を<span class="${highlightClass}">無料で実現</span>`,

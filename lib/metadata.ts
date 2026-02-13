@@ -45,7 +45,7 @@ export const siteMetadata: Record<string, Metadata> = {
   about: {
     title: 'Edixについて - チーム・技術・実績',
     description:
-      'Edixを運営する株式会社Rebounderのチーム、技術基盤、実証実験の実績をご紹介します。DigiTechQuest 2026最優秀賞受賞。',
+      'Edixを運営する株式会社Rebounderのチーム、技術基盤、実証実験の実績をご紹介します。DigiTechQuest 2025最優秀賞受賞。',
   },
   faq: {
     title: 'よくあるご質問 - Edix',
