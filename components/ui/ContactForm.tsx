@@ -5,10 +5,11 @@ import { FORM_ACTION, COMPANY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/contact.module.css';
 
 interface ContactFormProps {
-  defaultCategory?: string;
+  category: string;
+  onCategoryChange: (value: string) => void;
 }
 
-export default function ContactForm({ defaultCategory }: ContactFormProps) {
+export default function ContactForm({ category, onCategoryChange }: ContactFormProps) {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -66,9 +67,12 @@ export default function ContactForm({ defaultCategory }: ContactFormProps) {
           <select
             name="category"
             required
-            defaultValue={defaultCategory || ''}
+            value={category}
             className={errors.category ? styles.error : ''}
-            onChange={() => setErrors((prev) => ({ ...prev, category: false }))}
+            onChange={(e) => {
+              onCategoryChange(e.target.value);
+              setErrors((prev) => ({ ...prev, category: false }));
+            }}
           >
             <option value="" disabled>選択してください</option>
             <option value="企業（広告出稿）">企業（広告出稿）</option>

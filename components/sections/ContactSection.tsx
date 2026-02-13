@@ -1,4 +1,6 @@
-import Link from 'next/link';
+'use client';
+
+import { useState } from 'react';
 import FadeIn from '@/components/ui/FadeIn';
 import ContactForm from '@/components/ui/ContactForm';
 import styles from '@/styles/sections/contact.module.css';
@@ -14,6 +16,17 @@ const CTA_ITEMS = [
 ];
 
 export default function ContactSection({ defaultCategory }: ContactSectionProps) {
+  const [category, setCategory] = useState(defaultCategory || '');
+
+  function handleCtaClick(newCategory: string) {
+    setCategory(newCategory);
+    const el = document.getElementById('contact-form');
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2 + el.offsetHeight / 2;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+
   return (
     <section className={`section-padding ${styles.section}`} id="contact">
       <div className="container">
@@ -26,20 +39,21 @@ export default function ContactSection({ defaultCategory }: ContactSectionProps)
 
         <FadeIn className={styles.ctaButtons}>
           {CTA_ITEMS.map((item, i) => (
-            <Link
+            <button
               key={i}
-              href={`/contact?category=${encodeURIComponent(item.category)}`}
+              type="button"
+              onClick={() => handleCtaClick(item.category)}
               className={styles.ctaBtn}
             >
               <div className={styles.ctaBtnIcon}>{item.icon}</div>
               <div className={styles.ctaBtnLabel}>{item.label}</div>
               <div className={styles.ctaBtnSub}>{item.sub}</div>
-            </Link>
+            </button>
           ))}
         </FadeIn>
 
         <FadeIn>
-          <ContactForm defaultCategory={defaultCategory} />
+          <ContactForm category={category} onCategoryChange={setCategory} />
         </FadeIn>
       </div>
     </section>
