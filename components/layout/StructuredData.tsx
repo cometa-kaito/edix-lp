@@ -2,7 +2,7 @@ export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Edix',
+    name: 'DIGI+',
     description: '校務DX×広告による持続可能な学校デジタル化プラットフォーム',
     url: '',
     founder: {

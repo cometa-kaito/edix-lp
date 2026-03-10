@@ -5,7 +5,7 @@ import { OPERATION_FLOW } from '@/lib/constants';
 import styles from '@/styles/sections/features.module.css';
 
 const FEATURES = [
-  { icon: '📣', title: '「見に行く」から「目に入る」へ', desc: '既存アプリは生徒が開く必要がある「Pull型」。Edixは教室にいるだけで情報が届く「Push型」メディア。伝え漏れをゼロに。' },
+  { icon: '📣', title: '「見に行く」から「目に入る」へ', desc: '既存アプリは生徒が開く必要がある「Pull型」。DIGI+は教室にいるだけで情報が届く「Push型」メディア。伝え漏れをゼロに。' },
   { icon: '📝', title: '入力30秒でプリント数十分を削減', desc: 'スマホ対応の管理画面から30秒で入力完了。プリント印刷・仕分け・配布の手間をまるごとカット。' },
   { icon: '🎓', title: '生きたキャリア教育教材', desc: '地元企業のインターン情報やオープンキャンパス案内を、毎日教室で自然に届ける。進路情報に特化した「教育メディア」。' },
 ];
@@ -15,8 +15,8 @@ export default function Features() {
     <section className="section-padding" id="features">
       <div className="container">
         <SectionHeader
-          label="What is Edix?"
-          title="教室設置型デジタルサイネージ Edix"
+          label="What is DIGI+?"
+          title="教室設置型デジタルサイネージ DIGI+"
           subtitle="学校・広告主・生徒の3者をつなぐ、持続可能な校務DXプラットフォーム"
         />
         <div className={styles.grid}>

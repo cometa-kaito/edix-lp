@@ -20,7 +20,7 @@ export default function Problems() {
     <section className="section-padding bg-alt" id="problems">
       <div className="container">
         <SectionHeader
-          label="Why Edix?"
+          label="Why DIGI+?"
           title="学校と企業、それぞれの課題を<br>ひとつの仕組みで解決"
         />
         <div className={styles.grid}>
@@ -37,7 +37,7 @@ export default function Problems() {
           <FadeIn className={styles.center}>
             <div className={styles.arrow}>←</div>
             <div className={styles.solution}>
-              校内常設メディア<br /><strong>「Edix」</strong><br />で両方を解決
+              校内常設メディア<br /><strong>「DIGI+」</strong><br />で両方を解決
             </div>
             <div className={styles.arrow}>→</div>
           </FadeIn>
