@@ -36,7 +36,7 @@ export default function LoadingScreen() {
   return (
     <div className={`loading-screen ${hidden ? 'hidden' : ''}`}>
       <div className="loading-logo">
-        Edi<span>x</span>
+        DIGI<span>+</span>
       </div>
     </div>
   );

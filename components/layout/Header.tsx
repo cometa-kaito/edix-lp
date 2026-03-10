@@ -9,7 +9,7 @@ export default function Header() {
       <header className={styles.header} id="header">
         <div className={styles.headerInner}>
           <Link href="/" className={styles.logo}>
-            Edi<span className={styles.logoAccent}>x</span>
+            DIGI<span className={styles.logoAccent}>+</span>
           </Link>
           <nav className={styles.navLinks}>
             {NAV_LINKS.map((link) => (
