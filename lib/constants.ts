@@ -69,7 +69,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'PoC特別価格はいつまでですか？',
-    answer: '先着順のため予告なく終了する場合がございます。ご興味をお持ちの方はお早めにご相談ください。',
+    answer: '2026年4月・5月の期間限定で募集しています。1クラスあたり10社限定・先着順のため、定員に達し次第終了となります。ご興味をお持ちの方はお早めにご相談ください。',
     target: 'biz',
   },
   {
@@ -118,18 +118,19 @@ export const FAQ_ITEMS: FaqItem[] = [
 export const PRICING_PLANS: PricingPlan[] = [
   {
     label: '🔥 実証実験パートナー価格',
-    name: 'PoC特別価格',
-    oldPrice: '5,000円/月',
-    price: '2,500',
+    name: 'PoC特別価格（2026年4〜5月）',
+    oldPrice: '15,000円/月',
+    price: '5,000',
     unit: '円/月（税抜）',
     features: [
-      '通常価格の50% OFF',
-      '1枠あたり24分/日の露出',
-      '月間8時間の広告表示',
+      '通常価格の67% OFF',
+      '1枠あたり12分/日の露出',
+      '月間6時間の広告表示',
       '月次レポート付き',
       '掲載審査・運用サポート',
+      '1クラスあたり10社限定',
     ],
-    conditions: ['先着順', '半額適用', 'フィードバック必須'],
+    conditions: ['先着順', '67%OFF', 'フィードバック必須'],
     recommended: true,
     ctaText: '特別価格で申し込む →',
     ctaHref: '/contact?category=企業（広告出稿）',
@@ -138,13 +139,14 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     label: '通常プラン',
     name: 'スタンダードプラン',
-    price: '5,000',
+    price: '15,000',
     unit: '円/月（税抜）',
     features: [
-      '1枠あたり24分/日の露出',
-      '月間8時間の広告表示',
+      '1枠あたり12分/日の露出',
+      '月間6時間の広告表示',
       '月次レポート付き',
       '掲載審査・運用サポート',
+      '1クラスあたり10社限定',
     ],
     recommended: false,
     ctaText: 'このプランで相談する →',
@@ -156,7 +158,7 @@ export const PRICING_PLANS: PricingPlan[] = [
 // ===== Advertiser Specs =====
 export const AD_SPECS: SpecItem[] = [
   { num: '120', unit: '分/日', label: '広告表示時間' },
-  { num: '5', unit: '枠/クラス', label: '広告枠数' },
+  { num: '10', unit: '枠/クラス', label: '広告枠数' },
   { num: '30', unit: '名/クラス', label: '到達人数' },
   { num: '6', unit: '学科', label: '機械・自動車・電気・電子・建築・土木' },
 ];

@@ -22,16 +22,16 @@ export default function PocBanner({ variant = 'full' }: PocBannerProps) {
           </p>
         )}
         <div className={styles.price}>
-          <span className={styles.oldPrice}>5,000円/月</span>
+          <span className={styles.oldPrice}>15,000円/月</span>
           <span className={styles.newPrice}>
-            <CountUp target={2500} duration={1.5} separator="," />
+            <CountUp target={5000} duration={1.5} separator="," />
             <span className={styles.priceUnit}>円/月（税抜）</span>
           </span>
         </div>
         <div className={styles.badges}>
-          <span className={styles.pocBadge}>先着順</span>
-          <span className={styles.pocBadge}>通常の50%OFF</span>
-          <span className={styles.pocBadge}>フィードバック必須</span>
+          <span className={styles.pocBadge}>2026年4〜5月限定</span>
+          <span className={styles.pocBadge}>通常の67%OFF</span>
+          <span className={styles.pocBadge}>1クラス10社限定</span>
         </div>
         <Link href={variant === 'full' ? '/contact?category=企業（広告出稿）' : '/for-advertisers#poc-banner'} className="btn btn-accent">
           特別価格で広告を出す →

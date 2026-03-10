@@ -92,7 +92,7 @@ export default function AdvertiserBenefits() {
           ))}
         </FadeIn>
         <FadeIn className={styles.pricingNote}>
-          <p>時給換算 312.5円〜。求人サイト（月額2〜10万円）と比べ圧倒的に低コスト。属性100%特定済みのため「無駄打ちゼロ」。</p>
+          <p>時給換算 約833円〜。求人サイト（月額2〜10万円）と比べ圧倒的に低コスト。属性100%特定済みのため「無駄打ちゼロ」。</p>
           <p>※ 金額はすべて税抜表示です &ensp; ※ 実証実験価格は予告なく終了する場合があります</p>
         </FadeIn>
 
