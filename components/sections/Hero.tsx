@@ -102,7 +102,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
         </div>
         <FadeIn className={styles.heroImage}>
           <Image
-            src="/poc.png"
+            src="/poc-v2.png"
             alt="キミテラス サイネージ画面"
             width={560}
             height={320}
