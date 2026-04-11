@@ -1,6 +1,5 @@
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
-import LiveDemo from '@/components/sections/LiveDemo';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function HomePage() {
@@ -8,7 +7,6 @@ export default function HomePage() {
     <>
       <Hero variant="home" />
       <Features />
-      <LiveDemo />
       <ContactSection />
     </>
   );
