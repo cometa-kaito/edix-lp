@@ -150,6 +150,8 @@
   .heroImage {
     flex: none;
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     order: -1;
   }
 
@@ -183,8 +185,17 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: calc(var(--header-h) + 24px);
+    padding-top: calc(var(--header-h) + 20px);
     padding-bottom: 24px;
+  }
+
+  .heroInner {
+    gap: 24px;
+    padding: 0 var(--space-sm);
+  }
+
+  .heroImage {
+    max-width: 320px;
   }
 
   .title {
@@ -198,10 +209,6 @@
   .badge {
     padding: 6px 14px;
     font-size: 12px;
-  }
-
-  .heroInner {
-    padding: 0 var(--space-sm);
   }
 }
 
