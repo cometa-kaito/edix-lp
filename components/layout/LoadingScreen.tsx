@@ -36,7 +36,7 @@ export default function LoadingScreen() {
   return (
     <div className={`loading-screen ${hidden ? 'hidden' : ''}`}>
       <div className="loading-logo">
-        DIGI<span>+</span>
+        <img src="/logo-full.png" alt="キミテラス" width={120} height={120} />
       </div>
     </div>
   );

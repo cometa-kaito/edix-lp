@@ -28,15 +28,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'DIGI+ - 校務DX×広告で学校デジタル化を無料で実現',
+  title: 'キミテラス - 校務DX×広告で学校デジタル化を無料で実現',
   description:
-    'DIGI+は教室にデジタルサイネージを設置し、校内連絡のDXと企業広告を両立する持続可能な学校デジタル化プラットフォームです。学校は無料で導入可能。',
+    'キミテラスは教室にデジタルサイネージを設置し、校内連絡のDXと企業広告を両立する持続可能な学校デジタル化プラットフォームです。学校は無料で導入可能。',
   openGraph: {
-    title: 'DIGI+ - 校務DX×広告で学校デジタル化を無料で実現',
+    title: 'キミテラス - 校務DX×広告で学校デジタル化を無料で実現',
     description:
       '教室設置型デジタルサイネージが、先生の負担を減らし、生徒に進路情報を届ける。学校は無料で導入可能。',
     type: 'website',
-    siteName: 'DIGI+',
+    siteName: 'キミテラス',
   },
 };
 

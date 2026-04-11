@@ -50,7 +50,7 @@ export default function LiveDemo() {
             <iframe
               ref={iframeRef}
               src="about:blank"
-              title="DIGI+ サイネージ ライブデモ"
+              title="キミテラス サイネージ ライブデモ"
               loading="lazy"
               allow="autoplay"
               className={styles.iframe}

@@ -39,7 +39,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
         { text: 'PoC特別価格 実施中', gold: true },
       ],
       title: `若年層への確実なリーチと<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
-      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。PoC特別価格で月額5,000円から。',
+      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス3ヶ月5万円/社。',
       buttons: [
         { href: '#pricing', label: 'PoC特別価格を見る', variant: 'accent' },
         { href: '/contact?category=企業（広告出稿）', label: 'お問い合わせ', variant: 'secondary' },

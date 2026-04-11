@@ -161,19 +161,10 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .loading-logo {
-  font-size: 48px;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   animation: pulse-loading 1.5s ease-in-out infinite;
 }
-.loading-logo span {
-  background: var(--gradient-cta);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.loading-logo img {
+  display: block;
 }
 @keyframes pulse-loading {
   0%, 100% { opacity: 1; transform: scale(1); }

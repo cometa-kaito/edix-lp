@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { NAV_LINKS } from '@/lib/constants';
 import MobileNav from './MobileNav';
 import styles from '@/styles/sections/header.module.css';
@@ -9,7 +10,7 @@ export default function Header() {
       <header className={styles.header} id="header">
         <div className={styles.headerInner}>
           <Link href="/" className={styles.logo}>
-            DIGI<span className={styles.logoAccent}>+</span>
+            <Image src="/logo-text.png" alt="キミテラス" width={140} height={36} priority />
           </Link>
           <nav className={styles.navLinks}>
             {NAV_LINKS.map((link) => (

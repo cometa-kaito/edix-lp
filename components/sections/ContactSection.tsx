@@ -34,7 +34,7 @@ export default function ContactSection({ defaultCategory }: ContactSectionProps)
           <h2 className={styles.heading}>まずはお気軽にご相談ください</h2>
         </FadeIn>
         <FadeIn>
-          <p className={styles.desc}>DIGI+に関するお問い合わせ・ご相談はこちらから</p>
+          <p className={styles.desc}>キミテラスに関するお問い合わせ・ご相談はこちらから</p>
         </FadeIn>
 
         <FadeIn className={styles.ctaButtons}>

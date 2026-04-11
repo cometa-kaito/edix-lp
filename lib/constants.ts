@@ -44,12 +44,12 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'Google ClassroomやClassiと何が違いますか？',
-    answer: 'Google Classroom等は生徒がアプリを開く必要がある「Pull型」ですが、DIGI+は教室に常設されたモニターで登校するだけで全員の目に届く「Push型」です。既存システムの「補完」として、見落とし防止のインフラとして機能します。',
+    answer: 'Google Classroom等は生徒がアプリを開く必要がある「Pull型」ですが、キミテラスは教室に常設されたモニターで登校するだけで全員の目に届く「Push型」です。既存システムの「補完」として、見落とし防止のインフラとして機能します。',
     target: 'school',
   },
   {
     question: '教育委員会の許可は必要ですか？',
-    answer: '自治体によって異なりますが、DIGI+では導入前の教育委員会への説明資料と運用ガイドラインの提供を無償でサポートします。掲載は進路情報に限定し、学校の拒否権・試験期間の広告停止など教育環境を最優先にした運用ルールを設けています。',
+    answer: '自治体によって異なりますが、キミテラスでは導入前の教育委員会への説明資料と運用ガイドラインの提供を無償でサポートします。掲載は進路情報に限定し、学校の拒否権・試験期間の広告停止など教育環境を最優先にした運用ルールを設けています。',
     target: 'school',
   },
   {
@@ -59,7 +59,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'モニターが故障・破損した場合は？',
-    answer: '故障・破損時の交換費用はDIGI+側が全額負担します。Raspberry Piの採用により交換が容易で、48時間以内に代替機を手配します。',
+    answer: '故障・破損時の交換費用はキミテラス側が全額負担します。Raspberry Piの採用により交換が容易で、48時間以内に代替機を手配します。',
     target: 'school',
   },
   {
@@ -69,7 +69,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'PoC特別価格はいつまでですか？',
-    answer: '2026年4月・5月の期間限定で募集しています。1クラスあたり10社限定・先着順のため、定員に達し次第終了となります。ご興味をお持ちの方はお早めにご相談ください。',
+    answer: '期間限定で募集しています。20社限定・先着順のため、定員に達し次第終了となります。ご興味をお持ちの方はお早めにご相談ください。',
     target: 'biz',
   },
   {
@@ -117,50 +117,31 @@ export const FAQ_ITEMS: FaqItem[] = [
 // ===== Pricing =====
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    label: '🔥 実証実験パートナー価格',
-    name: 'PoC特別価格（2026年4〜5月）',
-    oldPrice: '15,000円/月',
-    price: '5,000',
-    unit: '円/月（税抜）',
+    label: '🔥 実証実験 特別価格',
+    name: '3クラス × 3ヶ月パック',
+    price: '50,000',
+    unit: '円/社（税抜）',
     features: [
-      '通常価格の67% OFF',
-      '1枠あたり12分/日の露出',
-      '月間6時間の広告表示',
+      '電子工学科 1年・2年・3年の3クラス',
+      '3ヶ月間の広告掲載',
       '月次レポート付き',
       '掲載審査・運用サポート',
-      '1クラスあたり10社限定',
+      '20社限定・先着順',
     ],
-    conditions: ['先着順', '67%OFF', 'フィードバック必須'],
+    conditions: ['先着順', '20社限定', 'フィードバック必須'],
     recommended: true,
     ctaText: '特別価格で申し込む →',
     ctaHref: '/contact?category=企業（広告出稿）',
     ctaVariant: 'accent',
-  },
-  {
-    label: '通常プラン',
-    name: 'スタンダードプラン',
-    price: '15,000',
-    unit: '円/月（税抜）',
-    features: [
-      '1枠あたり12分/日の露出',
-      '月間6時間の広告表示',
-      '月次レポート付き',
-      '掲載審査・運用サポート',
-      '1クラスあたり10社限定',
-    ],
-    recommended: false,
-    ctaText: 'このプランで相談する →',
-    ctaHref: '/contact?category=企業（広告出稿）',
-    ctaVariant: 'secondary',
   },
 ];
 
 // ===== Advertiser Specs =====
 export const AD_SPECS: SpecItem[] = [
   { num: '120', unit: '分/日', label: '広告表示時間' },
-  { num: '10', unit: '枠/クラス', label: '広告枠数' },
+  { num: '20', unit: '枠/クラス', label: '広告枠数' },
   { num: '30', unit: '名/クラス', label: '到達人数' },
-  { num: '6', unit: '学科', label: '機械・自動車・電気・電子・建築・土木' },
+  { num: '3', unit: 'クラス', label: '電子工学科 1年・2年・3年' },
 ];
 
 // ===== Advertiser Flow =====
@@ -199,6 +180,6 @@ export const INVEST_FLOW: FlowStep[] = [
 ];
 
 // ===== External URLs =====
-export const DEMO_URL = 'https://school-signage-2026.firebaseapp.com/';
+export const DEMO_URL = 'https://school-signage-2026.web.app/?school=__mnjj6sj4&grade=mYm7Lsja9fMAZCKO180n&class=KKJx8ZaoSvzgO6udis7V&kiosk=1';
 export const FORM_ACTION = 'https://formsubmit.co/rebounder@googlegroups.com';
 export const COMPANY_URL = 'https://rebounder.jp';

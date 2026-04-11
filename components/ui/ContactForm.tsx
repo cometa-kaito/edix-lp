@@ -35,7 +35,7 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
     <div className={styles.wrapper} id="contact-form">
       <h3 className={styles.formTitle}>お問い合わせフォーム</h3>
       <form onSubmit={handleSubmit} action={FORM_ACTION} method="POST">
-        <input type="hidden" name="_subject" value="【DIGI+ LP】お問い合わせ" />
+        <input type="hidden" name="_subject" value="【キミテラス LP】お問い合わせ" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_next" value="" />
         <input type="text" name="_honey" style={{ display: 'none' }} />

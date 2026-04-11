@@ -34,26 +34,13 @@
 }
 
 .logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo:hover {
   transform: scale(1.06);
-}
-
-.logoAccent {
-  background: var(--gradient-cta);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .navLinks {
