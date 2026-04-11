@@ -5,12 +5,6 @@ import Phrase from '@/components/ui/Phrase';
 import { DEMO_URL } from '@/lib/constants';
 import styles from '@/styles/sections/results.module.css';
 
-const ROADMAP = [
-  { phase: 1, title: 'PoC（実証実験）', desc: '3クラスでの運用検証・改善', active: true },
-  { phase: 2, title: '学年全体拡大', desc: '同一校内での全面導入', active: false },
-  { phase: 3, title: '他校横展開', desc: '近隣校・県外への展開', active: false },
-];
-
 export default function Results() {
   return (
     <section className="section-padding" id="results">
@@ -24,13 +18,11 @@ export default function Results() {
           <FadeIn className={styles.highlight}>
             <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
             <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。電子工学科3クラスでの試験運用を実施中。</Phrase>
-            <FadeIn className="text-center" as="div">
-              <div style={{ marginTop: 24 }}>
-                <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
-                  実際のサイネージ画面を見る →
-                </a>
-              </div>
-            </FadeIn>
+            <div style={{ marginTop: 24, textAlign: 'center' }}>
+              <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
+                実際のサイネージ画面を見る →
+              </a>
+            </div>
           </FadeIn>
 
           <FadeIn className={styles.awardSection}>
@@ -61,22 +53,6 @@ export default function Results() {
                 DigiTechQuest 2025 について →
               </a>
             </div>
-          </FadeIn>
-
-          <FadeIn className="text-center">
-            <h3 className={styles.roadmapHeading}>ロードマップ</h3>
-          </FadeIn>
-          <FadeIn className={styles.roadmap}>
-            {ROADMAP.map((step, i) => (
-              <span key={i} style={{ display: 'contents' }}>
-                {i > 0 && <span className="flow-arrow">→</span>}
-                <div className={`${styles.roadmapStep} ${step.active ? styles.roadmapStepActive : ''}`}>
-                  <div className={styles.phase}>{step.phase}</div>
-                  <h4 className={styles.roadmapStepTitle}>{step.title}</h4>
-                  <Phrase as="p" className={styles.roadmapStepDesc}>{step.desc}</Phrase>
-                </div>
-              </span>
-            ))}
           </FadeIn>
         </div>
       </div>
