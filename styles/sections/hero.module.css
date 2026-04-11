@@ -3,36 +3,6 @@
   padding-bottom: 80px;
   background: linear-gradient(180deg, #F0F4FF 0%, #FFFFFF 100%);
   position: relative;
-  overflow: hidden;
-}
-
-/* Home variant: background image */
-.heroWithBg {
-  background: none;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-}
-
-.heroBgWrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-/* Left-to-right gradient overlay: solid on left, fading to show image on right */
-.heroBgWrap::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.88) 35%,
-    rgba(255, 255, 255, 0.5) 60%,
-    rgba(255, 255, 255, 0.15) 100%
-  );
-  z-index: 1;
 }
 
 .heroContent {
@@ -40,9 +10,7 @@
   margin: 0 auto;
   padding: 0 32px;
   position: relative;
-  z-index: 2;
-  max-width: 640px;
-  margin: 0 auto 0 max(32px, calc((100% - var(--max-w)) / 2 + 32px));
+  z-index: 1;
 }
 
 .heroBadges {
@@ -87,10 +55,10 @@
 }
 
 .title {
-  font-size: var(--font-5xl);
+  font-size: var(--font-6xl);
   font-weight: 800;
   line-height: var(--leading-tight);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   letter-spacing: -0.03em;
   min-height: 1.2em;
   color: var(--text);
@@ -114,22 +82,22 @@
 }
 
 .sub {
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   color: var(--text-sub);
-  margin-bottom: var(--space-lg);
-  max-width: 560px;
+  margin-bottom: var(--space-xl);
+  max-width: 680px;
   line-height: var(--leading-relaxed);
 }
 
 .buttons {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .buttons .btn {
   font-size: 15px;
-  padding: 14px 28px;
+  padding: 16px 32px;
 }
 
 /* Typing cursor */
@@ -147,7 +115,7 @@
 
 @media (max-width: 1024px) {
   .title {
-    font-size: var(--font-4xl);
+    font-size: var(--font-5xl);
   }
 
   .heroContent {
@@ -157,32 +125,8 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(var(--header-h) + 40px);
+    padding-top: calc(var(--header-h) + 48px);
     padding-bottom: 40px;
-  }
-
-  .heroWithBg {
-    min-height: auto;
-  }
-
-  /* On mobile, overlay covers more so text is always readable */
-  .heroBgWrap::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(255, 255, 255, 0.8) 60%,
-      rgba(255, 255, 255, 0.5) 100%
-    );
-  }
-
-  .heroContent {
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .sub {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .title {
@@ -209,8 +153,8 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: calc(var(--header-h) + 24px);
-    padding-bottom: 24px;
+    padding-top: calc(var(--header-h) + 32px);
+    padding-bottom: 32px;
   }
 
   .title {

@@ -59,16 +59,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
   }, []);
 
   return (
-    <section className={`${styles.hero} ${styles.heroWithBg}`}>
-      <div className={styles.heroBgWrap}>
-        <Image
-          src="/poc.png"
-          alt="キミテラス サイネージ画面"
-          fill
-          priority
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
-      </div>
+    <section className={styles.hero}>
       <div className={styles.heroContent}>
         {data.badges && (
           <div className={`${styles.heroBadges} ${styles.animateIn}`}>
