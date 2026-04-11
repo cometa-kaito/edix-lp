@@ -3,29 +3,46 @@
   padding-bottom: 80px;
   background: linear-gradient(180deg, #F0F4FF 0%, #FFFFFF 100%);
   position: relative;
+  overflow: hidden;
 }
 
-.heroInner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+/* Home variant: background image */
+.heroWithBg {
+  background: none;
+  min-height: 85vh;
+  display: flex;
   align-items: center;
 }
 
-.heroContent {
-  position: relative;
+.heroBgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Left-to-right gradient overlay: solid on left, fading to show image on right */
+.heroBgWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.88) 35%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
   z-index: 1;
 }
 
-.heroImage {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+.heroContent {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto 0 max(32px, calc((100% - var(--max-w)) / 2 + 32px));
 }
 
 .heroBadges {
@@ -133,8 +150,7 @@
     font-size: var(--font-4xl);
   }
 
-  .heroInner {
-    gap: 32px;
+  .heroContent {
     padding: 0 var(--space-md);
   }
 }
@@ -145,13 +161,28 @@
     padding-bottom: 40px;
   }
 
-  .heroInner {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .heroWithBg {
+    min-height: auto;
   }
 
-  .heroImage {
-    order: -1;
+  /* On mobile, overlay covers more so text is always readable */
+  .heroBgWrap::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.8) 60%,
+      rgba(255, 255, 255, 0.5) 100%
+    );
+  }
+
+  .heroContent {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .sub {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .title {
@@ -174,15 +205,6 @@
   .heroBadges {
     justify-content: center;
   }
-
-  .heroContent {
-    text-align: center;
-  }
-
-  .sub {
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media (max-width: 480px) {
@@ -204,7 +226,7 @@
     font-size: 12px;
   }
 
-  .heroInner {
+  .heroContent {
     padding: 0 var(--space-sm);
   }
 }

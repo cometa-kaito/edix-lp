@@ -6,9 +6,8 @@ export const metadata: Metadata = siteMetadata.about;
 
 export default function AboutPage() {
   return (
-    <>
-      <div style={{ paddingTop: 'var(--header-h)' }} />
+    <div style={{ paddingTop: 'var(--header-h)' }}>
       <Results />
-    </>
+    </div>
   );
 }

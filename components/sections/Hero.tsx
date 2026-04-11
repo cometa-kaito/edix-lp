@@ -58,59 +58,58 @@ export default function Hero({ variant = 'home' }: HeroProps) {
     setTimeout(() => setPhase(3), 600);
   }, []);
 
+  const isHome = variant === 'home';
+
   return (
-    <section className={styles.hero}>
-      <div className={styles.heroInner}>
-        <div className={styles.heroContent}>
-          {data.badges && (
-            <div className={`${styles.heroBadges} ${styles.animateIn}`}>
-              {data.badges.map((badge, i) => (
-                <span
-                  key={i}
-                  className={`${styles.badge} ${badge.gold ? styles.badgeGold : ''}`}
-                  style={{ animationDelay: `${1.2 + i * 0.15}s` }}
-                >
-                  {badge.text}
-                </span>
-              ))}
-            </div>
-          )}
-          <h1 className={styles.title}>
-            <TypeWriter
-              text={data.title}
-              speed={40}
-              delay={1400}
-              onComplete={handleTitleDone}
-            />
-          </h1>
-          <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
-            {data.sub}
-          </p>
-          <div className={`${styles.buttons} ${phase >= 3 ? styles.visible : styles.hidden}`}>
-            {data.buttons.map((btn, i) => (
-              <Link
+    <section className={`${styles.hero} ${isHome ? styles.heroWithBg : ''}`}>
+      {isHome && (
+        <div className={styles.heroBgWrap}>
+          <Image
+            src="/poc.png"
+            alt="キミテラス サイネージ画面"
+            fill
+            priority
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
+      )}
+      <div className={styles.heroContent}>
+        {data.badges && (
+          <div className={`${styles.heroBadges} ${styles.animateIn}`}>
+            {data.badges.map((badge, i) => (
+              <span
                 key={i}
-                href={btn.href}
-                className={`btn btn-${btn.variant}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
+                className={`${styles.badge} ${badge.gold ? styles.badgeGold : ''}`}
+                style={{ animationDelay: `${1.2 + i * 0.15}s` }}
               >
-                {btn.label}
-              </Link>
+                {badge.text}
+              </span>
             ))}
           </div>
-        </div>
-        {variant === 'home' && (
-          <div className={`${styles.heroImage} ${phase >= 2 ? styles.visible : styles.hidden}`}>
-            <Image
-              src="/poc.png"
-              alt="キミテラス サイネージ画面"
-              width={600}
-              height={340}
-              priority
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </div>
         )}
+        <h1 className={styles.title}>
+          <TypeWriter
+            text={data.title}
+            speed={40}
+            delay={1400}
+            onComplete={handleTitleDone}
+          />
+        </h1>
+        <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
+          {data.sub}
+        </p>
+        <div className={`${styles.buttons} ${phase >= 3 ? styles.visible : styles.hidden}`}>
+          {data.buttons.map((btn, i) => (
+            <Link
+              key={i}
+              href={btn.href}
+              className={`btn btn-${btn.variant}`}
+              style={{ transitionDelay: `${i * 0.1}s` }}
+            >
+              {btn.label}
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
