@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Image from 'next/image';
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
 import Phrase from '@/components/ui/Phrase';
@@ -12,7 +12,7 @@ const DETAILS = [
 ];
 
 const ROADMAP = [
-  { phase: 1, title: 'PoC（実証実験）', desc: '1クラスでの運用検証・改善', active: true },
+  { phase: 1, title: 'PoC（実証実験）', desc: '3クラスでの運用検証・改善', active: true },
   { phase: 2, title: '学年全体拡大', desc: '同一校内での全面導入', active: false },
   { phase: 3, title: '他校横展開', desc: '近隣校・県外への展開', active: false },
 ];
@@ -25,10 +25,21 @@ export default function Results() {
           label="Results"
           title="岐阜県立 岐南工業高等学校で<br>実証実験を実施中"
         />
+
+        <FadeIn className={styles.pocImage}>
+          <Image
+            src="/poc.png"
+            alt="キミテラス 教室設置型デジタルサイネージの実証実験画面"
+            width={800}
+            height={450}
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </FadeIn>
+
         <div className={styles.content}>
           <FadeIn className={styles.highlight}>
             <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
-            <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。1クラスでの試験運用を実施中。</Phrase>
+            <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。電子工学科3クラスでの試験運用を実施中。</Phrase>
             <div className={styles.details}>
               {DETAILS.map((d, i) => (
                 <div key={i} className={styles.detail}>
@@ -43,6 +54,36 @@ export default function Results() {
             <div style={{ marginBottom: 48 }}>
               <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
                 実際のサイネージ画面を見る →
+              </a>
+            </div>
+          </FadeIn>
+
+          <FadeIn className={styles.awardSection}>
+            <div className={styles.awardImages}>
+              <div className={styles.awardImage}>
+                <Image
+                  src="/award.jpg"
+                  alt="DigiTechQuest 2025 最優秀賞 受賞時の写真"
+                  width={600}
+                  height={400}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
+              <div className={styles.awardImage}>
+                <Image
+                  src="/digitech-event.png"
+                  alt="DigiTechQuest 2025 DX体験型実践プロジェクト"
+                  width={600}
+                  height={400}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
+            </div>
+            <div className={styles.awardInfo}>
+              <h3 className={styles.awardTitle}>DigiTechQuest 2025 最優秀賞 受賞</h3>
+              <Phrase as="p" className={styles.awardDesc}>高専・工業高校発のDXコンテストにて最優秀賞と研究奨励金10万円を獲得。教育現場のDXに取り組む学生プロジェクトとして高い評価を受けました。</Phrase>
+              <a href="https://www.digitech.quest/events/2025-gifu" target="_blank" rel="noopener" className={styles.awardLink}>
+                DigiTechQuest 2025 について →
               </a>
             </div>
           </FadeIn>
