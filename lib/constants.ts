@@ -113,7 +113,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     conditions: ['先着順', '20社限定', 'フィードバック必須'],
     recommended: true,
     ctaText: '特別価格で申し込む →',
-    ctaHref: '#apply',
+    ctaHref: '/for-advertisers#apply',
     ctaVariant: 'accent',
   },
 ];

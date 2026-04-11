@@ -91,7 +91,7 @@ export default function AdvertiserBenefits() {
           ))}
         </FadeIn>
         <FadeIn className={styles.pricingNote}>
-          <p>求人サイト（月額2〜10万円）と比べ圧倒的に低コスト。属性100%特定済みのため「無駄打ちゼロ」。</p>
+          <p>生徒が毎日長時間を過ごす教室という、企業にとって他にない貴重な情報発信の場。属性100%特定済みのため「無駄打ちゼロ」。</p>
           <p>※ 金額はすべて税抜表示です &ensp; ※ 特別価格は20社限定・予告なく終了する場合があります</p>
         </FadeIn>
 
@@ -114,7 +114,7 @@ export default function AdvertiserBenefits() {
 
         <FadeIn className="text-center" as="div">
           <div style={{ marginTop: 48 }}>
-            <Link href="#apply" className="btn btn-accent">
+            <Link href="/for-advertisers#apply" className="btn btn-accent">
               広告掲載を申し込む →
             </Link>
           </div>

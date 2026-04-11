@@ -41,7 +41,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス3ヶ月5万円/社。',
       buttons: [
         { href: '#pricing', label: 'PoC特別価格を見る', variant: 'accent' },
-        { href: '#apply', label: '広告掲載を申し込む', variant: 'secondary' },
+        { href: '/for-advertisers#apply', label: '広告掲載を申し込む', variant: 'secondary' },
       ],
     },
   };
