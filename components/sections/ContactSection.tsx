@@ -10,9 +10,8 @@ interface ContactSectionProps {
 }
 
 const CTA_ITEMS = [
-  { icon: '🔥', label: '広告出稿のご相談（PoC特別価格）', sub: '企業・採用ご担当者様', category: '企業（広告出稿）' },
-  { icon: '🏫', label: '学校見学・PoC日程の調整', sub: '学校関係者様', category: '学校関係者' },
-  { icon: '💰', label: '投資家向け個別説明会', sub: '投資家・企業経営者様', category: '投資家' },
+  { label: '広告出稿のご相談（PoC特別価格）', sub: '企業・採用ご担当者様', category: '企業（広告出稿）' },
+  { label: '学校見学・PoC日程の調整', sub: '学校関係者様', category: '学校関係者' },
 ];
 
 export default function ContactSection({ defaultCategory }: ContactSectionProps) {
@@ -45,7 +44,6 @@ export default function ContactSection({ defaultCategory }: ContactSectionProps)
               onClick={() => handleCtaClick(item.category)}
               className={styles.ctaBtn}
             >
-              <div className={styles.ctaBtnIcon}>{item.icon}</div>
               <div className={styles.ctaBtnLabel}>{item.label}</div>
               <div className={styles.ctaBtnSub}>{item.sub}</div>
             </button>

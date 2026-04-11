@@ -16,20 +16,11 @@
   width: 100%;
   font-size: 16px;
   padding: 18px 32px;
-  background: var(--gradient-cta);
-  box-shadow: 0 12px 48px rgba(249, 115, 22, 0.3), 0 4px 16px rgba(0, 0, 0, 0.12);
-  animation: floatPulse 3s ease-in-out infinite;
+  box-shadow: var(--shadow-lg);
 }
 
 .floatingCta .btn:hover {
-  animation: none;
-  transform: scale(1.04);
-  box-shadow: 0 16px 64px rgba(249, 115, 22, 0.4), 0 6px 24px rgba(0, 0, 0, 0.16);
-}
-
-@keyframes floatPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
+  box-shadow: var(--shadow-xl);
 }
 
 @media (max-width: 768px) {
@@ -43,8 +34,5 @@
 @media (prefers-reduced-motion: reduce) {
   .floatingCta {
     transition: none;
-  }
-  .floatingCta .btn {
-    animation: none;
   }
 }

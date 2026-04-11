@@ -22,7 +22,6 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       buttons: [
         { href: '/for-schools', label: '学校関係者の方はこちら', variant: 'primary' },
         { href: '/for-advertisers', label: '広告出稿をご検討の方', variant: 'accent' },
-        { href: '/for-investors', label: '投資家の方', variant: 'secondary' },
       ],
     },
     schools: {
@@ -42,16 +41,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス3ヶ月5万円/社。',
       buttons: [
         { href: '#pricing', label: 'PoC特別価格を見る', variant: 'accent' },
-        { href: '/contact?category=企業（広告出稿）', label: 'お問い合わせ', variant: 'secondary' },
-      ],
-    },
-    investors: {
-      badges: [{ text: '投資家の方へ' }],
-      title: `教育への貢献という、<br><span class="${highlightClass}">プライスレスな価値</span>`,
-      sub: 'レベニューシェア型 教室DXオーナー制度で、社会貢献と収益を両立。',
-      buttons: [
-        { href: '#scheme', label: '投資スキームを見る', variant: 'primary' },
-        { href: '/contact?category=投資家', label: '個別説明会の申し込み', variant: 'secondary' },
+        { href: '#apply', label: '広告掲載を申し込む', variant: 'secondary' },
       ],
     },
   };

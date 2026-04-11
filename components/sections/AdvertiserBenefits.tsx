@@ -10,10 +10,10 @@ import { AD_SPECS, AD_FLOW_STEPS, PRICING_PLANS } from '@/lib/constants';
 import styles from '@/styles/sections/advertisers.module.css';
 
 const MERITS = [
-  { icon: '🎯', title: 'Z世代の空白地帯にリーチ', desc: 'SNS広告はスキップされ、TVは見られない。教室は高校生に確実に届く唯一のメディア空間です。' },
-  { icon: '👁', title: '「見られる」を保証', desc: '教室の常設モニターで「見ていない」がありえない。月次レポートで表示回数・表示時間を可視化します。' },
-  { icon: '💼', title: '採用コスト削減', desc: '日頃から企業名を認知させ、求人票公開時の「指名検索」を増加。高卒1名採用の価値（数百万円）に対し月額数千円。' },
-  { icon: '🌎', title: 'CSR/SDGsブランディング', desc: '教育DX支援として企業ブランディング・SDGs活動に活用。税金で賄えないICT環境を民間がサポートする社会貢献モデル。' },
+  { title: 'Z世代の空白地帯にリーチ', desc: 'SNS広告はスキップされ、TVは見られない。教室は高校生に確実に届く唯一のメディア空間です。' },
+  { title: '「見られる」を保証', desc: '教室の常設モニターで「見ていない」がありえない。月次レポートで表示回数・表示時間を可視化します。' },
+  { title: '採用コスト削減', desc: '日頃から企業名を認知させ、求人票公開時の「指名検索」を増加。高卒1名採用の価値（数百万円）に対し月額数千円。' },
+  { title: 'CSR/SDGsブランディング', desc: '教育DX支援として企業ブランディング・SDGs活動に活用。税金で賄えないICT環境を民間がサポートする社会貢献モデル。' },
 ];
 
 export default function AdvertiserBenefits() {
@@ -30,7 +30,6 @@ export default function AdvertiserBenefits() {
         <FadeIn className={styles.merits}>
           {MERITS.map((m, i) => (
             <div key={i} className={styles.meritCard}>
-              <div className={styles.meritIcon}>{m.icon}</div>
               <h3 className={styles.meritTitle}>{m.title}</h3>
               <Phrase as="p" className={styles.meritDesc}>{m.desc}</Phrase>
             </div>
@@ -52,7 +51,7 @@ export default function AdvertiserBenefits() {
 
         {/* Pricing */}
         <FadeIn className="text-center" id="pricing">
-          <h3 className={styles.pricingHeading}>🔥 PoC実証実験 特別価格プラン</h3>
+          <h3 className={styles.pricingHeading}>PoC実証実験 特別価格プラン</h3>
         </FadeIn>
         <FadeIn className={styles.pricingCards}>
           {PRICING_PLANS.map((plan, i) => (
@@ -115,8 +114,8 @@ export default function AdvertiserBenefits() {
 
         <FadeIn className="text-center" as="div">
           <div style={{ marginTop: 48 }}>
-            <Link href="/contact?category=企業（広告出稿）" className="btn btn-accent">
-              🔥 PoC特別価格で広告を始める →
+            <Link href="#apply" className="btn btn-accent">
+              広告掲載を申し込む →
             </Link>
           </div>
         </FadeIn>

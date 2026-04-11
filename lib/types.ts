@@ -1,5 +1,5 @@
 // ===== Component Variant Types =====
-export type HeroVariant = 'home' | 'schools' | 'advertisers' | 'investors';
+export type HeroVariant = 'home' | 'schools' | 'advertisers';
 export type PocBannerVariant = 'full' | 'compact';
 export type ResultsVariant = 'full' | 'compact';
 export type TeamVariant = 'full' | 'compact';
@@ -44,18 +44,6 @@ export interface FlowStep {
   description: string;
 }
 
-export interface MarketData {
-  label: string;
-  value: string;
-  unit: string;
-}
-
-export interface RoiRow {
-  rate: string;
-  mrr: string;
-  recovery: string;
-  roi: string;
-}
 
 export interface NavLink {
   href: string;

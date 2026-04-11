@@ -29,7 +29,7 @@ export default function FloatingCta() {
   return (
     <div className={`${styles.floatingCta} ${visible ? styles.visible : ''}`}>
       <Link href="/contact" className="btn btn-primary" style={{ width: '100%', fontSize: 15 }}>
-        📢 お問い合わせ
+        お問い合わせ
       </Link>
     </div>
   );

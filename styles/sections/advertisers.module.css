@@ -16,13 +16,8 @@
 }
 
 .meritCard:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-}
-
-.meritIcon {
-  font-size: 44px;
-  margin-bottom: 20px;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .meritTitle {
@@ -82,9 +77,9 @@
 /* Pricing Cards */
 .pricingCards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-lg);
-  max-width: 840px;
+  max-width: 480px;
   margin: 0 auto var(--space-xl);
 }
 
@@ -101,28 +96,12 @@
 }
 
 .pricingCard:hover {
-  transform: translateY(-6px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
 
 .recommended {
-  border-color: var(--accent-biz);
-  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.18);
-}
-
-.recommended::before {
-  content: '今だけ半額';
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gradient-cta);
-  color: var(--white);
-  padding: 6px 24px;
-  border-radius: var(--radius-full);
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: var(--shadow-cta);
+  border-color: var(--primary);
 }
 
 .pricingLabel {
@@ -161,7 +140,7 @@
 }
 
 .recommended .amount {
-  color: var(--accent-biz);
+  color: var(--primary);
 }
 
 .unit {
@@ -188,17 +167,17 @@
 }
 
 .conditions {
-  background: #FFF7ED;
+  background: var(--bg-alt);
   border-radius: var(--radius-md);
   padding: 20px;
   margin-bottom: 28px;
-  border: 1px solid rgba(249, 115, 22, 0.15);
+  border: 1px solid var(--border-light);
 }
 
 .conditionsTitle {
   font-size: var(--font-sm);
   font-weight: 700;
-  color: var(--accent-biz);
+  color: var(--text);
   margin-bottom: 10px;
 }
 
@@ -210,12 +189,12 @@
 
 .condBadge {
   background: var(--white);
-  border: 1px solid #FDBA74;
+  border: 1px solid var(--border-medium);
   border-radius: var(--radius-full);
   padding: 4px 14px;
   font-size: var(--font-xs);
   font-weight: 600;
-  color: #C2410C;
+  color: var(--text-sub);
   white-space: nowrap;
 }
 
@@ -262,7 +241,7 @@
 }
 
 .bizFlowStep:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
@@ -272,13 +251,12 @@
   height: 44px;
   align-items: center;
   justify-content: center;
-  background: var(--gradient-cta);
+  background: var(--primary);
   color: var(--white);
   border-radius: 50%;
   font-weight: 700;
   font-size: var(--font-lg);
   margin-bottom: 12px;
-  box-shadow: var(--shadow-cta);
 }
 
 .bizFlowTitle {

@@ -10,7 +10,6 @@ export default function Team() {
         <SectionHeader label="Team" title="学生が学校DXする！" />
         <FadeIn className="text-center">
           <div className={styles.awardBanner}>
-            <div className={styles.awardIcon}>🏆</div>
             <div className={styles.awardText}>
               <h3 className={styles.awardTitle}>DigiTechQuest 2025 最優秀賞 受賞</h3>
               <p className={styles.awardDesc}>高専・工業高校発のイノベーションプロジェクト</p>

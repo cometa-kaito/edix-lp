@@ -27,7 +27,7 @@ export default function Results() {
         />
         <div className={styles.content}>
           <FadeIn className={styles.highlight}>
-            <h3 className={styles.highlightTitle}>🏫 岐南工業高等学校</h3>
+            <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
             <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。1クラスでの試験運用を実施中。</Phrase>
             <div className={styles.details}>
               {DETAILS.map((d, i) => (
@@ -42,7 +42,7 @@ export default function Results() {
           <FadeIn className="text-center" as="div">
             <div style={{ marginBottom: 48 }}>
               <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
-                💻 実際のサイネージ画面を見る →
+                実際のサイネージ画面を見る →
               </a>
             </div>
           </FadeIn>

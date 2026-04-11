@@ -5,11 +5,11 @@ import Phrase from '@/components/ui/Phrase';
 import styles from '@/styles/sections/schools.module.css';
 
 const MERITS = [
-  { icon: '⏰', title: '働き方改革 & 業務効率化', desc: 'HR時間の短縮、全クラスへの一斉配信、プリント削減で先生の時間を創出します。' },
-  { icon: '📱', title: 'かんたん運用', desc: 'スマホ対応の管理画面から入力するだけ。専門知識は不要。窓口担当者1名で運用可能です。' },
-  { icon: '🛡', title: '安全性（School Safety）', desc: '全広告を事前審査し、学校に拒否権を付与。教育的価値の高い進路情報に限定し、教育環境を守ります。' },
-  { icon: '🏛', title: '教育委員会・PTA対応支援', desc: '導入前に教育委員会への説明資料を提供。自治体条例の確認と運用ガイドラインの策定を無償でサポートします。' },
-  { icon: '💰', title: '導入・費用負担なし', desc: '機材は広告収益モデルで無償提供。学校負担は電気代のみ。故障・破損時の交換もキミテラス側が全額負担。' },
+  { title: '働き方改革 & 業務効率化', desc: 'HR時間の短縮、全クラスへの一斉配信、プリント削減で先生の時間を創出します。' },
+  { title: 'かんたん運用', desc: 'スマホ対応の管理画面から入力するだけ。専門知識は不要。窓口担当者1名で運用可能です。' },
+  { title: '安全性（School Safety）', desc: '全広告を事前審査し、学校に拒否権を付与。教育的価値の高い進路情報に限定し、教育環境を守ります。' },
+  { title: '教育委員会・PTA対応支援', desc: '導入前に教育委員会への説明資料を提供。自治体条例の確認と運用ガイドラインの策定を無償でサポートします。' },
+  { title: '導入・費用負担なし', desc: '機材は広告収益モデルで無償提供。学校負担は電気代のみ。故障・破損時の交換もキミテラス側が全額負担。' },
 ];
 
 const SCHOOL_PROVIDES = [
@@ -40,14 +40,13 @@ export default function SchoolBenefits() {
         <div className={styles.meritGrid}>
           {MERITS.map((m, i) => (
             <FadeIn key={i} className={styles.meritCard}>
-              <div className={styles.meritIcon}>{m.icon}</div>
               <h3 className={styles.meritTitle}>{m.title}</h3>
               <Phrase as="p" className={styles.meritDesc}>{m.desc}</Phrase>
             </FadeIn>
           ))}
         </div>
         <FadeIn className={styles.costHighlight}>
-          <h3 className={styles.costTitle}>🆓 学校側の費用負担 = 電気代 + 通信費のみ</h3>
+          <h3 className={styles.costTitle}>学校側の費用負担 = 電気代 + 通信費のみ</h3>
           <p className={styles.costDesc}>機材（43〜55インチモニター・スタンド）は無償提供。故障・破損時は48時間以内に交換対応。費用はキミテラス側が全額負担。</p>
         </FadeIn>
         <FadeIn className={styles.infoGrid}>
@@ -70,7 +69,7 @@ export default function SchoolBenefits() {
         </FadeIn>
         <FadeIn className="text-center">
           <Link href="/contact?category=学校関係者" className="btn btn-primary">
-            📢 導入のご相談・学校見学のお申し込み
+            導入のご相談・学校見学のお申し込み
           </Link>
         </FadeIn>
       </div>

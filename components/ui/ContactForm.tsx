@@ -77,7 +77,6 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
             <option value="" disabled>選択してください</option>
             <option value="企業（広告出稿）">企業（広告出稿）</option>
             <option value="学校関係者">学校関係者</option>
-            <option value="投資家">投資家</option>
             <option value="その他">その他</option>
           </select>
         </div>

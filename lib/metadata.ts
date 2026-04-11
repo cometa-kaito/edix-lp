@@ -33,15 +33,6 @@ export const siteMetadata: Record<string, Metadata> = {
       description: '校務DXを無料で実現。機材無償提供で先生の負担を軽減します。',
     },
   },
-  investors: {
-    title: '投資家の方へ - キミテラス 教室DXオーナー制度 ROI 120%',
-    description:
-      'レベニューシェア型教室DXオーナー制度。10万円/教室の出資で広告売上の60%を分配。教育貢献と収益を両立する社会的投資。',
-    openGraph: {
-      title: '投資家の方へ - キミテラス 教室DXオーナー制度 ROI 120%',
-      description: 'レベニューシェア型で教育貢献と収益を両立。10万円/教室から。',
-    },
-  },
   about: {
     title: 'キミテラスについて - チーム・技術・実績',
     description:

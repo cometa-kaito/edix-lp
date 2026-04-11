@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-/* Gradient accent bar */
+/* Accent bar */
 .highlight::before {
   content: '';
   position: absolute;
@@ -23,7 +23,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient-primary);
+  background: var(--primary);
 }
 
 .highlightTitle {
@@ -113,10 +113,8 @@
 }
 
 .roadmapStepActive {
-  border: 2px solid transparent;
-  background: linear-gradient(var(--white), var(--white)) padding-box,
-              var(--gradient-primary) border-box;
-  box-shadow: var(--shadow-primary);
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .roadmapStepTitle {

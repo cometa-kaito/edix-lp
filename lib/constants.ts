@@ -4,8 +4,6 @@ import type {
   PricingPlan,
   SpecItem,
   FlowStep,
-  MarketData,
-  RoiRow,
   NavLink,
 } from './types';
 
@@ -14,7 +12,6 @@ export const NAV_LINKS: NavLink[] = [
   { href: '/#features', label: '特徴' },
   { href: '/for-schools', label: '学校の方' },
   { href: '/for-advertisers#poc-banner', label: '広告出稿（特別価格）', highlight: true },
-  { href: '/for-investors', label: '投資家の方' },
   { href: '/about', label: '実績' },
 ];
 
@@ -93,21 +90,6 @@ export const FAQ_ITEMS: FaqItem[] = [
     target: 'biz',
   },
   {
-    question: '元本保証はありますか？',
-    answer: '法的に元本保証はできません。広告売上の60%を分配するレベニューシェア型となります。リスク開示を行った上でご契約いただきます。',
-    target: 'investor',
-  },
-  {
-    question: '金融商品取引法上の問題はありませんか？',
-    answer: '本スキームは匿名組合契約として、第二種金融商品取引業の適用除外要件（500名未満・1人50万円未満）を満たす形で運用します。弁護士監修のもと適法性を確保しています。',
-    target: 'investor',
-  },
-  {
-    question: 'なぜROIの上限が120%なのですか？',
-    answer: '短期回収・低リスクの応援型投資として設計しています。最長1年で契約終了するためリスク期間が限定的です。設置数の拡大に伴いネットワーク価値が向上するため、将来的なアップサイドは別途ご相談ください。',
-    target: 'investor',
-  },
-  {
     question: 'いつから始められますか？',
     answer: '最短2週間程度で配信開始が可能です。まずはお問い合わせフォームからご連絡ください。',
     target: 'all',
@@ -117,7 +99,7 @@ export const FAQ_ITEMS: FaqItem[] = [
 // ===== Pricing =====
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    label: '🔥 実証実験 特別価格',
+    label: '実証実験 特別価格',
     name: '3クラス × 3ヶ月パック',
     price: '50,000',
     unit: '円/社（税抜）',
@@ -131,7 +113,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     conditions: ['先着順', '20社限定', 'フィードバック必須'],
     recommended: true,
     ctaText: '特別価格で申し込む →',
-    ctaHref: '/contact?category=企業（広告出稿）',
+    ctaHref: '#apply',
     ctaVariant: 'accent',
   },
 ];
@@ -157,26 +139,6 @@ export const OPERATION_FLOW: FlowStep[] = [
   { num: 1, title: '情報を入力', description: '管理画面から連絡事項や広告を登録' },
   { num: 2, title: 'クラウドで即時反映', description: 'Firebaseで全サイネージにリアルタイム配信' },
   { num: 3, title: 'サイネージ表示', description: '教室のモニターに自動で表示・更新' },
-];
-
-// ===== Investor Data =====
-export const ROI_DATA: RoiRow[] = [
-  { rate: '100%', mrr: '25,000円', recovery: '約4.8ヶ月', roi: '120%' },
-  { rate: '60%', mrr: '15,000円', recovery: '約8.0ヶ月', roi: '120%' },
-  { rate: '40%', mrr: '10,000円', recovery: '約12.0ヶ月', roi: '120%' },
-];
-
-export const MARKET_DATA: MarketData[] = [
-  { label: 'TAM（総市場規模）', value: '250', unit: '億円' },
-  { label: 'SAM（対象市場）', value: '75', unit: '億円' },
-  { label: 'SOM（初期獲得市場）', value: '5.1', unit: '億円' },
-];
-
-// ===== Investor Flow =====
-export const INVEST_FLOW: FlowStep[] = [
-  { num: 1, title: '出資', description: '10万円 / 教室' },
-  { num: 2, title: '収益分配', description: '広告売上の60%を分配' },
-  { num: 3, title: '契約終了', description: '分配総額12万円到達 or 1年' },
 ];
 
 // ===== External URLs =====

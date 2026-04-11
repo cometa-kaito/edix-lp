@@ -6,26 +6,17 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
+  background: var(--white);
   border-radius: var(--radius-lg);
   padding: 40px 32px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-top: 4px solid var(--primary);
-  position: relative;
+  transition: all var(--duration-base) ease;
+  border: 1px solid var(--border-light);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.cardIcon {
-  font-size: 48px;
-  margin-bottom: 20px;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .cardTitle {
@@ -61,7 +52,7 @@
 }
 
 .flowStep:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
