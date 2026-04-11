@@ -100,12 +100,12 @@ export const FAQ_ITEMS: FaqItem[] = [
 export const PRICING_PLANS: PricingPlan[] = [
   {
     label: '実証実験 特別価格',
-    name: '3クラス × 3ヶ月パック',
+    name: '3クラス × 3ヶ月（2026年6〜8月）',
     price: '50,000',
     unit: '円/社（税抜）',
     features: [
       '電子工学科 1年・2年・3年の3クラス',
-      '3ヶ月間の広告掲載',
+      '2026年6月・7月・8月の広告掲載',
       '月次レポート付き',
       '掲載審査・運用サポート',
       '20社限定・先着順',

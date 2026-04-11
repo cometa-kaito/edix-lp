@@ -27,7 +27,7 @@ export default function PocBanner({ variant = 'full' }: PocBannerProps) {
           </span>
         </div>
         <div className={styles.badges}>
-          <span className={styles.pocBadge}>3クラス × 3ヶ月</span>
+          <span className={styles.pocBadge}>3クラス × 3ヶ月（6〜8月）</span>
           <span className={styles.pocBadge}>20社限定</span>
           <span className={styles.pocBadge}>先着順</span>
         </div>
