@@ -1,12 +1,3 @@
-.pocImage {
-  max-width: 720px;
-  margin: 0 auto var(--space-xl);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
-}
-
 .content {
   max-width: 800px;
   margin: 0 auto;
@@ -94,39 +85,6 @@
   margin-bottom: 20px;
 }
 
-.details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: var(--space-lg);
-}
-
-.detail {
-  padding: 24px;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  transition: all var(--duration-base) ease;
-}
-
-.detail:hover {
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
-}
-
-.detailTitle {
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.detailDesc {
-  font-size: var(--font-sm);
-  color: var(--text-sub);
-  line-height: var(--leading-relaxed);
-}
-
 .roadmap {
   display: flex;
   gap: 24px;
@@ -186,12 +144,6 @@
   font-size: var(--font-xl);
   font-weight: 700;
   margin-bottom: var(--space-lg);
-}
-
-@media (max-width: 1024px) {
-  .details {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 768px) {

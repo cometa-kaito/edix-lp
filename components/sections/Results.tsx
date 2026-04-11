@@ -5,12 +5,6 @@ import Phrase from '@/components/ui/Phrase';
 import { DEMO_URL } from '@/lib/constants';
 import styles from '@/styles/sections/results.module.css';
 
-const DETAILS = [
-  { title: '運用性の確認', desc: '教員・生徒の日常利用における操作性を検証' },
-  { title: '学習環境への影響', desc: '授業中の集中力や学習環境への影響を評価' },
-  { title: '広告運用の妥当性', desc: '広告表示の適切性と効果を分析' },
-];
-
 const ROADMAP = [
   { phase: 1, title: 'PoC（実証実験）', desc: '3クラスでの運用検証・改善', active: true },
   { phase: 2, title: '学年全体拡大', desc: '同一校内での全面導入', active: false },
@@ -26,36 +20,17 @@ export default function Results() {
           title="岐阜県立 岐南工業高等学校で<br>実証実験を実施中"
         />
 
-        <FadeIn className={styles.pocImage}>
-          <Image
-            src="/poc.png"
-            alt="キミテラス 教室設置型デジタルサイネージの実証実験画面"
-            width={800}
-            height={450}
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </FadeIn>
-
         <div className={styles.content}>
           <FadeIn className={styles.highlight}>
             <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
             <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。電子工学科3クラスでの試験運用を実施中。</Phrase>
-            <div className={styles.details}>
-              {DETAILS.map((d, i) => (
-                <div key={i} className={styles.detail}>
-                  <h4 className={styles.detailTitle}>{d.title}</h4>
-                  <Phrase as="p" className={styles.detailDesc}>{d.desc}</Phrase>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          <FadeIn className="text-center" as="div">
-            <div style={{ marginBottom: 48 }}>
-              <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
-                実際のサイネージ画面を見る →
-              </a>
-            </div>
+            <FadeIn className="text-center" as="div">
+              <div style={{ marginTop: 24 }}>
+                <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
+                  実際のサイネージ画面を見る →
+                </a>
+              </div>
+            </FadeIn>
           </FadeIn>
 
           <FadeIn className={styles.awardSection}>
@@ -81,7 +56,7 @@ export default function Results() {
             </div>
             <div className={styles.awardInfo}>
               <h3 className={styles.awardTitle}>DigiTechQuest 2025 最優秀賞 受賞</h3>
-              <Phrase as="p" className={styles.awardDesc}>高専・工業高校発のDXコンテストにて最優秀賞と研究奨励金10万円を獲得。教育現場のDXに取り組む学生プロジェクトとして高い評価を受けました。</Phrase>
+              <Phrase as="p" className={styles.awardDesc}>高専・工業高校発のDXコンテストにて最優秀賞と研究奨励金10万円を獲得。</Phrase>
               <a href="https://www.digitech.quest/events/2025-gifu" target="_blank" rel="noopener" className={styles.awardLink}>
                 DigiTechQuest 2025 について →
               </a>
