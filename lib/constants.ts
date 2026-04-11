@@ -11,7 +11,7 @@ import type {
 export const NAV_LINKS: NavLink[] = [
   { href: '/#features', label: '特徴' },
   { href: '/for-schools', label: '学校の方' },
-  { href: '/for-advertisers#poc-banner', label: '広告出稿（特別価格）', highlight: true },
+  { href: '/for-advertisers', label: '広告出稿（特別価格）', highlight: true },
   { href: '/about', label: '実績' },
 ];
 
