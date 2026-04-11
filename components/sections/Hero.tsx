@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import FadeIn from '@/components/ui/FadeIn';
 import TypeWriter from '@/components/ui/TypeWriter';
 import styles from '@/styles/sections/hero.module.css';
 import type { HeroVariant } from '@/lib/types';
@@ -60,43 +61,55 @@ export default function Hero({ variant = 'home' }: HeroProps) {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.heroContent}>
-        {data.badges && (
-          <div className={`${styles.heroBadges} ${styles.animateIn}`}>
-            {data.badges.map((badge, i) => (
-              <span
+      <div className={styles.heroInner}>
+        <div className={styles.heroContent}>
+          {data.badges && (
+            <div className={`${styles.heroBadges} ${styles.animateIn}`}>
+              {data.badges.map((badge, i) => (
+                <span
+                  key={i}
+                  className={`${styles.badge} ${badge.gold ? styles.badgeGold : ''}`}
+                  style={{ animationDelay: `${1.2 + i * 0.15}s` }}
+                >
+                  {badge.text}
+                </span>
+              ))}
+            </div>
+          )}
+          <h1 className={styles.title}>
+            <TypeWriter
+              text={data.title}
+              speed={40}
+              delay={1400}
+              onComplete={handleTitleDone}
+            />
+          </h1>
+          <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
+            {data.sub}
+          </p>
+          <div className={`${styles.buttons} ${phase >= 3 ? styles.visible : styles.hidden}`}>
+            {data.buttons.map((btn, i) => (
+              <Link
                 key={i}
-                className={`${styles.badge} ${badge.gold ? styles.badgeGold : ''}`}
-                style={{ animationDelay: `${1.2 + i * 0.15}s` }}
+                href={btn.href}
+                className={`btn btn-${btn.variant}`}
+                style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                {badge.text}
-              </span>
+                {btn.label}
+              </Link>
             ))}
           </div>
-        )}
-        <h1 className={styles.title}>
-          <TypeWriter
-            text={data.title}
-            speed={40}
-            delay={1400}
-            onComplete={handleTitleDone}
-          />
-        </h1>
-        <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
-          {data.sub}
-        </p>
-        <div className={`${styles.buttons} ${phase >= 3 ? styles.visible : styles.hidden}`}>
-          {data.buttons.map((btn, i) => (
-            <Link
-              key={i}
-              href={btn.href}
-              className={`btn btn-${btn.variant}`}
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              {btn.label}
-            </Link>
-          ))}
         </div>
+        <FadeIn className={styles.heroImage}>
+          <Image
+            src="/poc.png"
+            alt="キミテラス サイネージ画面"
+            width={560}
+            height={320}
+            priority
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </FadeIn>
       </div>
     </section>
   );
