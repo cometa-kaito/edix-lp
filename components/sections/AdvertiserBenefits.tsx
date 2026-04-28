@@ -83,9 +83,15 @@ export default function AdvertiserBenefits() {
                 </div>
               )}
               <div className="text-center" style={{ marginTop: 'auto' }}>
-                <Link href={plan.ctaHref} className={`btn btn-${plan.ctaVariant}`}>
-                  {plan.ctaText}
-                </Link>
+                {plan.ctaHref.startsWith('http') ? (
+                  <a href={plan.ctaHref} target="_blank" rel="noopener" className={`btn btn-${plan.ctaVariant}`}>
+                    {plan.ctaText}
+                  </a>
+                ) : (
+                  <Link href={plan.ctaHref} className={`btn btn-${plan.ctaVariant}`}>
+                    {plan.ctaText}
+                  </Link>
+                )}
               </div>
             </TiltCard>
           ))}
@@ -114,9 +120,9 @@ export default function AdvertiserBenefits() {
 
         <FadeIn className="text-center" as="div">
           <div style={{ marginTop: 48 }}>
-            <Link href="/for-advertisers#apply" className="btn btn-accent">
+            <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl" target="_blank" rel="noopener" className="btn btn-accent">
               広告掲載を申し込む →
-            </Link>
+            </a>
           </div>
         </FadeIn>
       </div>

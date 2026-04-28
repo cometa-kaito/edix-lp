@@ -47,7 +47,7 @@ export default function SchoolBenefits() {
         </div>
         <FadeIn className={styles.costHighlight}>
           <h3 className={styles.costTitle}>学校側の費用負担 = 電気代 + 通信費のみ</h3>
-          <p className={styles.costDesc}>機材（43〜55インチモニター・スタンド）は無償提供。故障・破損時は48時間以内に交換対応。費用はキミテラス側が全額負担。</p>
+          <p className={styles.costDesc}>スマートテレビ（43〜55インチ）・スタンドは無償提供。故障・破損時は48時間以内に交換対応。費用はキミテラス側が全額負担。</p>
         </FadeIn>
         <FadeIn className={styles.infoGrid}>
           <div className={styles.infoBox}>

@@ -1,7 +1,7 @@
 .hero {
-  padding-top: calc(var(--header-h) + 80px);
+  padding-top: calc(var(--header-h) + 32px);
   padding-bottom: 80px;
-  background: linear-gradient(180deg, #F0F4FF 0%, #FFFFFF 100%);
+  background: #FFFFFF;
 }
 
 .heroInner {
@@ -138,7 +138,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(var(--header-h) + 40px);
+    padding-top: calc(var(--header-h) + 16px);
     padding-bottom: 40px;
   }
 
@@ -185,7 +185,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: calc(var(--header-h) + 20px);
+    padding-top: calc(var(--header-h) + 8px);
     padding-bottom: 24px;
   }
 

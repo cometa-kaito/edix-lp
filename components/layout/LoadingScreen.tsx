@@ -7,19 +7,22 @@ export default function LoadingScreen() {
   const [removed, setRemoved] = useState(false);
 
   useEffect(() => {
-    // Check prefers-reduced-motion
+    // Only show loading screen on first visit per session
+    const alreadyVisited = sessionStorage.getItem('kimiterasu-visited');
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
+
+    if (prefersReduced || alreadyVisited) {
       setRemoved(true);
       return;
     }
+
+    sessionStorage.setItem('kimiterasu-visited', '1');
 
     const timer = setTimeout(() => {
       setHidden(true);
       setTimeout(() => setRemoved(true), 400);
     }, 800);
 
-    // Fallback: force hide after 3s
     const fallback = setTimeout(() => {
       setHidden(true);
       setTimeout(() => setRemoved(true), 400);

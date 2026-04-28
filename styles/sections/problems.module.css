@@ -101,7 +101,7 @@
 }
 
 .solution {
-  background: var(--gradient-primary);
+  background: var(--primary);
   color: var(--white);
   padding: var(--space-lg);
   border-radius: var(--radius-lg);

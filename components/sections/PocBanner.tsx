@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import CountUp from '@/components/ui/CountUp';
 import styles from '@/styles/sections/poc-banner.module.css';
@@ -27,13 +26,13 @@ export default function PocBanner({ variant = 'full' }: PocBannerProps) {
           </span>
         </div>
         <div className={styles.badges}>
-          <span className={styles.pocBadge}>3クラス × 3ヶ月（6〜8月）</span>
+          <span className={styles.pocBadge}>3クラス × 実質3ヶ月（6〜9月、夏季休業除く）</span>
           <span className={styles.pocBadge}>20社限定</span>
           <span className={styles.pocBadge}>先着順</span>
         </div>
-        <Link href="/for-advertisers#apply" className="btn btn-accent">
+        <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl" target="_blank" rel="noopener" className="btn btn-accent">
           特別価格で広告を出す →
-        </Link>
+        </a>
         <p className={styles.remain}>
           20社限定 — 実証実験中の今だけの特別価格です
         </p>

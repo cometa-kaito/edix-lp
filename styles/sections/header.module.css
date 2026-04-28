@@ -62,14 +62,14 @@
 
 .navLink:hover {
   color: var(--primary);
-  background: linear-gradient(135deg, rgba(43, 74, 203, 0.06) 0%, rgba(43, 74, 203, 0.1) 100%);
+  background: rgba(43, 74, 203, 0.08);
   transform: translateY(-1px);
 }
 
 .navHighlight {
   color: var(--white);
   font-weight: 700;
-  background: var(--gradient-cta);
+  background: var(--accent-biz);
   border-radius: var(--radius-full);
   padding: 8px 20px;
   border: none;

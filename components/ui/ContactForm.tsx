@@ -92,7 +92,6 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
         <p><a href={COMPANY_URL} target="_blank" rel="noopener"><strong>株式会社Rebounder</strong></a></p>
         <p>代表: 奥村 魁斗</p>
         <p>Email: <a href="mailto:rebounder@googlegroups.com">rebounder@googlegroups.com</a></p>
-        <p>TEL: <a href="tel:08067482231">080-6748-2231</a></p>
       </div>
     </div>
   );

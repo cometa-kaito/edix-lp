@@ -2,7 +2,6 @@ import Image from 'next/image';
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
 import Phrase from '@/components/ui/Phrase';
-import { DEMO_URL } from '@/lib/constants';
 import styles from '@/styles/sections/results.module.css';
 
 export default function Results() {
@@ -18,11 +17,6 @@ export default function Results() {
           <FadeIn className={styles.highlight}>
             <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
             <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。電子工学科3クラスでの試験運用を実施中。</Phrase>
-            <div style={{ marginTop: 24, textAlign: 'center' }}>
-              <a href={DEMO_URL} target="_blank" rel="noopener" className="btn btn-primary">
-                実際のサイネージ画面を見る →
-              </a>
-            </div>
           </FadeIn>
 
           <FadeIn className={styles.awardSection}>
@@ -48,7 +42,7 @@ export default function Results() {
             </div>
             <div className={styles.awardInfo}>
               <h3 className={styles.awardTitle}>DigiTechQuest 2025 最優秀賞 受賞</h3>
-              <Phrase as="p" className={styles.awardDesc}>高専・工業高校発のDXコンテストにて最優秀賞と研究奨励金10万円を獲得。</Phrase>
+              <Phrase as="p" className={styles.awardDesc}>課題解決型DXコンテストにて最優秀賞と研究奨励金10万円を獲得。</Phrase>
               <a href="https://www.digitech.quest/events/2025-gifu" target="_blank" rel="noopener" className={styles.awardLink}>
                 DigiTechQuest 2025 について →
               </a>

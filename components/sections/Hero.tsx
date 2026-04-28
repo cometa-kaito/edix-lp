@@ -40,10 +40,10 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
         { text: 'PoC特別価格 実施中', gold: true },
       ],
       title: `若年層への確実なリーチと<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
-      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス×3ヶ月（6〜8月）5万円/社。',
+      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス×実質3ヶ月（6〜9月、夏季休業除く）5万円/社。',
       buttons: [
         { href: '#pricing', label: 'PoC特別価格を見る', variant: 'accent' },
-        { href: '/for-advertisers#apply', label: '広告掲載を申し込む', variant: 'secondary' },
+        { href: 'https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl', label: '広告掲載を申し込む', variant: 'secondary' },
       ],
     },
   };
@@ -88,16 +88,29 @@ export default function Hero({ variant = 'home' }: HeroProps) {
             {data.sub}
           </p>
           <div className={`${styles.buttons} ${phase >= 3 ? styles.visible : styles.hidden}`}>
-            {data.buttons.map((btn, i) => (
-              <Link
-                key={i}
-                href={btn.href}
-                className={`btn btn-${btn.variant}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                {btn.label}
-              </Link>
-            ))}
+            {data.buttons.map((btn, i) =>
+              btn.href.startsWith('http') ? (
+                <a
+                  key={i}
+                  href={btn.href}
+                  target="_blank"
+                  rel="noopener"
+                  className={`btn btn-${btn.variant}`}
+                  style={{ transitionDelay: `${i * 0.1}s` }}
+                >
+                  {btn.label}
+                </a>
+              ) : (
+                <Link
+                  key={i}
+                  href={btn.href}
+                  className={`btn btn-${btn.variant}`}
+                  style={{ transitionDelay: `${i * 0.1}s` }}
+                >
+                  {btn.label}
+                </Link>
+              )
+            )}
           </div>
         </div>
         <FadeIn className={styles.heroImage}>

@@ -1,8 +1,9 @@
 .footer {
-  background: linear-gradient(180deg, #0F172A 0%, #0A0F1E 100%);
-  color: #94A3B8;
+  background: #F8FAFC;
+  color: #64748B;
   padding: 64px 0 32px;
   text-align: center;
+  border-top: 1px solid #E2E8F0;
 }
 
 .logo {
@@ -20,9 +21,27 @@
   line-height: 1.6;
 }
 
+.footerNav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.footerNav a {
+  color: #64748B;
+  transition: color 0.2s ease;
+}
+
+.footerNav a:hover {
+  color: #2B4ACB;
+}
+
 .copyright {
   font-size: 13px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #E2E8F0;
   padding-top: 28px;
   color: #475569;
 }

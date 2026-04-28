@@ -50,18 +50,13 @@ export const FAQ_ITEMS: FaqItem[] = [
     target: 'school',
   },
   {
-    question: '校内ネットワークへの接続は必要ですか？',
-    answer: 'LTE回線に対応しているため、校内LANへの接続は不要です。学校のセキュリティポリシーに影響を与えることなく、情報システム担当者の負担もゼロで導入できます。',
-    target: 'school',
-  },
-  {
     question: 'モニターが故障・破損した場合は？',
-    answer: '故障・破損時の交換費用はキミテラス側が全額負担します。Raspberry Piの採用により交換が容易で、48時間以内に代替機を手配します。',
+    answer: '故障・破損時の交換費用はキミテラス側が全額負担します。スマートテレビでの運用のため、48時間以内に代替機を手配します。',
     target: 'school',
   },
   {
     question: '最低出稿期間はありますか？',
-    answer: '1ヶ月からご利用いただけます。実証実験特別価格もございますので、まずはお気軽にお試しください。',
+    answer: '最低出稿期間の規定はございません。ご要望に応じて柔軟に対応いたしますので、まずはお気軽にご相談ください。',
     target: 'biz',
   },
   {
@@ -76,17 +71,17 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'どんな広告が出せますか？',
-    answer: '採用情報、オープンキャンパス案内、企業紹介など。ギャンブル・アダルト・美容医療等はNG基準により掲載不可となります。',
+    answer: '採用情報、オープンキャンパス案内、企業紹介など。ギャンブル・アダルト・美容医療等はNG基準により掲載不可となります。なお、掲載可否の最終決定権は学校側にあります。',
     target: 'biz',
   },
   {
     question: '広告効果はどう測定しますか？',
-    answer: '月次レポートで表示回数・表示時間を報告します。教室常設のため在校生全員に確実にリーチしており、属性が100%特定済みのため「無駄打ちゼロ」の媒体です。',
+    answer: '月次レポートで表示回数・表示時間を報告します。教室常設のため在校生全員に確実にリーチしており、属性が100%特定済みのため「無駄打ちゼロ」の媒体です。PoC期間中は生徒向けアンケートを実施し、広告効果を具体的に測定します。',
     target: 'biz',
   },
   {
     question: '掲載可能校数は今後増えますか？',
-    answer: '現在は岐南工業高校（6学科）での実証実験中です。段階的に県内10校へ拡大を計画しており、PoC参加企業にはネットワーク拡大時に優先的にご案内します。',
+    answer: '現在は岐南工業高校の電子工学科（全学年）で実証実験中です。段階的に県内10校へ拡大を計画しており、PoC参加企業にはネットワーク拡大時に優先的にご案内します。',
     target: 'biz',
   },
   {
@@ -100,12 +95,12 @@ export const FAQ_ITEMS: FaqItem[] = [
 export const PRICING_PLANS: PricingPlan[] = [
   {
     label: '実証実験 特別価格',
-    name: '3クラス × 3ヶ月（2026年6〜8月）',
+    name: '3クラス × 実質3ヶ月（2026年6〜9月、夏季休業除く）',
     price: '50,000',
     unit: '円/社（税抜）',
     features: [
       '電子工学科 1年・2年・3年の3クラス',
-      '2026年6月・7月・8月の広告掲載',
+      '2026年6〜9月の広告掲載（夏季休業を除く実質3ヶ月）',
       '月次レポート付き',
       '掲載審査・運用サポート',
       '20社限定・先着順',
@@ -113,7 +108,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     conditions: ['先着順', '20社限定', 'フィードバック必須'],
     recommended: true,
     ctaText: '特別価格で申し込む →',
-    ctaHref: '/for-advertisers#apply',
+    ctaHref: 'https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl',
     ctaVariant: 'accent',
   },
 ];

@@ -115,7 +115,7 @@
   height: 52px;
   align-items: center;
   justify-content: center;
-  background: var(--gradient-primary);
+  background: var(--primary);
   color: var(--white);
   border-radius: 50%;
   font-weight: 700;

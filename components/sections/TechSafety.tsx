@@ -5,10 +5,10 @@ import styles from '@/styles/sections/tech.module.css';
 
 const TECH_ITEMS = [
   { title: 'Firebase基盤', desc: 'Firestore / Storage / Auth / Hosting / Functions' },
-  { title: 'LTE独立回線対応', desc: '校内LANに依存しない独立通信。学校のセキュリティポリシーに影響を与えず導入可能' },
+  { title: '校内Wi-Fi接続', desc: '校内LANに接続してコンテンツを配信。スマートテレビのブラウザで動作するため専用機器不要' },
   { title: 'リアルタイム更新', desc: '入力から表示まで即時反映。待ち時間ゼロ' },
   { title: 'オフライン対応', desc: '通信断でもキャッシュデータで表示を継続。画面がブラックアウトすることはありません' },
-  { title: '低コスト・即交換設計', desc: 'Raspberry Pi採用で交換容易。故障時は「修理」ではなく「即交換」で48時間以内に復旧' },
+  { title: '低コスト・即交換設計', desc: 'スマートテレビ採用で交換容易。故障時は「修理」ではなく「即交換」で48時間以内に復旧' },
 ];
 
 const SAFETY_ITEMS = [

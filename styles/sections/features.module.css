@@ -19,6 +19,11 @@
   box-shadow: var(--shadow-md);
 }
 
+.cardIcon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
 .cardTitle {
   font-size: var(--font-xl);
   font-weight: 700;
@@ -62,7 +67,7 @@
   height: 56px;
   align-items: center;
   justify-content: center;
-  background: var(--gradient-primary);
+  background: var(--primary);
   color: var(--white);
   border-radius: 50%;
   font-weight: 700;

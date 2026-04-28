@@ -39,7 +39,7 @@
 }
 
 .costHighlight {
-  background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
+  background: #ECFDF5;
   border-radius: var(--radius-lg);
   padding: 40px;
   text-align: center;

@@ -12,13 +12,11 @@ export default function ApplicationForm() {
     const company = (form.elements.namedItem('company') as HTMLInputElement).value.trim();
     const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
     const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
-    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value.trim();
 
     const newErrors: Record<string, boolean> = {};
     if (!company) newErrors.company = true;
     if (!name) newErrors.name = true;
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = true;
-    if (!phone) newErrors.phone = true;
 
     if (Object.keys(newErrors).length > 0) {
       e.preventDefault();
@@ -73,17 +71,6 @@ export default function ApplicationForm() {
             placeholder="example@company.com"
             className={errors.email ? styles.error : ''}
             onChange={() => setErrors((prev) => ({ ...prev, email: false }))}
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label>電話番号<span className={styles.required}>*</span></label>
-          <input
-            type="tel"
-            name="phone"
-            required
-            placeholder="090-1234-5678"
-            className={errors.phone ? styles.error : ''}
-            onChange={() => setErrors((prev) => ({ ...prev, phone: false }))}
           />
         </div>
         <div className={styles.formGroup}>
