@@ -20,8 +20,15 @@
 }
 
 .cardIcon {
-  font-size: 32px;
-  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(43, 74, 203, 0.08);
+  color: var(--primary);
+  margin-bottom: 20px;
 }
 
 .cardTitle {

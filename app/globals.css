@@ -21,7 +21,7 @@ ul { list-style: none; }
   --primary-dark: #1E3AB0;
   --primary-light: #4F6FE8;
   --accent-school: #22C55E;
-  --accent-biz: #F97316;
+  --accent-biz: #F08A45;
   --accent-investor: #EAB308;
   --text: #1E293B;
   --text-sub: #64748B;
@@ -36,7 +36,7 @@ ul { list-style: none; }
 
   /* Solid Colors (gradients removed) */
   --gradient-primary: #2B4ACB;
-  --gradient-cta: #F97316;
+  --gradient-cta: #F08A45;
   --gradient-hero: #FFFFFF;
 
   /* Layered Shadows */
@@ -228,7 +228,7 @@ ul { list-style: none; }
   box-shadow: var(--shadow-md);
 }
 .btn-accent:hover {
-  background: #EA6C10;
+  background: #DA7531;
   box-shadow: var(--shadow-lg);
 }
 

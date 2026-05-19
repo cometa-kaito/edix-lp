@@ -5,12 +5,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '@/components/ui/FadeIn';
 import TypeWriter from '@/components/ui/TypeWriter';
+import { ShieldCheckIcon, CheckCircleIcon, BookOpenIcon } from '@/components/ui/Icon';
 import styles from '@/styles/sections/hero.module.css';
 import type { HeroVariant } from '@/lib/types';
 
 interface HeroProps {
   variant?: HeroVariant;
 }
+
+const TRUST_POINTS = [
+  { Icon: ShieldCheckIcon, label: 'カメラ・マイク不使用' },
+  { Icon: CheckCircleIcon, label: '全広告 事前審査' },
+  { Icon: BookOpenIcon, label: '試験期間は広告停止' },
+];
 
 function getHeroData(variant: HeroVariant, highlightClass: string) {
   const data: Record<HeroVariant, { badges?: { text: string; gold?: boolean }[]; title: string; sub: string; buttons: { href: string; label: string; variant: string }[] }> = {
@@ -52,7 +59,8 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
 
 export default function Hero({ variant = 'home' }: HeroProps) {
   const data = getHeroData(variant, styles.highlight);
-  const [phase, setPhase] = useState(0);
+  const useTypewriter = variant === 'home';
+  const [phase, setPhase] = useState(useTypewriter ? 0 : 3);
 
   const handleTitleDone = useCallback(() => {
     setTimeout(() => setPhase(2), 200);
@@ -76,17 +84,34 @@ export default function Hero({ variant = 'home' }: HeroProps) {
               ))}
             </div>
           )}
-          <h1 className={styles.title}>
-            <TypeWriter
-              text={data.title}
-              speed={40}
-              delay={1400}
-              onComplete={handleTitleDone}
+          {useTypewriter ? (
+            <h1 className={styles.title}>
+              <TypeWriter
+                text={data.title}
+                speed={40}
+                delay={1400}
+                onComplete={handleTitleDone}
+              />
+            </h1>
+          ) : (
+            <h1
+              className={styles.title}
+              dangerouslySetInnerHTML={{ __html: data.title }}
             />
-          </h1>
+          )}
           <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
             {data.sub}
           </p>
+          <ul className={`${styles.trustPoints} ${phase >= 2 ? styles.visible : styles.hidden}`} aria-label="安心ポイント">
+            {TRUST_POINTS.map(({ Icon, label }, i) => (
+              <li key={i} className={styles.trustPoint}>
+                <span className={styles.trustIcon}>
+                  <Icon size={18} />
+                </span>
+                {label}
+              </li>
+            ))}
+          </ul>
           <div className={`${styles.buttons} ${phase >= 3 ? styles.visible : styles.hidden}`}>
             {data.buttons.map((btn, i) =>
               btn.href.startsWith('http') ? (
@@ -115,7 +140,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
         </div>
         <FadeIn className={styles.heroImage}>
           <Image
-            src="/poc-v2.png"
+            src="/signage-demo.png"
             alt="キミテラス サイネージ画面"
             width={560}
             height={320}

@@ -48,4 +48,10 @@ export const siteMetadata: Record<string, Metadata> = {
     description:
       'キミテラスへのお問い合わせ。学校導入のご相談、広告出稿、投資家向け説明会のお申し込みはこちらから。',
   },
+  thanks: {
+    title: '送信完了 - キミテラス',
+    description:
+      'お問い合わせ・お申込みを承りました。担当者より追ってご連絡いたします。',
+    robots: { index: false, follow: false },
+  },
 };

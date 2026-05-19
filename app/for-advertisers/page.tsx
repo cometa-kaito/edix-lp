@@ -3,6 +3,7 @@ import { siteMetadata } from '@/lib/metadata';
 import Hero from '@/components/sections/Hero';
 import PocBanner from '@/components/sections/PocBanner';
 import AdvertiserBenefits from '@/components/sections/AdvertiserBenefits';
+import GuidePromo from '@/components/sections/GuidePromo';
 import ApplicationSection from '@/components/sections/ApplicationSection';
 import Faq from '@/components/sections/Faq';
 import ContactSection from '@/components/sections/ContactSection';
@@ -15,6 +16,7 @@ export default function ForAdvertisersPage() {
       <Hero variant="advertisers" />
       <PocBanner variant="full" />
       <AdvertiserBenefits />
+      <GuidePromo />
       <ApplicationSection />
       <Faq filter={['biz']} />
       <ContactSection defaultCategory="企業（広告出稿）" />

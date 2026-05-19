@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { FORM_ACTION, COMPANY_URL } from '@/lib/constants';
+import { useRouter } from 'next/navigation';
+import { COMPANY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/contact.module.css';
 
 interface ContactFormProps {
@@ -10,35 +11,71 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ category, onCategoryChange }: ContactFormProps) {
+  const router = useRouter();
   const [errors, setErrors] = useState<Record<string, boolean>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (submitting) return;
+
     const form = e.currentTarget;
     const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
     const email = (form.elements.namedItem('email') as HTMLInputElement).value.trim();
-    const category = (form.elements.namedItem('category') as HTMLSelectElement).value;
+    const cat = (form.elements.namedItem('category') as HTMLSelectElement).value;
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value.trim();
+    const honey = (form.elements.namedItem('_honey') as HTMLInputElement).value;
 
     const newErrors: Record<string, boolean> = {};
     if (!name) newErrors.name = true;
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = true;
-    if (!category) newErrors.category = true;
+    if (!cat) newErrors.category = true;
 
     if (Object.keys(newErrors).length > 0) {
-      e.preventDefault();
       setErrors(newErrors);
       return;
     }
+
     setErrors({});
+    setSendError(null);
+    setSubmitting(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, category: cat, message, _honey: honey }),
+      });
+
+      if (!res.ok) {
+        const data: { fields?: Record<string, string>; error?: string } = await res
+          .json()
+          .catch(() => ({}));
+        if (data.fields) {
+          const serverErrors: Record<string, boolean> = {};
+          Object.keys(data.fields).forEach((k) => (serverErrors[k] = true));
+          setErrors(serverErrors);
+          setSendError('入力内容をご確認ください');
+        } else {
+          setSendError('送信に失敗しました。時間をおいて再度お試しください。');
+        }
+        setSubmitting(false);
+        return;
+      }
+
+      router.push('/thanks');
+    } catch {
+      setSendError('ネットワークエラーが発生しました。時間をおいて再度お試しください。');
+      setSubmitting(false);
+    }
   }
 
   return (
     <div className={styles.wrapper} id="contact-form">
       <h3 className={styles.formTitle}>お問い合わせフォーム</h3>
-      <form onSubmit={handleSubmit} action={FORM_ACTION} method="POST">
-        <input type="hidden" name="_subject" value="【キミテラス LP】お問い合わせ" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="" />
-        <input type="text" name="_honey" style={{ display: 'none' }} />
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1 }} aria-hidden="true" />
 
         <div className={styles.formGroup}>
           <label>お名前<span className={styles.required}>*</span></label>
@@ -46,6 +83,7 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
             type="text"
             name="name"
             required
+            autoComplete="name"
             placeholder="山田 太郎"
             className={errors.name ? styles.error : ''}
             onChange={() => setErrors((prev) => ({ ...prev, name: false }))}
@@ -57,6 +95,7 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
             type="email"
             name="email"
             required
+            autoComplete="email"
             placeholder="example@company.com"
             className={errors.email ? styles.error : ''}
             onChange={() => setErrors((prev) => ({ ...prev, email: false }))}
@@ -84,8 +123,17 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
           <label>お問い合わせ内容</label>
           <textarea name="message" placeholder="ご質問やご相談内容をお書きください" />
         </div>
+
+        {sendError && (
+          <div role="alert" style={{ color: '#DC2626', fontSize: 14, marginBottom: 16, textAlign: 'center' }}>
+            {sendError}
+          </div>
+        )}
+
         <div className={styles.formSubmit}>
-          <button type="submit" className="btn btn-primary">送信する</button>
+          <button type="submit" className="btn btn-primary" disabled={submitting} aria-busy={submitting}>
+            {submitting ? '送信中…' : '送信する'}
+          </button>
         </div>
       </form>
       <div className={styles.contactInfo}>

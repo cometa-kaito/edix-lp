@@ -1,0 +1,141 @@
+.section {
+  padding: calc(var(--header-h) + var(--space-3xl)) 0 var(--space-4xl);
+  background: var(--bg-alt);
+}
+
+.wrapper {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  padding: 56px 56px;
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.lead {
+  font-size: var(--font-base);
+  color: var(--text-sub);
+  margin-bottom: var(--space-xl);
+  line-height: var(--leading-relaxed);
+}
+
+.meta {
+  display: block;
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-light);
+}
+
+.section h2 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin: var(--space-xl) 0 var(--space-sm);
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.section h2:first-of-type {
+  margin-top: 0;
+}
+
+.section p,
+.section li {
+  font-size: var(--font-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text);
+}
+
+.section p {
+  margin-bottom: var(--space-sm);
+}
+
+.section ul,
+.section ol {
+  margin: 0 0 var(--space-sm) 0;
+  padding-left: 1.5em;
+}
+
+.section ul {
+  list-style: disc;
+}
+
+.section ol {
+  list-style: decimal;
+}
+
+.section li {
+  margin-bottom: 6px;
+}
+
+.section a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section a:hover {
+  color: var(--primary-dark);
+}
+
+.dlGrid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px 24px;
+  margin: 0 0 var(--space-md);
+  padding: 0;
+}
+
+.dlGrid dt {
+  font-weight: 700;
+  color: var(--text);
+  font-size: var(--font-base);
+}
+
+.dlGrid dd {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--font-base);
+  line-height: var(--leading-relaxed);
+}
+
+.note {
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: calc(var(--header-h) + var(--space-xl)) 0 var(--space-3xl);
+  }
+  .wrapper {
+    padding: 36px 24px;
+    border-radius: var(--radius-lg);
+  }
+  .title {
+    font-size: var(--font-2xl);
+  }
+  .dlGrid {
+    grid-template-columns: 1fr;
+    gap: 4px 0;
+  }
+  .dlGrid dt {
+    margin-top: 12px;
+    font-size: var(--font-sm);
+    color: var(--text-sub);
+  }
+  .dlGrid dt:first-child {
+    margin-top: 0;
+  }
+}

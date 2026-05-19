@@ -10,6 +10,7 @@ export interface FaqItem {
   question: string;
   answer: string;
   target: 'school' | 'biz' | 'investor' | 'all';
+  category?: string;
 }
 
 export interface TeamMember {

@@ -1,0 +1,662 @@
+/* ===== Guide Section Shared Styles ===== */
+
+.wrapper {
+  padding: calc(var(--header-h) + var(--space-2xl)) 0 var(--space-3xl);
+  background: var(--bg-secondary);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  margin-bottom: var(--space-lg);
+}
+.breadcrumb a {
+  color: var(--primary);
+  transition: color var(--duration-fast);
+}
+.breadcrumb a:hover { color: var(--primary-dark); text-decoration: underline; }
+.breadcrumb .sep { color: var(--border-medium); }
+.breadcrumb .current { color: var(--text); font-weight: 600; }
+
+/* Page header */
+.eyebrow {
+  display: inline-block;
+  font-size: var(--font-sm);
+  letter-spacing: 0.08em;
+  color: var(--accent-biz);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.title {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.lead {
+  font-size: var(--font-lg);
+  color: var(--text-sub);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-xl);
+}
+
+/* Content card */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-md);
+}
+.card h2 {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.card h3 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin: var(--space-lg) 0 var(--space-sm);
+  color: var(--text);
+}
+.card p { color: var(--text); margin-bottom: 14px; }
+.card ul, .card ol { padding-left: 1.4em; margin-bottom: 14px; color: var(--text); }
+.card ul li, .card ol li { margin-bottom: 6px; }
+.card ul { list-style: disc; }
+.card ol { list-style: decimal; }
+.card strong { color: var(--primary-dark); font-weight: 700; }
+
+/* Quote / example boxes */
+.quote {
+  background: #f6f6f0;
+  border-left: 4px solid #333;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin: 14px 0;
+  font-size: var(--font-base);
+}
+.good {
+  background: #f0f7f0;
+  border-left: 4px solid #2a7a2a;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin: 14px 0;
+}
+.bad {
+  background: #faf0f0;
+  border-left: 4px solid #a33;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin: 14px 0;
+}
+.note {
+  background: var(--bg-tertiary);
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  margin: 14px 0;
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+}
+
+/* Philosophy / 想い card — orange left accent + subtle warm bg */
+.philosophy {
+  border-left: 5px solid var(--accent-biz);
+  background: linear-gradient(to right, #fff8f1 0%, var(--white) 40%);
+}
+.philosophy h2 {
+  color: #c46a2e;
+}
+.philosophy p {
+  font-size: var(--font-lg);
+  line-height: 1.9;
+  margin-bottom: 1em;
+}
+.philosophy .signature {
+  display: block;
+  margin-top: var(--space-md);
+  font-size: var(--font-base);
+  color: var(--text-sub);
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .philosophy p { font-size: var(--font-base); line-height: 1.8; }
+}
+
+/* Download row */
+.downloadRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+/* Sample visual (teacher template image) */
+.sampleVisual {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0 20px;
+  padding: 16px;
+  background: #f6f6f0;
+  border-radius: var(--radius-md);
+}
+.sampleImg {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Template/code-like block: preserve whitespace, monospace */
+.template {
+  background: #f6f6f0;
+  border-left: 4px solid #333;
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin: 14px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, "SF Mono", Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  overflow-x: auto;
+  color: var(--text);
+}
+
+/* Branch buttons (key UX) */
+.branchGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: var(--space-md) 0;
+}
+.branchCard {
+  display: block;
+  background: var(--white);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  text-decoration: none;
+  color: var(--text);
+  transition: all var(--duration-base);
+  position: relative;
+}
+.branchCard:hover {
+  border-color: var(--accent-biz);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.branchLabel {
+  display: inline-block;
+  font-size: var(--font-xs);
+  background: var(--accent-biz);
+  color: var(--white);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.branchTitle {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.branchDesc {
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+.branchArrow {
+  margin-top: 12px;
+  font-size: var(--font-sm);
+  color: var(--accent-biz);
+  font-weight: 700;
+}
+
+/* Photo grid */
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: var(--space-md) 0;
+}
+
+/* Photo rows (OK row = 1 col / NG row = up to 3 cols on one line) */
+.photoRowOk {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px);
+  gap: 16px;
+  margin: 12px 0 var(--space-md);
+}
+.photoRowNg {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 12px 0 var(--space-md);
+}
+@media (max-width: 720px) {
+  .photoRowNg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 460px) {
+  .photoRowNg { grid-template-columns: 1fr; }
+}
+
+.photoRowHeading {
+  margin: var(--space-md) 0 0 !important;
+  font-size: var(--font-lg) !important;
+}
+.photoRowHeading.ok { color: #2a7a2a; }
+.photoRowHeading.ng { color: #a33; }
+.photoCard {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+  border: 2px solid var(--border-light);
+}
+.photoCard.ok { border-color: #2a7a2a; }
+.photoCard.ng { border-color: #c33; }
+.photoCardLabel {
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: var(--font-sm);
+}
+.photoCard.ok .photoCardLabel { background: #e8f3e8; color: #2a7a2a; }
+.photoCard.ng .photoCardLabel { background: #f9e8e8; color: #a33; }
+.photoCardImg {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--bg-tertiary);
+}
+.photoCardImg img { object-fit: cover; }
+.photoCardReasons {
+  padding: 12px;
+  font-size: var(--font-sm);
+  color: var(--text);
+}
+.photoCardReasons ul { padding-left: 1.2em; margin: 0; }
+.photoCardReasons li { margin-bottom: 4px; line-height: 1.5; }
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checklist li {
+  padding: 10px 0 10px 32px;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.6;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-medium);
+  border-radius: 4px;
+  background: var(--white);
+}
+.checklist .group {
+  margin-top: var(--space-md);
+  padding: 8px 0;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: var(--font-base);
+  border-bottom: 2px solid var(--primary);
+}
+.checklist .group::before { display: none; }
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-sm) 0;
+  font-size: var(--font-sm);
+}
+.table th, .table td {
+  border: 1px solid var(--border-light);
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+.table th {
+  background: var(--bg-tertiary);
+  font-weight: 700;
+}
+
+/* Navigation buttons at bottom */
+.pageNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--space-xl);
+  flex-wrap: wrap;
+}
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  transition: all var(--duration-base);
+  border: 2px solid var(--border-medium);
+  background: var(--white);
+  color: var(--text);
+}
+.navBtn:hover {
+  border-color: var(--accent-biz);
+  color: var(--accent-biz);
+}
+.navBtn.primary {
+  background: var(--accent-biz);
+  border-color: var(--accent-biz);
+  color: var(--white);
+}
+.navBtn.primary:hover {
+  background: #d97633;
+  border-color: #d97633;
+  color: var(--white);
+}
+
+/* CTA block — primary call to action */
+.ctaBlock {
+  background: linear-gradient(135deg, #fff4e9 0%, #ffe9d6 100%);
+  border: 2px solid var(--accent-biz);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  margin: var(--space-xl) 0 var(--space-md);
+  text-align: center;
+}
+.ctaTitle {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #b85e25;
+}
+.ctaText {
+  font-size: var(--font-base);
+  margin: 0 auto 20px;
+  max-width: 560px;
+  color: var(--text);
+  line-height: 1.8;
+}
+.ctaButton {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accent-biz);
+  color: var(--white);
+  font-weight: 700;
+  font-size: var(--font-base);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: all var(--duration-base);
+}
+.ctaButton:hover {
+  background: #d97633;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  color: var(--white);
+}
+.ctaNote {
+  margin: 18px auto 0;
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  max-width: 560px;
+  line-height: 1.7;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-md);
+}
+
+/* Price / schedule card */
+.priceCard {
+  border-top: 4px solid var(--primary);
+}
+.priceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.priceItem {
+  text-align: center;
+  padding: 16px 8px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+.priceItemLabel {
+  font-size: var(--font-xs);
+  color: var(--text-sub);
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+.priceItemValue {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--primary-dark);
+  line-height: 1.2;
+}
+.priceItemUnit {
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+  margin-top: 2px;
+}
+
+/* PDF download button */
+.pdfDownload {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  color: var(--primary-dark);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--duration-base);
+  margin-top: 8px;
+}
+.pdfDownload:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Visual branch map */
+.branchMap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: var(--space-md) 0;
+  padding: var(--space-md);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+}
+.branchStep {
+  padding: 12px 24px;
+  background: var(--white);
+  border: 2px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  min-width: 200px;
+  text-align: center;
+}
+.branchStep.entry { background: var(--primary); color: var(--white); border-color: var(--primary); }
+.branchStep.action { background: var(--accent-biz); color: var(--white); border-color: var(--accent-biz); }
+.branchArrowDown {
+  font-size: 20px;
+  color: var(--text-sub);
+  line-height: 1;
+}
+.branchRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.branchRow .branchStep {
+  min-width: 140px;
+  font-size: var(--font-xs);
+}
+.branchSplitLabel {
+  font-size: var(--font-xs);
+  color: var(--text-sub);
+  margin-top: -4px;
+}
+
+/* Contact box */
+.contactBox {
+  background: #f6f6f0;
+  border: 1px solid #333;
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+.contactBox h3 {
+  font-size: var(--font-xl);
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+}
+.contactBox dl {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 6px 16px;
+  margin: 0;
+}
+.contactBox dt { font-weight: 700; color: var(--text-sub); }
+.contactBox dd { margin: 0; }
+.contactBox a { color: var(--primary); text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  /* Wrapper / shell */
+  .wrapper { padding-top: calc(var(--header-h) + var(--space-md)); }
+  .container { padding: 0 16px; }
+
+  /* Headings */
+  .title { font-size: var(--font-3xl); }
+  .lead { font-size: var(--font-base); }
+
+  /* Cards */
+  .card { padding: 18px 16px; }
+  .card h2 { font-size: var(--font-xl); margin-bottom: 14px; }
+  .card h3 { font-size: var(--font-base); margin: 16px 0 8px; }
+  .card p, .card ul, .card ol { font-size: 14px; }
+
+  /* Quote / good / bad / template boxes — compact */
+  .quote, .good, .bad, .note, .template { padding: 12px 14px; font-size: 13px; }
+  .template { font-size: 12px; }
+
+  /* Tables: shrink padding + font; allow horizontal scroll fallback */
+  .table { font-size: 12px; }
+  .table th, .table td { padding: 8px 10px; line-height: 1.55; }
+
+  /* Checklist */
+  .checklist li { padding-left: 30px; font-size: 14px; }
+  .checklist li::before { width: 16px; height: 16px; top: 13px; }
+
+  /* Branch cards (3-up grid) — 1 column on mobile */
+  .branchGrid { grid-template-columns: 1fr; gap: 12px; }
+  .branchCard { padding: 16px; }
+
+  /* Price grid: 2 columns on mobile (instead of cramped 1) */
+  .priceGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .priceItem { padding: 12px 6px; }
+  .priceItemValue { font-size: 1.3rem; }
+  .priceItemLabel { font-size: 10px; }
+  .priceItemUnit { font-size: 11px; }
+
+  /* Branch map */
+  .branchMap { padding: 14px 10px; gap: 10px; }
+  .branchStep { min-width: 0; width: 100%; padding: 10px 14px; font-size: 13px; }
+  .branchRow { flex-direction: column; width: 100%; gap: 8px; }
+  .branchRow .branchStep { min-width: 0; width: 100%; font-size: 12px; }
+  .branchArrowDown { font-size: 16px; }
+
+  /* CTA block — compact + full-width button */
+  .ctaBlock { padding: 22px 16px; }
+  .ctaTitle { font-size: 1.25rem; }
+  .ctaText { font-size: 14px; margin-bottom: 16px; }
+  .ctaButton { padding: 12px 18px; font-size: 14px; display: flex; justify-content: center; width: 100%; box-sizing: border-box; }
+  .ctaNote { font-size: 12px; padding: 10px 12px; }
+
+  /* PDF download — full-width */
+  .pdfDownload { padding: 12px 20px; font-size: 13px; width: 100%; justify-content: center; box-sizing: border-box; }
+
+  /* Contact box stack */
+  .contactBox { padding: 16px; }
+  .contactBox dl { grid-template-columns: 1fr; gap: 4px 0; }
+  .contactBox dt { margin-top: 8px; }
+
+  /* Page nav buttons stack */
+  .pageNav { flex-direction: column; align-items: stretch; }
+  .navBtn { justify-content: center; padding: 11px 16px; font-size: 13px; }
+
+  /* Philosophy card — shrink long paragraphs */
+  .philosophy p { font-size: 14px; line-height: 1.8; }
+  .philosophy h2 { font-size: var(--font-xl); }
+
+  /* Photo row headings */
+  .photoRowHeading { font-size: var(--font-base) !important; }
+}
+
+/* Very small phones: stack tables for readability */
+@media (max-width: 420px) {
+  .table thead { display: none; }
+  .table tr {
+    display: block;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background: var(--white);
+  }
+  .table th, .table td {
+    display: block;
+    border: none;
+    padding: 4px 0;
+    background: transparent;
+  }
+  .table th {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-sub);
+    letter-spacing: 0.04em;
+  }
+  .table td { font-size: 13px; }
+
+  /* Branch grid items fit comfortably */
+  .branchCard { padding: 14px; }
+  .branchTitle { font-size: var(--font-base); }
+}
