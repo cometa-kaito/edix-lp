@@ -142,8 +142,8 @@ export default function Hero({ variant = 'home' }: HeroProps) {
           <Image
             src="/signage-demo.png"
             alt="キミテラス サイネージ画面"
-            width={560}
-            height={320}
+            width={1251}
+            height={872}
             priority
             style={{ width: '100%', height: 'auto' }}
           />

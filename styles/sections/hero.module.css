@@ -19,11 +19,12 @@
 }
 
 .heroImage {
-  flex: 0 0 420px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
+  flex: 0 0 480px;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  background: transparent;
 }
 
 .heroBadges {
@@ -154,7 +155,7 @@
 
 @media (max-width: 1024px) {
   .heroImage {
-    flex: 0 0 340px;
+    flex: 0 0 380px;
   }
 
   .heroInner {
