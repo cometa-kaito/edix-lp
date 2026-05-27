@@ -9,8 +9,6 @@ export default function ContactBox() {
         <dd><a href="https://rebounder.jp/ja" target="_blank" rel="noopener noreferrer">株式会社 Rebounder（キミテラス事業）</a></dd>
         <dt>担当</dt>
         <dd>奥村 魁斗</dd>
-        <dt>TEL</dt>
-        <dd>080-6748-2231</dd>
         <dt>Mail</dt>
         <dd><a href="mailto:rebounder@googlegroups.com">rebounder@googlegroups.com</a></dd>
         <dt>Web</dt>

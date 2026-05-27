@@ -7,9 +7,9 @@ import styles from '@/styles/sections/schools.module.css';
 const MERITS = [
   { title: '働き方改革 & 業務効率化', desc: 'HR時間の短縮、全クラスへの一斉配信、プリント削減で先生の時間を創出します。' },
   { title: 'かんたん運用', desc: 'スマホ対応の管理画面から入力するだけ。専門知識は不要。窓口担当者1名で運用可能です。' },
-  { title: '安全性（School Safety）', desc: '全広告を事前審査し、学校に拒否権を付与。教育的価値の高い進路情報に限定し、教育環境を守ります。' },
+  { title: '安全性（School Safety）', desc: '全広告を事前審査し、学校に拒否権を付与。学校が合意を得たものに限定し、教育環境を守ります。' },
   { title: '教育委員会・PTA対応支援', desc: '導入前に教育委員会への説明資料を提供。自治体条例の確認と運用ガイドラインの策定を無償でサポートします。' },
-  { title: '導入・費用負担なし', desc: '機材は広告収益モデルで無償提供。学校負担は電気代のみ。故障・破損時の交換もキミテラス側が全額負担。' },
+  { title: '導入・費用負担なし', desc: '機材は広告収益モデルで無償提供。学校負担は電気代＋通信費のみ。故障・破損時の交換もキミテラス側が全額負担。' },
 ];
 
 const SCHOOL_PROVIDES = [
@@ -22,8 +22,7 @@ const SCHOOL_PROVIDES = [
 const KIMITERAS_PROVIDES = [
   '43〜55インチ デジタルサイネージ',
   '壁掛け or スタンド（設置方法は選択可）',
-  '耐震措置・安全対策',
-  '48時間以内の保守・メンテナンス対応',
+  '電気工事',
   '管理画面・運用サポート',
   '教育委員会向け説明資料・ガイドライン',
 ];
@@ -47,7 +46,7 @@ export default function SchoolBenefits() {
         </div>
         <FadeIn className={styles.costHighlight}>
           <h3 className={styles.costTitle}>学校側の費用負担 = 電気代 + 通信費のみ</h3>
-          <p className={styles.costDesc}>スマートテレビ（43〜55インチ）・スタンドは無償提供。故障・破損時は48時間以内に交換対応。費用はキミテラス側が全額負担。</p>
+          <p className={styles.costDesc}>スマートテレビ（43〜55インチ）・スタンドは無償提供。故障・破損時は2週間以内に交換対応。費用はキミテラス側が全額負担。</p>
         </FadeIn>
         <FadeIn className={styles.infoGrid}>
           <div className={styles.infoBox}>

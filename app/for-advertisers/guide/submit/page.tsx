@@ -79,19 +79,19 @@ export default function SubmitPage() {
         <h3>基本仕様</h3>
         <table className={styles.table}>
           <tbody>
-            <tr><th style={{ width: '160px' }}>形式</th><td><strong>画像のみ（JPEG／PNG）</strong>　※動画は受付不可</td></tr>
+            <tr><th style={{ width: '160px' }}>形式</th><td><strong>画像のみ（JPEG／PNG）</strong></td></tr>
             <tr><th>推奨サイズ</th><td><strong>1080 × 1920px</strong></td></tr>
             <tr><th>アスペクト比</th><td><strong>9:16（縦長）</strong></td></tr>
             <tr><th>ファイルサイズ</th><td>5MB以下</td></tr>
             <tr><th>カラーモード</th><td>RGB</td></tr>
-            <tr><th>表示時間</th><td>15秒（固定）</td></tr>
+            <tr><th>表示時間</th><td>30秒（固定）</td></tr>
             <tr><th>音声</th><td>原則なし</td></tr>
           </tbody>
         </table>
 
         <h3>動画素材について</h3>
         <div className={styles.note}>
-          動画素材はPoC・本格運用フェーズともに <strong>受付対象外</strong> です。教室での視認性・配信安定性・1ループ5分の枠設計を維持するため、当面のあいだ <strong>画像のみ（JPEG／PNG）</strong> の運用を継続いたします。動画形式での訴求をご希望の場合は、静止画（縦長 9:16・15秒固定）への変換をお願いいたします。必要に応じて連携先の岐阜文芸社さんへの取次が可能です。
+          動画素材はPoC・本格運用フェーズともに <strong>受付対象外</strong> です。教室での視認性・配信安定性・1ループ5分の枠設計を維持するため、当面のあいだ <strong>画像のみ（JPEG／PNG）</strong> の運用を継続いたします。動画形式での訴求をご希望の場合は、静止画（縦長 9:16・30秒固定）への変換をお願いいたします。必要に応じて連携先の岐阜文芸社さんへの取次が可能です。
         </div>
 
         <h3>QRコードを掲載する場合</h3>
@@ -125,7 +125,7 @@ export default function SubmitPage() {
               <th>ファイル命名規則</th>
               <td>
                 広告主名_広告タイトル_秒数.拡張子<br />
-                <span style={{ fontSize: '0.85em', color: 'var(--text-sub)' }}>例：大垣未来精工_CareerNavi_15s.jpg</span>
+                <span style={{ fontSize: '0.85em', color: 'var(--text-sub)' }}>例：大垣未来精工_CareerNavi_30s.jpg</span>
               </td>
             </tr>
           </tbody>
@@ -159,7 +159,6 @@ export default function SubmitPage() {
         <h2>その他のご留意点</h2>
         <ul>
           <li>素材の著作権・肖像権等の権利処理は広告主さまの責任でお願いいたします。</li>
-          <li>掲載後の素材差し替えは、掲載開始後7日間は原則お受けできません。</li>
           <li>光の点滅（フラッシュ）を含む表現は使用できません。</li>
           <li>設置校の事情により、予告なく掲載が停止される場合があります。</li>
         </ul>

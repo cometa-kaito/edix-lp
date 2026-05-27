@@ -24,7 +24,7 @@ const STORY_STEPS = [
 const COMPANY_INFO = [
   { label: '会社名', value: '株式会社Rebounder' },
   { label: '代表取締役', value: '奥村 魁斗' },
-  { label: '設立', value: '2026年2月20日' },
+  { label: '設立', value: '2026年2月' },
   { label: '所在地', value: '東京都文京区' },
 ];
 

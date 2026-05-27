@@ -19,8 +19,8 @@ export const NAV_LINKS: NavLink[] = [
 // ===== Team =====
 export const TEAM_MEMBERS: TeamMember[] = [
   { name: '奥村 魁斗', initial: 'O', role: '岐阜高専 5年\n代表取締役' },
-  { name: '小原 大樹', initial: 'O', role: '岐南工業 3年' },
-  { name: '大村 柳雲', initial: 'O', role: '岐南工業 3年' },
+  { name: '岐南工業高校 3年', initial: 'K', role: 'プロジェクトメンバー' },
+  { name: '岐南工業高校 3年', initial: 'K', role: 'プロジェクトメンバー' },
 ];
 
 // ===== FAQ =====
@@ -37,7 +37,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '導入・費用',
     target: 'school',
     question: '教育委員会の許可は必要ですか？',
-    answer: '自治体によって異なりますが、キミテラスでは導入前の教育委員会への説明資料と運用ガイドラインの提供を無償でサポートします。掲載は進路情報に限定し、学校の拒否権・試験期間の広告停止など教育環境を最優先にした運用ルールを設けています。',
+    answer: '自治体によって異なりますが、キミテラスでは導入前の教育委員会への説明資料と運用ガイドラインの提供を無償でサポートします。掲載は学校が合意を得たものに限定し、学校の拒否権など教育環境を最優先にした運用ルールを設けています。',
   },
   {
     category: '運用・教育環境',
@@ -49,7 +49,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '運用・教育環境',
     target: 'school',
     question: '授業の邪魔になりませんか？',
-    answer: '授業中は校内連絡を優先表示し、音声は原則OFFです。試験期間中は広告表示を停止するなど、学習環境を第一に運用します。',
+    answer: '授業中は校内連絡を優先表示し、音声は原則OFFです。学習環境を第一に運用します。',
   },
   {
     category: '運用・教育環境',
@@ -61,7 +61,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '運用・教育環境',
     target: 'school',
     question: 'モニターが故障・破損した場合は？',
-    answer: '故障・破損時の交換費用はキミテラス側が全額負担します。スマートテレビでの運用のため、48時間以内に代替機を手配します。',
+    answer: '故障・破損時の交換費用はキミテラス側が全額負担します。スマートテレビでの運用のため、2週間以内に代替機を手配します。',
   },
 
   // ===== 広告主企業向け（PoC FAQポスターと同期）=====
@@ -81,7 +81,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '効果・成果について',
     target: 'biz',
     question: '結果はいつ・どんな形で報告されますか？',
-    answer: '月次レポート（PDF・3か月で計3回）でお届けします。最終レポートはPoC終了から2週間以内にご提示します。',
+    answer: '月次レポートでお届けします。最終レポートはPoC終了から2週間以内にご提示します。',
   },
   {
     category: '効果・成果について',
@@ -93,7 +93,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '個人情報・倫理について',
     target: 'biz',
     question: '個人情報・プライバシーはどう扱われますか？',
-    answer: 'LiDARセンサーは距離と時間のみ計測し、カメラは一切使用しません。生徒個人を特定するデータは取得しません。学校との合意も取得済みです。',
+    answer: 'LiDARセンサーは設置しない場合もあり、設置する場合も距離と時間のみを計測し、カメラは一切使用しません。生徒個人を特定するデータは取得しません。学校との合意も取得済みです。',
   },
   {
     category: '個人情報・倫理について',
@@ -111,13 +111,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '広告クリエイティブについて',
     target: 'biz',
     question: '動画広告は使えますか？',
-    answer: '画像のみ・縦長（9:16）・15秒固定でお願いしています。教室での視認性・配信の安定性・1ループ5分の枠設計を維持するため、本格運用フェーズでも動画は対応せず、画像運用を継続する方針です。',
-  },
-  {
-    category: '広告クリエイティブについて',
-    target: 'biz',
-    question: 'クリエイティブの差替はできますか？',
-    answer: '期間中いつでも差替え可能です。差替えご希望日の5営業日前までに新クリエイティブをご入稿ください。差替え回数に上限はありません。',
+    answer: '画像のみ・縦長（9:16）・30秒固定でお願いしています。教室での視認性・配信の安定性・1ループ5分の枠設計を維持するため、本格運用フェーズでも動画は対応せず、画像運用を継続する方針です。',
   },
   {
     category: '申込・運用について',
@@ -129,13 +123,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '申込・運用について',
     target: 'biz',
     question: '申込後にキャンセル・変更はできますか？',
-    answer: '申込書段階でのキャンセルは可能です。契約締結（5/22まで）後のキャンセルは原則として承れませんが、業績不振等のやむを得ない事情がある場合は個別にご相談ください。',
-  },
-  {
-    category: '申込・運用について',
-    target: 'biz',
-    question: '機材トラブルで配信されなかった場合は？',
-    answer: '稼働率を週次でモニタリングし月次レポートで開示。稼働率90%を下回った場合は該当日数分を割引します。LiDAR・サイネージの予備機を1台ずつ用意しています。',
+    answer: '申込書段階でのキャンセルは可能です。契約締結後のキャンセルは原則として承れませんが、業績不振等のやむを得ない事情がある場合は個別にご相談ください。',
   },
   {
     category: '申込・運用について',
@@ -147,13 +135,13 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: '申込・運用について',
     target: 'biz',
     question: '支払いはいつ・どんな方法ですか？',
-    answer: '契約締結後にご請求書を発行し、稼働開始月（2026年6月）末日までに銀行振込にてお支払いください。3か月分一括（5万円・税別）が原則です。',
+    answer: '契約締結後にご請求書を発行し、稼働開始月末日までに銀行振込にてお支払いください。',
   },
   {
     category: 'PoC後・継続について',
     target: 'biz',
     question: 'PoC終了後（4か月目以降）はどうなりますか？',
-    answer: '本格運用フェーズへ移行します。ティア制（スタンダード月3万円／プレミアム月5〜7万円／エンタープライズ月10万円〜）を想定。PoC参加企業様には継続割引・優先案内をご用意します。',
+    answer: '本格運用フェーズへ移行します。ティア制プランを想定しています。PoC参加企業様には継続割引・優先案内をご用意します。',
   },
   {
     category: 'PoC後・継続について',
@@ -214,7 +202,7 @@ export const PRICING_PLANS: PricingPlan[] = [
 // ===== Advertiser Specs =====
 export const AD_SPECS: SpecItem[] = [
   { num: '120', unit: '分/日', label: '広告表示時間' },
-  { num: '20', unit: '枠/クラス', label: '広告枠数' },
+  { num: '20', unit: '社', label: '限定募集枠' },
   { num: '30', unit: '名/クラス', label: '到達人数' },
   { num: '3', unit: 'クラス', label: '電子工学科 1年・2年・3年' },
 ];
@@ -235,6 +223,5 @@ export const OPERATION_FLOW: FlowStep[] = [
 ];
 
 // ===== External URLs =====
-export const DEMO_URL = 'https://school-signage-2026.web.app/?school=__mnjj6sj4&grade=mYm7Lsja9fMAZCKO180n&class=KKJx8ZaoSvzgO6udis7V&kiosk=1';
 export const FORM_ACTION = 'https://formsubmit.co/rebounder@googlegroups.com';
 export const COMPANY_URL = 'https://rebounder.jp';

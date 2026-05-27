@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '@/components/ui/FadeIn';
 import TypeWriter from '@/components/ui/TypeWriter';
-import { ShieldCheckIcon, CheckCircleIcon, BookOpenIcon } from '@/components/ui/Icon';
+import { ShieldCheckIcon, CheckCircleIcon } from '@/components/ui/Icon';
 import styles from '@/styles/sections/hero.module.css';
 import type { HeroVariant } from '@/lib/types';
 
@@ -16,7 +16,6 @@ interface HeroProps {
 const TRUST_POINTS = [
   { Icon: ShieldCheckIcon, label: 'カメラ・マイク不使用' },
   { Icon: CheckCircleIcon, label: '全広告 事前審査' },
-  { Icon: BookOpenIcon, label: '試験期間は広告停止' },
 ];
 
 function getHeroData(variant: HeroVariant, highlightClass: string) {
