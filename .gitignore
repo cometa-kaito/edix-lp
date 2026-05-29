@@ -33,6 +33,13 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# 秘密情報を含むローカル用 .bat（.template はコミットして OK）
+scripts/start-ble-recorder.bat
+scripts/start-ble-recorder-loop.bat
+
+# Python キャッシュ
+scripts/__pycache__/
+
 # vercel
 .vercel
 

@@ -1,0 +1,27 @@
+@echo off
+REM ======================================================================
+REM キミテラスPoC BLE Recorder 起動スクリプト（テンプレート）
+REM
+REM 使い方:
+REM   1. このファイルを start-ble-recorder.bat にコピー
+REM      （.template を外す。gitignore 済なのでローカルだけに残る）
+REM   2. 下の WEBHOOK_URL 行のシークレットを実際の値に置き換え
+REM   3. ダブルクリックで起動。コマンドプロンプトが開きログが流れる
+REM   4. 停止は Ctrl+C
+REM
+REM 自動再起動付きで動かしたい場合は scripts\start-ble-recorder-loop.bat を使用
+REM ======================================================================
+
+REM ----- 環境変数 -----
+SET TARGET_MAC=DC:A5:B3:C2:98:D7
+SET WEBHOOK_URL=https://www.school-signage.net/api/switchbot-webhook?key=REPLACE_WITH_SWITCHBOT_WEBHOOK_SECRET
+SET SYNC_INTERVAL_SEC=30
+
+REM ----- Python の UTF-8 モードを強制 -----
+SET PYTHONUTF8=1
+
+REM ----- 起動 -----
+cd /d "%~dp0"
+py -X utf8 ble_recorder.py
+
+pause

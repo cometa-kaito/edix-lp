@@ -1,0 +1,27 @@
+@echo off
+REM ======================================================================
+REM キミテラスPoC BLE Recorder 自動再起動付きランチャ（テンプレート）
+REM
+REM 使い方:
+REM   1. このファイルを start-ble-recorder-loop.bat にコピー（.template を外す）
+REM   2. WEBHOOK_URL を実値に置き換え
+REM   3. ダブルクリックで起動
+REM   4. Python スクリプトがクラッシュしても10秒後に自動再起動
+REM   5. 停止はウィンドウを閉じる
+REM ======================================================================
+
+SET TARGET_MAC=DC:A5:B3:C2:98:D7
+SET WEBHOOK_URL=https://www.school-signage.net/api/switchbot-webhook?key=REPLACE_WITH_SWITCHBOT_WEBHOOK_SECRET
+SET SYNC_INTERVAL_SEC=30
+SET PYTHONUTF8=1
+
+cd /d "%~dp0"
+
+:loop
+echo.
+echo === BLE Recorder 起動 %date% %time% ===
+py -X utf8 ble_recorder.py
+echo.
+echo *** プロセス終了。10秒後に再起動します。Ctrl+C で停止 ***
+timeout /t 10
+goto loop
