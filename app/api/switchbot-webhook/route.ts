@@ -13,6 +13,13 @@ type SwitchBotWebhookPayload = {
     deviceId?: string;
     detectionState?: string;
     timeOfSample?: number;
+    // マルチデバイス対応で TV アプリが付与する教室コンテキスト
+    tv_device_id?: string;
+    device_id?: string; // tv_device_id のエイリアス（旧フィールド名互換）
+    school_id?: string;
+    grade_id?: string;
+    department_id?: string;
+    class_id?: string;
     [k: string]: unknown;
   };
 };
@@ -57,6 +64,18 @@ export async function POST(req: NextRequest) {
       ? timeOfSample
       : Date.now();
 
+  // 教室コンテキストの抽出（context にあれば取り出す）。
+  // `tv_device_id` が優先、後方互換で context.device_id も TV ID として扱う
+  // （SwitchBot 由来の deviceId とは別物）。
+  const tvDeviceId =
+    typeof ctx.tv_device_id === 'string'
+      ? ctx.tv_device_id
+      : null;
+  const schoolId = typeof ctx.school_id === 'string' ? ctx.school_id : null;
+  const gradeId = typeof ctx.grade_id === 'string' ? ctx.grade_id : null;
+  const departmentId = typeof ctx.department_id === 'string' ? ctx.department_id : null;
+  const classId = typeof ctx.class_id === 'string' ? ctx.class_id : null;
+
   try {
     await insertMotionEvent({
       deviceMac,
@@ -65,6 +84,11 @@ export async function POST(req: NextRequest) {
       detectedAtMs,
       eventType: typeof payload.eventType === 'string' ? payload.eventType : null,
       rawPayload: rawText,
+      tvDeviceId,
+      schoolId,
+      gradeId,
+      departmentId,
+      classId,
     });
   } catch (err) {
     await safeLogFailure(
