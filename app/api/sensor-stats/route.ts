@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getRecentStats, getTotalEventCount } from '@/lib/sensor-db';
+import { getRecentStats, getTotalEventCount, getStatsByClass } from '@/lib/sensor-db';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -20,12 +20,17 @@ export async function GET(req: NextRequest) {
   const hours = hoursParam ? Math.max(1, Math.min(720, Number(hoursParam))) : 24;
 
   try {
-    const [total, recent] = await Promise.all([getTotalEventCount(), getRecentStats(hours)]);
+    const [total, recent, byClass] = await Promise.all([
+      getTotalEventCount(),
+      getRecentStats(hours),
+      getStatsByClass(hours),
+    ]);
     return NextResponse.json({
       ok: true,
       totalEvents: total,
       hours,
       detectedByHour: recent,
+      byClass,
     });
   } catch (err) {
     return NextResponse.json(
