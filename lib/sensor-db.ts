@@ -239,3 +239,43 @@ export async function getTotalEventCount(): Promise<number> {
   const result = await client.execute('SELECT COUNT(*) AS n FROM motion_events');
   return Number(result.rows[0]?.n ?? 0);
 }
+
+export type ClassStatsRow = {
+  classId: string | null;
+  gradeId: string | null;
+  label: string | null;
+  detected: number;
+  total: number;
+  lastDetectedMs: number | null;
+};
+
+/**
+ * 教室（class_id）別の検知数集計。各イベントは class_id カラムで教室タグ付け
+ * されているので、合算ではなく教室単位で出せる。label は tv_devices から解決。
+ */
+export async function getStatsByClass(hours: number): Promise<ClassStatsRow[]> {
+  const client = getClient();
+  const sinceMs = Date.now() - hours * 60 * 60 * 1000;
+  const result = await client.execute({
+    sql: `SELECT
+            m.class_id AS class_id,
+            m.grade_id AS grade_id,
+            (SELECT d.label FROM tv_devices d WHERE d.class_id = m.class_id LIMIT 1) AS label,
+            SUM(CASE WHEN m.detection_state = 'DETECTED' THEN 1 ELSE 0 END) AS detected,
+            COUNT(*) AS total,
+            MAX(CASE WHEN m.detection_state = 'DETECTED' THEN m.detected_at_ms END) AS last_detected_ms
+          FROM motion_events m
+          WHERE m.detected_at_ms >= ?
+          GROUP BY m.class_id
+          ORDER BY detected DESC`,
+    args: [sinceMs],
+  });
+  return result.rows.map((r) => ({
+    classId: r.class_id ? String(r.class_id) : null,
+    gradeId: r.grade_id ? String(r.grade_id) : null,
+    label: r.label ? String(r.label) : null,
+    detected: Number(r.detected ?? 0),
+    total: Number(r.total ?? 0),
+    lastDetectedMs: r.last_detected_ms != null ? Number(r.last_detected_ms) : null,
+  }));
+}
