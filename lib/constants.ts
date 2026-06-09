@@ -218,7 +218,7 @@ export const AD_FLOW_STEPS: FlowStep[] = [
 // ===== Operation Flow =====
 export const OPERATION_FLOW: FlowStep[] = [
   { num: 1, title: '情報を入力', description: '管理画面から連絡事項や広告を登録' },
-  { num: 2, title: 'クラウドで即時反映', description: 'Firebaseで全サイネージにリアルタイム配信' },
+  { num: 2, title: 'クラウドで即時反映', description: 'クラウドで全サイネージにリアルタイム配信' },
   { num: 3, title: 'サイネージ表示', description: '教室のモニターに自動で表示・更新' },
 ];
 
