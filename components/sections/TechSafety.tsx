@@ -4,7 +4,7 @@ import Phrase from '@/components/ui/Phrase';
 import styles from '@/styles/sections/tech.module.css';
 
 const TECH_ITEMS = [
-  { title: 'Firebase基盤', desc: 'Firestore / Storage / Auth / Hosting / Functions' },
+  { title: 'クラウド基盤', desc: 'マネージドなデータベース・ストレージ・認証・配信で安定運用' },
   { title: '校内Wi-Fi接続', desc: '校内LANに接続してコンテンツを配信。スマートテレビのブラウザで動作するため専用機器不要' },
   { title: 'リアルタイム更新', desc: '入力から表示まで即時反映。待ち時間ゼロ' },
   { title: 'オフライン対応', desc: '通信断でもキャッシュデータで表示を継続。画面がブラックアウトすることはありません' },
