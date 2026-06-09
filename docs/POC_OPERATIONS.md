@@ -143,7 +143,7 @@ PoC を成立させるための妥協シナリオ。**センサも自宅に置�
 ### 4-3. クラウドの集計を確認（ブラウザ）
 
 ```
-https://www.school-signage.net/api/sensor-stats?key=0khL1mUcvIYYEowrO-Z1CuZQGIyMYHerkb30uFuByl0&hours=24
+https://www.school-signage.net/api/sensor-stats?key=<SECRET>&hours=24
 ```
 
 ### 4-4. Turso DB を直接 SQL で叩く
