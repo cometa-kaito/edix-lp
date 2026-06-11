@@ -6,7 +6,7 @@ import FadeIn from '@/components/ui/FadeIn';
 import CountUp from '@/components/ui/CountUp';
 import TiltCard from '@/components/ui/TiltCard';
 import Phrase from '@/components/ui/Phrase';
-import { AD_SPECS, AD_FLOW_STEPS, PRICING_PLANS } from '@/lib/constants';
+import { AD_SPECS, AD_FLOW_STEPS, PRICING_PLANS, PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/advertisers.module.css';
 
 const MERITS = [
@@ -29,10 +29,10 @@ export default function AdvertiserBenefits() {
         {/* Merits */}
         <FadeIn className={styles.merits}>
           {MERITS.map((m, i) => (
-            <div key={i} className={styles.meritCard}>
+            <TiltCard key={i} maxTilt={6} className={styles.meritCard}>
               <h3 className={styles.meritTitle}>{m.title}</h3>
               <Phrase as="p" className={styles.meritDesc}>{m.desc}</Phrase>
-            </div>
+            </TiltCard>
           ))}
         </FadeIn>
 
@@ -119,10 +119,13 @@ export default function AdvertiserBenefits() {
         </FadeIn>
 
         <FadeIn className="text-center" as="div">
-          <div style={{ marginTop: 48 }}>
-            <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl" target="_blank" rel="noopener" className="btn btn-accent">
-              広告掲載を申し込む →
+          <div style={{ marginTop: 'var(--space-xl)' }}>
+            <a href={PORTAL_APPLY_URL} target="_blank" rel="noopener" className="btn btn-accent">
+              空き枠を見て申し込む →
             </a>
+            <p style={{ marginTop: 'var(--space-xs)', fontSize: 'var(--font-sm)', color: 'var(--text-sub)' }}>
+              空き状況・価格・入稿規格をその場でご確認いただけます
+            </p>
           </div>
         </FadeIn>
       </div>

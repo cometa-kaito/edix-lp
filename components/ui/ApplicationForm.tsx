@@ -69,7 +69,7 @@ export default function ApplicationForm() {
   return (
     <div className={styles.wrapper} id="application-form">
       <h3 className={styles.formTitle}>広告掲載 お申し込みフォーム</h3>
-      <p style={{ textAlign: 'center', color: 'var(--text-sub)', fontSize: 'var(--font-sm)', marginBottom: 28 }}>
+      <p style={{ textAlign: 'center', color: 'var(--text-sub)', fontSize: 'var(--font-sm)', marginBottom: 'var(--space-md)' }}>
         お申し込み後、担当者よりご連絡のうえ契約書をお送りいたします。<br />
         本フォームの送信をもって契約成立とはなりません。
       </p>
@@ -129,7 +129,7 @@ export default function ApplicationForm() {
         </div>
 
         {sendError && (
-          <div role="alert" style={{ color: '#DC2626', fontSize: 14, marginBottom: 16, textAlign: 'center' }}>
+          <div role="alert" style={{ color: '#DC2626', fontSize: 'var(--font-sm)', marginBottom: 'var(--space-sm)', textAlign: 'center' }}>
             {sendError}
           </div>
         )}

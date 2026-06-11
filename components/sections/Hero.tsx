@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import FadeIn from '@/components/ui/FadeIn';
 import TypeWriter from '@/components/ui/TypeWriter';
 import { ShieldCheckIcon, CheckCircleIcon } from '@/components/ui/Icon';
+import { PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/hero.module.css';
 import type { HeroVariant } from '@/lib/types';
 
@@ -44,12 +45,12 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     advertisers: {
       badges: [
         { text: 'PoC特別価格 実施中', gold: true },
+        { text: '岐南工業高校で実証実験中' },
       ],
       title: `若年層への確実なリーチと<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
       sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス×実質3ヶ月（6〜9月、夏季休業除く）5万円/社。',
       buttons: [
-        { href: '#pricing', label: 'PoC特別価格を見る', variant: 'accent' },
-        { href: 'https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl', label: '広告掲載を申し込む', variant: 'secondary' },
+        { href: PORTAL_APPLY_URL, label: '空き枠を見て申し込む →', variant: 'accent' },
       ],
     },
   };
@@ -59,7 +60,19 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
 export default function Hero({ variant = 'home' }: HeroProps) {
   const data = getHeroData(variant, styles.highlight);
   const useTypewriter = variant === 'home';
-  const [phase, setPhase] = useState(useTypewriter ? 0 : 3);
+  // typewriter 無し variant も「タイトル→サブ→CTA」と段階表示して情緒の立ち上がりを作る
+  // （タイトルは即表示のままで LCP を損なわない）
+  const [phase, setPhase] = useState(useTypewriter ? 0 : 1);
+
+  useEffect(() => {
+    if (useTypewriter) return;
+    const t1 = setTimeout(() => setPhase(2), 250);
+    const t2 = setTimeout(() => setPhase(3), 650);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [useTypewriter]);
 
   const handleTitleDone = useCallback(() => {
     setTimeout(() => setPhase(2), 200);
@@ -76,7 +89,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
                 <span
                   key={i}
                   className={`${styles.badge} ${badge.gold ? styles.badgeGold : ''}`}
-                  style={{ animationDelay: `${1.2 + i * 0.15}s` }}
+                  style={{ animationDelay: `${(useTypewriter ? 1.2 : 0.15) + i * 0.15}s` }}
                 >
                   {badge.text}
                 </span>
