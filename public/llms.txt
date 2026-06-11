@@ -1,0 +1,35 @@
+# キミテラス（KimiTeras）
+
+> 教室設置型デジタルサイネージ「キミテラス」。校内連絡のDX（校務DX）と企業広告を両立させ、学校は費用負担ゼロで導入できる持続可能な学校デジタル化プラットフォームです。DigiTechQuest 2025 最優秀賞受賞。岐阜県立岐南工業高校で実証実験中。運営は株式会社Rebounder（https://rebounder.jp）。
+
+## 概要
+
+- **サービス名**: キミテラス（KimiTeras）
+- **提供形態**: 教室に常設するデジタルサイネージ端末＋配信システム
+- **仕組み**: 広告モデルにより、学校は機材・運用費の負担ゼロで導入可能
+- **価値（学校向け）**: Google Classroom 等の通知アプリでは届きにくい「全員の目に入る連絡」を実現し、先生の連絡業務を効率化
+- **価値（広告主向け）**: 工業高校生など若年層へ教室で確実にリーチし、教育貢献によるブランディングを両立
+- **安全設計**: カメラ・マイク不使用。全広告を事前審査
+- **運営会社**: 株式会社Rebounder（創業者・奥村魁斗）
+- **サイト**: https://www.school-signage.net
+
+## 主要ページ
+
+- [トップ](https://www.school-signage.net/): キミテラスの概要・特長・導入メリット
+- [学校関係者の方へ](https://www.school-signage.net/for-schools): 校務DXを費用負担ゼロで実現。機材無償提供・教育委員会対応支援
+- [広告出稿のご案内](https://www.school-signage.net/for-advertisers): 教室サイネージ広告の特長・料金・申込方法
+- [よくあるご質問（FAQ）](https://www.school-signage.net/faq): 費用・運用・安全性・効果測定に関するQ&A
+- [キミテラスについて](https://www.school-signage.net/about): チーム・技術基盤・実証実験の実績
+- [お問い合わせ](https://www.school-signage.net/contact): 学校導入のご相談・広告出稿のお申し込み
+
+## 広告出稿の特別価格（実証実験期）
+
+- 価格: 3クラス × 実質3ヶ月（6〜9月、夏季休業除く）で 5万円/社
+- 募集: 20社限定
+- 安心: カメラ不使用・全広告事前審査・最短2週間程度で配信開始
+
+## 補足
+
+- [プライバシーポリシー](https://www.school-signage.net/privacy)
+- [特定商取引法に基づく表記](https://www.school-signage.net/tokutei)
+- 運営会社サイト: https://rebounder.jp

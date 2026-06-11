@@ -6,6 +6,7 @@ import FloatingCta from '@/components/layout/FloatingCta';
 import ScrollProgress from '@/components/layout/ScrollProgress';
 import LoadingScreen from '@/components/layout/LoadingScreen';
 import { OrganizationSchema } from '@/components/layout/StructuredData';
+import { siteMetadata, BASE_URL } from '@/lib/metadata';
 import './globals.css';
 
 const notoSansJP = Noto_Sans_JP({
@@ -28,15 +29,26 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'キミテラス - 校務DX×広告で学校デジタル化を無料で実現',
-  description:
-    'キミテラスは教室にデジタルサイネージを設置し、校内連絡のDXと企業広告を両立する持続可能な学校デジタル化プラットフォームです。学校は無料で導入可能。',
-  openGraph: {
+  metadataBase: new URL(BASE_URL),
+  ...siteMetadata.home,
+  keywords: [
+    'デジタルサイネージ',
+    '学校DX',
+    '校務DX',
+    '学校 デジタル化',
+    '高校生 広告',
+    '採用ブランディング',
+    'キミテラス',
+    '岐南工業高校',
+  ],
+  authors: [{ name: '株式会社Rebounder' }],
+  robots: { index: true, follow: true },
+  twitter: {
+    card: 'summary_large_image',
     title: 'キミテラス - 校務DX×広告で学校デジタル化を無料で実現',
     description:
       '教室設置型デジタルサイネージが、先生の負担を減らし、生徒に進路情報を届ける。学校は無料で導入可能。',
-    type: 'website',
-    siteName: 'キミテラス',
+    images: ['/signage-demo.png'],
   },
 };
 

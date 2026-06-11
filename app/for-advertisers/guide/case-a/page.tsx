@@ -76,7 +76,7 @@ export default function CaseAPage() {
           <li>前年度の求人ページが消し忘れになっていないかチェックした</li>
 
           <li className={styles.group}>E. 文字量・形式</li>
-          <li>原稿の本文の文字数が <strong>200〜300文字</strong> に収まっている（30秒枠で読める分量）</li>
+          <li>原稿の本文の文字数が <strong>200〜300文字</strong> に収まっている（約30秒で読める分量）</li>
           <li>入稿データの形式が指定のものになっている</li>
           <li>商品・サービスの宣伝広告ではなく、求人活動でもなく、<strong>企業認知</strong> を目的とした内容である</li>
 

@@ -17,7 +17,10 @@ export default function TypeWriter({
   onComplete,
   className,
 }: TypeWriterProps) {
-  const [displayed, setDisplayed] = useState('');
+  // SSR と初回ハイドレーションでは全文を描画する。
+  // これにより JS を実行しないクローラー（AI/検索）にも h1 の本文が確実に届く（LLMO/SEO対策）。
+  // クライアントでマウント後、アニメーション可能な場合のみ一旦クリアしてタイプし直す。
+  const [displayed, setDisplayed] = useState(text);
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
@@ -29,6 +32,8 @@ export default function TypeWriter({
       return;
     }
 
+    // アニメーション開始：一旦クリアし、delay 後にタイプを開始する
+    setDisplayed('');
     const timer = setTimeout(() => setStarted(true), delay);
     return () => clearTimeout(timer);
   }, [delay, text, onComplete]);

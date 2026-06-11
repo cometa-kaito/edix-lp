@@ -1,10 +1,15 @@
+import { BASE_URL } from '@/lib/metadata';
+
 export function OrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'キミテラス',
     description: '校務DX×広告による持続可能な学校デジタル化プラットフォーム',
-    url: '',
+    url: BASE_URL,
+    logo: `${BASE_URL}/icon.png`,
+    image: `${BASE_URL}/signage-demo.png`,
+    areaServed: { '@type': 'AdministrativeArea', name: '岐阜県' },
     founder: {
       '@type': 'Person',
       name: '奥村魁斗',
@@ -12,7 +17,9 @@ export function OrganizationSchema() {
     parentOrganization: {
       '@type': 'Organization',
       name: '株式会社Rebounder',
+      url: 'https://rebounder.jp',
     },
+    sameAs: ['https://rebounder.jp'],
   };
 
   return (
