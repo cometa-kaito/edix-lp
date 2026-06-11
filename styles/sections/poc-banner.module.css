@@ -34,6 +34,7 @@
   font-size: var(--font-6xl);
   font-weight: 900;
   letter-spacing: -0.03em;
+  color: var(--accent-biz); /* 濃紺地に大きいオレンジ数字。価格を視覚の主役にする */
 }
 
 .priceUnit {

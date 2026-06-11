@@ -2,6 +2,7 @@
 
 import FadeIn from '@/components/ui/FadeIn';
 import CountUp from '@/components/ui/CountUp';
+import { PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/poc-banner.module.css';
 import type { PocBannerVariant } from '@/lib/types';
 
@@ -30,8 +31,8 @@ export default function PocBanner({ variant = 'full' }: PocBannerProps) {
           <span className={styles.pocBadge}>20社限定</span>
           <span className={styles.pocBadge}>先着順</span>
         </div>
-        <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl" target="_blank" rel="noopener" className="btn btn-accent">
-          特別価格で広告を出す →
+        <a href={PORTAL_APPLY_URL} target="_blank" rel="noopener" className="btn btn-accent">
+          空き枠を見て、特別価格で広告を出す →
         </a>
         <p className={styles.remain}>
           20社限定 — 実証実験中の今だけの特別価格です

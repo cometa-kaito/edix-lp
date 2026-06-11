@@ -177,6 +177,9 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
 ];
 
+// 申込導線は自社ポータル（枠在庫・価格・入稿規格をその場で確認して申込）に統一。
+export const PORTAL_APPLY_URL = 'https://kimiteras.rebounder.jp/apply';
+
 // ===== Pricing =====
 export const PRICING_PLANS: PricingPlan[] = [
   {
@@ -193,8 +196,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     ],
     conditions: ['先着順', '20社限定', 'フィードバック必須'],
     recommended: true,
-    ctaText: '特別価格で申し込む →',
-    ctaHref: 'https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAADlWcT5UMU5KTFQ0RDBDN1hZMk9JVVQ4MTgyWldFSS4u&route=shorturl',
+    ctaText: '空き枠を見て申し込む →',
+    ctaHref: PORTAL_APPLY_URL,
     ctaVariant: 'accent',
   },
 ];
