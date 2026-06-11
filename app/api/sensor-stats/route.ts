@@ -1,18 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getRecentStats, getTotalEventCount, getStatsByClass } from '@/lib/sensor-db';
+import { isAuthConfigured, isAuthorizedKey } from '@/lib/auth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function GET(req: NextRequest) {
-  const secret = process.env.SWITCHBOT_WEBHOOK_SECRET;
-  if (!secret) {
+  if (!isAuthConfigured()) {
     return NextResponse.json({ ok: false, error: 'misconfigured' }, { status: 500 });
   }
 
   const url = new URL(req.url);
   const key = url.searchParams.get('key') ?? req.headers.get('x-webhook-key');
-  if (key !== secret) {
+  if (!isAuthorizedKey(key)) {
     return NextResponse.json({ ok: false, error: 'unauthorized' }, { status: 401 });
   }
 

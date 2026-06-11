@@ -6,17 +6,15 @@ import {
   listTvDevices,
   type TvDeviceUpsert,
 } from '@/lib/sensor-db';
+import { isAuthorizedKey } from '@/lib/auth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 function isAuthorized(req: NextRequest): boolean {
-  const secret = process.env.SWITCHBOT_WEBHOOK_SECRET;
-  if (!secret) return false;
   const url = new URL(req.url);
-  const keyFromQuery = url.searchParams.get('key');
-  const keyFromHeader = req.headers.get('x-webhook-key');
-  return keyFromQuery === secret || keyFromHeader === secret;
+  const key = url.searchParams.get('key') ?? req.headers.get('x-webhook-key');
+  return isAuthorizedKey(key);
 }
 
 function clientIp(req: NextRequest): string | undefined {

@@ -1,4 +1,5 @@
 import { headers } from 'next/headers';
+import { isAuthConfigured, isAuthorizedKey } from '@/lib/auth';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -139,9 +140,8 @@ export default async function Page({
 }) {
   const params = await searchParams;
   const providedKey = params.key ?? '';
-  const expectedKey = process.env.SWITCHBOT_WEBHOOK_SECRET ?? '';
 
-  if (!expectedKey || providedKey !== expectedKey) {
+  if (!isAuthConfigured() || !isAuthorizedKey(providedKey)) {
     return (
       <main style={{ padding: 32, fontFamily: 'sans-serif', background: '#0a0a0a', color: '#eee', minHeight: '100vh' }}>
         <h1>🔒 認証が必要です</h1>
