@@ -22,6 +22,8 @@ ul { list-style: none; }
   --primary-light: #4F6FE8;
   --accent-school: #22C55E;
   --accent-biz: #F08A45;
+  --accent-cta: #EA580C;        /* 白文字CTA専用・AA充足(UIUX-00 §5)。装飾用 --accent-biz(#F08A45) は据置 */
+  --accent-cta-hover: #C2410C;
   --accent-investor: #EAB308;
   --text: #1E293B;
   --text-sub: #64748B;
@@ -220,7 +222,7 @@ ul { list-style: none; }
 }
 
 .btn-accent {
-  background: var(--accent-biz);
+  background: var(--accent-cta);
   color: var(--white);
   border-color: transparent;
   font-size: var(--font-lg);
@@ -228,7 +230,7 @@ ul { list-style: none; }
   box-shadow: var(--shadow-md);
 }
 .btn-accent:hover {
-  background: #DA7531;
+  background: var(--accent-cta-hover);
   box-shadow: var(--shadow-lg);
 }
 
