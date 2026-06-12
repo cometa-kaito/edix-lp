@@ -10,13 +10,13 @@ export default function Results() {
       <div className="container">
         <SectionHeader
           label="Results"
-          title="岐阜県立 岐南工業高等学校で<br>実証実験を実施中"
+          title="岐阜県立 岐南工業高等学校で<br>運用中"
         />
 
         <div className={styles.content}>
           <FadeIn className={styles.highlight}>
             <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
-            <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。電子工学科3クラスでの試験運用を実施中。</Phrase>
+            <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認済み。電子工学科3クラスで運用中。</Phrase>
           </FadeIn>
 
           <FadeIn className={styles.awardSection}>

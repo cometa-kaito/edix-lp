@@ -51,7 +51,7 @@ export default function AdvertiserBenefits() {
 
         {/* Pricing */}
         <FadeIn className="text-center" id="pricing">
-          <h3 className={styles.pricingHeading}>PoC実証実験 特別価格プラン</h3>
+          <h3 className={styles.pricingHeading}>広告掲載プラン</h3>
         </FadeIn>
         <FadeIn className={styles.pricingCards}>
           {PRICING_PLANS.map((plan, i) => (
@@ -98,7 +98,7 @@ export default function AdvertiserBenefits() {
         </FadeIn>
         <FadeIn className={styles.pricingNote}>
           <p>生徒が毎日長時間を過ごす教室という、企業にとって他にない貴重な情報発信の場。属性100%特定済みのため「無駄打ちゼロ」。</p>
-          <p>※ 金額はすべて税抜表示です &ensp; ※ 特別価格は20社限定・予告なく終了する場合があります</p>
+          <p>※ 募集枠には限りがあります &ensp; ※ 料金の詳細はお問い合わせください</p>
         </FadeIn>
 
         {/* Flow */}

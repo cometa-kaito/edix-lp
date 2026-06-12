@@ -10,8 +10,8 @@ interface ContactSectionProps {
 }
 
 const CTA_ITEMS = [
-  { label: '広告出稿のご相談（PoC特別価格）', sub: '企業・採用ご担当者様', category: '企業（広告出稿）' },
-  { label: '学校見学・PoC日程の調整', sub: '学校関係者様', category: '学校関係者' },
+  { label: '広告出稿のご相談', sub: '企業・採用ご担当者様', category: '企業（広告出稿）' },
+  { label: '学校見学・日程の調整', sub: '学校関係者様', category: '学校関係者' },
 ];
 
 export default function ContactSection({ defaultCategory }: ContactSectionProps) {

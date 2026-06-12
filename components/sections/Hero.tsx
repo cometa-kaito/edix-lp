@@ -24,7 +24,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     home: {
       badges: [
         { text: 'DigiTechQuest 2025 最優秀賞受賞', gold: true },
-        { text: '岐南工業高校で実証実験中' },
+        { text: '岐南工業高校で運用中' },
       ],
       title: `校務DX × 広告で、<br>学校のデジタル化を<span class="${highlightClass}">無料で実現</span>`,
       sub: '通知アプリでは届かない情報を、教室の全員に届ける。広告モデルで学校の費用負担ゼロ。',
@@ -44,11 +44,10 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     },
     advertisers: {
       badges: [
-        { text: 'PoC特別価格 実施中', gold: true },
-        { text: '岐南工業高校で実証実験中' },
+        { text: '岐南工業高校で運用中', gold: true },
       ],
       title: `若年層への確実なリーチと<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
-      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。実証実験特別価格 3クラス×実質3ヶ月（6〜9月、夏季休業除く）5万円/社。',
+      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。配信は3クラス×実質3ヶ月（2026年6〜9月、夏季休業除く）。料金はお問い合わせください。',
       buttons: [
         { href: PORTAL_APPLY_URL, label: '空き枠を見て申し込む →', variant: 'accent' },
       ],

@@ -1,6 +1,5 @@
 // ===== Component Variant Types =====
 export type HeroVariant = 'home' | 'schools' | 'advertisers';
-export type PocBannerVariant = 'full' | 'compact';
 export type ResultsVariant = 'full' | 'compact';
 export type TeamVariant = 'full' | 'compact';
 export type ButtonVariant = 'primary' | 'secondary' | 'accent' | 'white';
