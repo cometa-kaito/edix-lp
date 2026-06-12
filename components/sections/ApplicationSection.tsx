@@ -25,7 +25,7 @@ export default function ApplicationSection() {
                 fontSize: 'var(--font-xs)',
                 fontWeight: 700,
                 letterSpacing: '0.08em',
-                color: 'var(--accent-biz)',
+                color: 'var(--accent-text)',
                 marginBottom: 'var(--space-xs)',
               }}
             >

@@ -5,20 +5,20 @@
   margin-bottom: var(--space-xl);
 }
 
+/* 学校=青の文法。緑は会社（コーポレート）の色としてLPから引退 */
 .meritCard {
   background: var(--white);
   border-radius: var(--radius-lg);
   padding: 32px;
-  box-shadow: var(--shadow-sm);
-  border-left: 4px solid var(--accent-school);
+  box-shadow: var(--shadow-xs);
+  border: none;
+  border-left: 4px solid var(--primary);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--border-light);
-  border-left: 4px solid var(--accent-school);
 }
 
 .meritCard:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .meritIcon {
@@ -38,25 +38,26 @@
   line-height: var(--leading-relaxed);
 }
 
+/* 「無料」のキーメッセージはマーカーの暖色面で照らす */
 .costHighlight {
-  background: #ECFDF5;
+  background: #FFF1E0;
   border-radius: var(--radius-lg);
   padding: 40px;
   text-align: center;
   margin-bottom: var(--space-xl);
-  border: 1px solid rgba(34, 197, 94, 0.15);
+  border: 1px solid var(--border-warm);
 }
 
 .costTitle {
   font-size: var(--font-2xl);
   font-weight: 800;
-  color: #065F46;
+  color: var(--text);
   margin-bottom: 10px;
   letter-spacing: -0.02em;
 }
 
 .costDesc {
-  color: #047857;
+  color: var(--text-sub);
   font-size: 15px;
 }
 
@@ -79,7 +80,7 @@
   font-size: var(--font-lg);
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--accent-school);
+  color: var(--primary);
 }
 
 .infoItem {
@@ -96,7 +97,7 @@
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: var(--accent-school);
+  background: var(--primary);
   border-radius: 50%;
   flex-shrink: 0;
 }

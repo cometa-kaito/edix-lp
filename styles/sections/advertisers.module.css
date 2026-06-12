@@ -1,28 +1,30 @@
+/* 4項目なので2×2で組む（3列だと1枚が孤立する） */
 .merits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-bottom: var(--space-xl);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto var(--space-2xl);
 }
 
 .meritCard {
   text-align: center;
   padding: 40px 24px;
-  background: var(--white);
+  background: var(--bg-warm);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--border-light);
+  border: none;
 }
 
 .meritCard:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .meritTitle {
   font-size: var(--font-lg);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 10px;
 }
 
@@ -32,46 +34,72 @@
   line-height: var(--leading-relaxed);
 }
 
+/* 媒体データボード（C: 墨の大数字・罫線のみの媒体資料調） */
+.specBoard {
+  margin-bottom: var(--space-2xl);
+}
+
+.specHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+}
+
+.specHeadTitle {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.specHeadNote {
+  font-size: var(--font-sm);
+  color: var(--text-sub);
+}
+
 .specGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: var(--space-xl);
+  gap: 0;
+  border-top: 2px solid var(--text);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .specItem {
   text-align: center;
-  padding: 28px 16px;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xs);
-  border: 1px solid var(--border-light);
-  transition: all var(--duration-base) ease;
+  padding: 36px 16px 28px;
+  border-left: 1px solid var(--border-light);
 }
 
-.specItem:hover {
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+.specItem:first-child {
+  border-left: none;
 }
 
 .specNum {
-  font-size: var(--font-4xl);
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(3rem, 4.2vw, 4.25rem);
   font-weight: 800;
-  color: var(--accent-biz);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
 }
 
 .specUnit {
-  font-size: 15px;
-  color: var(--accent-biz);
-  font-weight: 600;
+  font-size: var(--font-base);
+  color: var(--accent-text);
+  font-weight: 700;
+  margin-left: 4px;
+  letter-spacing: 0;
 }
 
 .specLabel {
   font-size: var(--font-sm);
   color: var(--text-sub);
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 /* Pricing Cards */
@@ -107,7 +135,7 @@
 .pricingLabel {
   font-size: 13px;
   font-weight: 700;
-  color: var(--accent-biz);
+  color: var(--accent-text);
   margin-bottom: 4px;
 }
 
@@ -162,7 +190,7 @@
 }
 
 .check {
-  color: var(--accent-school);
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -282,6 +310,14 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .specItem:nth-child(odd) {
+    border-left: none;
+  }
+
+  .specItem:nth-child(n+3) {
+    border-top: 1px solid var(--border-light);
+  }
+
   .merits {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -289,9 +325,20 @@
 
 @media (max-width: 768px) {
   .merits,
-  .pricingCards,
-  .specGrid {
+  .pricingCards {
     grid-template-columns: 1fr;
+  }
+
+  .specGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .specNum {
+    font-size: 2.5rem;
+  }
+
+  .specItem {
+    padding: 24px 12px 20px;
   }
 
   .bizFlow {

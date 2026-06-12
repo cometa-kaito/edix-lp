@@ -1,7 +1,7 @@
 .hero {
   padding-top: calc(var(--header-h) + 32px);
   padding-bottom: 80px;
-  background: #FFFFFF;
+  background: var(--bg-warm);
 }
 
 .heroInner {
@@ -19,7 +19,7 @@
 }
 
 .heroImage {
-  flex: 0 0 480px;
+  flex: 0 0 500px;
   border-radius: 0;
   overflow: visible;
   box-shadow: none;
@@ -52,7 +52,7 @@
   align-items: center;
   gap: 6px;
   background: var(--white);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-warm);
   border-radius: var(--radius-full);
   padding: 8px 20px;
   font-size: 14px;
@@ -69,17 +69,35 @@
 }
 
 .title {
-  font-size: clamp(1.75rem, 2.8vw, 3rem);
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
   font-weight: 800;
-  line-height: var(--leading-tight);
+  line-height: 1.25;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
   min-height: 1.2em;
   color: var(--text);
 }
 
+/* キーワードを照らすマーカー。単色のlinear-gradientは塗り面として使用（装飾グラデではない） */
 .highlight {
-  color: var(--primary);
+  color: inherit;
+  background-image: linear-gradient(var(--marker), var(--marker));
+  background-repeat: no-repeat;
+  background-size: 100% 0.42em;
+  background-position: 0 92%;
+  padding: 0 0.04em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: markerSweep 0.7s cubic-bezier(0.2, 0, 0.2, 1) 0.45s backwards;
+}
+
+@keyframes markerSweep {
+  from {
+    background-size: 0% 0.42em;
+  }
+  to {
+    background-size: 100% 0.42em;
+  }
 }
 
 /* Sequential visibility */
@@ -118,8 +136,8 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--text);
-  background: rgba(43, 74, 203, 0.05);
-  border: 1px solid rgba(43, 74, 203, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border-warm);
   padding: 6px 12px;
   border-radius: var(--radius-full);
 }
@@ -138,19 +156,6 @@
 .buttons .btn {
   font-size: 15px;
   padding: 14px 28px;
-}
-
-/* Typing cursor */
-:global(.type-cursor) {
-  display: inline;
-  animation: blink 0.7s step-end infinite;
-  color: var(--primary);
-  font-weight: 400;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
 }
 
 @media (max-width: 1024px) {
@@ -257,8 +262,7 @@
     transition: none;
   }
 
-  :global(.type-cursor) {
+  .highlight {
     animation: none;
-    display: none;
   }
 }

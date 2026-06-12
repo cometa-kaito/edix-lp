@@ -11,7 +11,7 @@
   display: inline-block;
   font-size: var(--font-sm);
   letter-spacing: 0.08em;
-  color: var(--accent-biz);
+  color: var(--accent-text);
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -60,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-biz);
+  background: var(--accent-cta);
   color: var(--white);
   border-radius: var(--radius-full);
   font-weight: 700;
@@ -92,7 +92,7 @@
   align-items: center;
   gap: 8px;
   padding: 14px 32px;
-  background: var(--accent-biz);
+  background: var(--accent-cta);
   color: var(--white);
   font-weight: 700;
   font-size: var(--font-base);
@@ -102,7 +102,7 @@
   transition: all var(--duration-base);
 }
 .primaryBtn:hover {
-  background: #d97633;
+  background: var(--accent-cta-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
   color: var(--white);

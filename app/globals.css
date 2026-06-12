@@ -25,13 +25,20 @@ ul { list-style: none; }
   --accent-cta: #EA580C;        /* 白文字CTA専用・AA充足(UIUX-00 §5)。装飾用 --accent-biz(#F08A45) は据置 */
   --accent-cta-hover: #C2410C;
   --accent-investor: #EAB308;
+  --accent-text: #B45309;       /* 白地上の小さいオレンジ文字用（AA充足）。#F08A45/#EA580Cは小文字AA未達 */
   --text: #1E293B;
   --text-sub: #64748B;
   --white: #FFFFFF;
 
+  /* 「教室に差す光」デザイン言語（2026-06-12） */
+  --bg-warm: #FFF8F1;           /* 朝光の地色。ヒーロー・交互セクション背景 */
+  --marker: #FFD9AC;            /* 見出しキーワードのマーカーハイライト（=照らす） */
+  --primary-dusk: #20307C;      /* 夕方の教室。最終セクション（問い合わせ）の色面 */
+  --border-warm: #EDE0D0;       /* 暖色地の上で使う罫線 */
+
   /* Backgrounds */
-  --bg-alt: #F8FAFC;
-  --bg-secondary: #F8FAFC;
+  --bg-alt: #F8F7F3;
+  --bg-secondary: #F8F7F3;
   --bg-tertiary: #F1F5F9;
   --border-light: #E2E8F0;
   --border-medium: #CBD5E1;
@@ -101,6 +108,7 @@ ul { list-style: none; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
 .section-padding { padding: var(--space-3xl) 0; }
 .bg-alt { background: var(--bg-alt); }
+.bg-warm { background: var(--bg-warm); }
 .text-center { text-align: center; }
 
 /* ===== Section Labels & Titles ===== */
@@ -122,7 +130,7 @@ ul { list-style: none; }
 }
 .section-title {
   font-size: var(--font-4xl);
-  font-weight: 700;
+  font-weight: 800;
   line-height: var(--leading-tight);
   margin-bottom: var(--space-md);
   letter-spacing: -0.02em;
@@ -245,11 +253,11 @@ ul { list-style: none; }
   box-shadow: var(--shadow-lg);
 }
 
-/* ===== Fade-in Animation ===== */
+/* ===== Fade-in（モーション言語「灯る」: 短く・小さく・素早く点く） ===== */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(14px);
+  transition: opacity 0.45s ease-out, transform 0.45s cubic-bezier(0.2, 0, 0.2, 1);
 }
 .fade-in.visible {
   opacity: 1;
