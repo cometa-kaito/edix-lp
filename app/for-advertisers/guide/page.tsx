@@ -289,14 +289,14 @@ export default function GuideTopPage() {
 
       {/* 価格・スケジュール */}
       <div className={`${styles.card} ${styles.priceCard}`}>
-        <h2>PoC特別価格・スケジュール</h2>
-        <p>2026年度のPoC（実証実験）では、岐南工業高校での3か月配信を <strong>20社限定の特別価格</strong> でご利用いただけます。</p>
+        <h2>料金・スケジュール</h2>
+        <p>2026年度は、岐南工業高校での3か月配信をご利用いただけます。募集枠には限りがあり、<strong>料金はお問い合わせ</strong>ください。</p>
 
         <div className={styles.priceGrid}>
           <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>PoC料金</div>
-            <div className={styles.priceItemValue}>5<span style={{ fontSize: '0.6em' }}>万円</span></div>
-            <div className={styles.priceItemUnit}>3か月総額・税抜</div>
+            <div className={styles.priceItemLabel}>料金</div>
+            <div className={styles.priceItemValue} style={{ fontSize: '0.55em' }}>お問い合わせ</div>
+            <div className={styles.priceItemUnit}>3か月総額（税抜）</div>
           </div>
           <div className={styles.priceItem}>
             <div className={styles.priceItemLabel}>配信期間</div>
@@ -306,7 +306,7 @@ export default function GuideTopPage() {
           <div className={styles.priceItem}>
             <div className={styles.priceItemLabel}>枠数</div>
             <div className={styles.priceItemValue}>20<span style={{ fontSize: '0.6em' }}>社</span></div>
-            <div className={styles.priceItemUnit}>限定</div>
+            <div className={styles.priceItemUnit}>募集枠</div>
           </div>
           <div className={styles.priceItem}>
             <div className={styles.priceItemLabel}>配信先</div>
@@ -338,7 +338,7 @@ export default function GuideTopPage() {
         </table>
 
         <div className={styles.note}>
-          PoC終了後の本格運用では、別途ティア制プラン（スタンダード／プレミアム／エンタープライズ）をご用意する予定です。
+          今期の配信終了後の本格運用では、別途ティア制プラン（スタンダード／プレミアム／エンタープライズ）をご用意する予定です。
         </div>
       </div>
 

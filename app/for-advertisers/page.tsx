@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { siteMetadata } from '@/lib/metadata';
 import Hero from '@/components/sections/Hero';
-import PocBanner from '@/components/sections/PocBanner';
 import AdvertiserBenefits from '@/components/sections/AdvertiserBenefits';
 import GuidePromo from '@/components/sections/GuidePromo';
 import ApplicationSection from '@/components/sections/ApplicationSection';
@@ -14,7 +13,6 @@ export default function ForAdvertisersPage() {
   return (
     <>
       <Hero variant="advertisers" />
-      <PocBanner variant="full" />
       <AdvertiserBenefits />
       <GuidePromo />
       <ApplicationSection />

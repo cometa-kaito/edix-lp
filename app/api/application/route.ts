@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
   const htmlBody = `
 <div style="font-family: -apple-system, 'Hiragino Sans', sans-serif; max-width: 640px; color: #1E293B;">
   <h2 style="color: #0f4c81; border-bottom: 2px solid #F08A45; padding-bottom: 8px;">
-    広告掲載お申し込み（PoC特別価格）
+    広告掲載お申し込み
   </h2>
   <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
     <tr>
