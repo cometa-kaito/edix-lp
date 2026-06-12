@@ -12,6 +12,8 @@ export default function LoadingScreen() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReduced || alreadyVisited) {
+      // reduced-motion でも訪問フラグは立てる（inline script の再訪非表示を効かせる）
+      sessionStorage.setItem('kimiterasu-visited', '1');
       setRemoved(true);
       return;
     }

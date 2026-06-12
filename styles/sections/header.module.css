@@ -66,9 +66,10 @@
   transform: translateY(-1px);
 }
 
-/* 淡色面+濃色文字（白文字on#F08A45はAA未達のため）。塗りCTAは右端の1つに絞る */
+/* 淡色面+濃色文字（白文字on#F08A45はAA未達のため）。塗りCTAは右端の1つに絞る。
+   文字は #92400E（badgeGold と同系・淡橙地での AA 充足） */
 .navHighlight {
-  color: var(--accent-text);
+  color: #92400E;
   font-weight: 700;
   background: rgba(240, 138, 69, 0.16);
   border-radius: var(--radius-full);
@@ -79,9 +80,9 @@
 }
 
 .navHighlight:hover {
-  background: rgba(240, 138, 69, 0.28);
+  background: rgba(240, 138, 69, 0.26);
   transform: translateY(-1px);
-  color: var(--accent-text);
+  color: #92400E;
 }
 
 .headerCta {

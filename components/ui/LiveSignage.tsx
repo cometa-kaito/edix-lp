@@ -85,18 +85,25 @@ const SCENES = [
 export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
   const total = SCENES.length;
   const [active, setActive] = useState(() => ((startIndex % total) + total) % total);
+  // WCAG 2.2.2: hover/focus 中はローテーションを一時停止できる
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const id = setInterval(() => setActive((a) => (a + 1) % total), ROTATE_MS);
     return () => clearInterval(id);
-  }, [total]);
+  }, [total, paused]);
 
   return (
     <div
       className={styles.wrap}
       role="img"
       aria-label="教室サイネージの表示イメージ。校内連絡・時間割・行事と、審査済みの企業広告が切り替わって表示されます"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
     >
       <div className={styles.frame}>
         <div className={styles.screen}>

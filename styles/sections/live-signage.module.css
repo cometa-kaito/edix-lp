@@ -228,6 +228,11 @@
   }
 }
 
+/* hover中はティッカーも停止（場面ローテーションはJS側で停止） */
+.wrap:hover .tickerText {
+  animation-play-state: paused;
+}
+
 /* 場面インジケータ */
 .dots {
   display: flex;
@@ -301,6 +306,25 @@
 
   .countdownNum {
     font-size: 32px;
+  }
+
+  /* 最小幅でのクリップ防止に画面内の文字を一段縮める */
+  .noticeCard {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .timetable {
+    font-size: 10px;
+  }
+
+  .adCopy {
+    font-size: 12px;
+  }
+
+  .screenHeader {
+    font-size: 11px;
+    padding: 5px 10px;
   }
 }
 
