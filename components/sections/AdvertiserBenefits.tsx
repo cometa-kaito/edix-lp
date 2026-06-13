@@ -22,8 +22,8 @@ export default function AdvertiserBenefits() {
       <div className="container">
         <SectionHeader
           label="For Advertisers"
-          title="若年層への確実なリーチと<br>教育貢献によるブランディング"
-          labelColor="var(--accent-biz)"
+          title="教室という、他にないメディアが<br>選ばれる4つの理由"
+          labelColor="var(--accent-text)"
         />
 
         {/* Merits */}
@@ -36,17 +36,23 @@ export default function AdvertiserBenefits() {
           ))}
         </FadeIn>
 
-        {/* Specs */}
-        <FadeIn className={styles.specGrid}>
-          {AD_SPECS.map((s, i) => (
-            <div key={i} className={styles.specItem}>
-              <div className={styles.specNum}>
-                <CountUp target={Number(s.num)} duration={2} />
+        {/* Specs — 媒体データ（放送局の数字盤のように、墨色の大数字で見せる） */}
+        <FadeIn className={styles.specBoard}>
+          <div className={styles.specHead}>
+            <span className={styles.specHeadTitle}>媒体データ</span>
+            <span className={styles.specHeadNote}>岐阜県立岐南工業高等学校・運用中</span>
+          </div>
+          <div className={styles.specGrid}>
+            {AD_SPECS.map((s, i) => (
+              <div key={i} className={styles.specItem}>
+                <div className={styles.specNum}>
+                  <CountUp target={Number(s.num)} duration={2} />
+                  <span className={styles.specUnit}>{s.unit}</span>
+                </div>
+                <div className={styles.specLabel}>{s.label}</div>
               </div>
-              <div className={styles.specUnit}>{s.unit}</div>
-              <div className={styles.specLabel}>{s.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </FadeIn>
 
         {/* Pricing */}

@@ -1,5 +1,6 @@
+/* 「夕方の教室」: 1日の終わり=問い合わせ。ヒーローの朝(暖)と対になる深い青 */
 .section {
-  background: var(--primary);
+  background: var(--primary-dusk);
   color: var(--white);
   text-align: center;
   position: relative;

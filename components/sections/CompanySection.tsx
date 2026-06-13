@@ -30,7 +30,7 @@ const COMPANY_INFO = [
 
 export default function CompanySection() {
   return (
-    <section className="section-padding" id="company">
+    <section className="section-padding bg-warm" id="company">
       <div className="container">
         <SectionHeader
           label="About Us"

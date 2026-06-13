@@ -34,7 +34,7 @@ export default function SchoolBenefits() {
         <SectionHeader
           label="For Schools"
           title="先生の負担を減らし、<br>安全で持続可能なDXを実現"
-          labelColor="var(--accent-school)"
+          labelColor="var(--primary)"
         />
         <div className={styles.meritGrid}>
           {MERITS.map((m, i) => (

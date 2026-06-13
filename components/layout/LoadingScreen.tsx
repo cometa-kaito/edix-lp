@@ -12,6 +12,8 @@ export default function LoadingScreen() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReduced || alreadyVisited) {
+      // reduced-motion でも訪問フラグは立てる（inline script の再訪非表示を効かせる）
+      sessionStorage.setItem('kimiterasu-visited', '1');
       setRemoved(true);
       return;
     }
@@ -37,10 +39,19 @@ export default function LoadingScreen() {
   if (removed) return null;
 
   return (
-    <div className={`loading-screen ${hidden ? 'hidden' : ''}`}>
-      <div className="loading-logo">
-        <img src="/logo-full.png" alt="キミテラス" width={120} height={120} />
+    <>
+      <div id="loading-screen" className={`loading-screen ${hidden ? 'hidden' : ''}`} suppressHydrationWarning>
+        <div className="loading-logo">
+          <img src="/logo-full.png" alt="キミテラス" width={120} height={120} />
+        </div>
       </div>
-    </div>
+      {/* 再訪時はhydration前の白フラッシュを出さない（ペイント前に同期で判定） */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            "try{if(sessionStorage.getItem('kimiterasu-visited')){var e=document.getElementById('loading-screen');if(e)e.style.display='none';}}catch(_){}",
+        }}
+      />
+    </>
   );
 }

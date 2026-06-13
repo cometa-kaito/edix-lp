@@ -1,10 +1,9 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import FadeIn from '@/components/ui/FadeIn';
-import TypeWriter from '@/components/ui/TypeWriter';
+import LiveSignage from '@/components/ui/LiveSignage';
 import { ShieldCheckIcon, CheckCircleIcon } from '@/components/ui/Icon';
 import { PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/hero.module.css';
@@ -26,7 +25,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
         { text: 'DigiTechQuest 2025 最優秀賞受賞', gold: true },
         { text: '岐南工業高校で運用中' },
       ],
-      title: `校務DX × 広告で、<br>学校のデジタル化を<span class="${highlightClass}">無料で実現</span>`,
+      title: `校務DX × 広告で、<br>学校のデジタル化を<br><span class="${highlightClass}">無料で実現</span>`,
       sub: '通知アプリでは届かない情報を、教室の全員に届ける。広告モデルで学校の費用負担ゼロ。',
       buttons: [
         { href: '/for-schools', label: '学校関係者の方はこちら', variant: 'primary' },
@@ -35,7 +34,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     },
     schools: {
       badges: [{ text: '学校関係者の方へ' }],
-      title: `先生の負担を減らし、<br>安全で持続可能な<span class="${highlightClass}">DXを無料で実現</span>`,
+      title: `先生の負担を減らし、<br>安全で持続可能な<br><span class="${highlightClass}">DXを無料で実現</span>`,
       sub: 'Google Classroom等では届かない「全員の目に入る連絡」を実現。機材無償・教育委員会対応支援付き。',
       buttons: [
         { href: '#benefits', label: 'メリットを見る', variant: 'primary' },
@@ -58,24 +57,16 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
 
 export default function Hero({ variant = 'home' }: HeroProps) {
   const data = getHeroData(variant, styles.highlight);
-  const useTypewriter = variant === 'home';
-  // typewriter 無し variant も「タイトル→サブ→CTA」と段階表示して情緒の立ち上がりを作る
-  // （タイトルは即表示のままで LCP を損なわない）
-  const [phase, setPhase] = useState(useTypewriter ? 0 : 1);
+  // タイトルは即時描画（LCP）。サブ→CTAだけ「灯る」ように短く段階表示する
+  const [phase, setPhase] = useState(1);
 
   useEffect(() => {
-    if (useTypewriter) return;
     const t1 = setTimeout(() => setPhase(2), 250);
     const t2 = setTimeout(() => setPhase(3), 650);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
     };
-  }, [useTypewriter]);
-
-  const handleTitleDone = useCallback(() => {
-    setTimeout(() => setPhase(2), 200);
-    setTimeout(() => setPhase(3), 600);
   }, []);
 
   return (
@@ -88,28 +79,17 @@ export default function Hero({ variant = 'home' }: HeroProps) {
                 <span
                   key={i}
                   className={`${styles.badge} ${badge.gold ? styles.badgeGold : ''}`}
-                  style={{ animationDelay: `${(useTypewriter ? 1.2 : 0.15) + i * 0.15}s` }}
+                  style={{ animationDelay: `${0.15 + i * 0.15}s` }}
                 >
                   {badge.text}
                 </span>
               ))}
             </div>
           )}
-          {useTypewriter ? (
-            <h1 className={styles.title}>
-              <TypeWriter
-                text={data.title}
-                speed={40}
-                delay={1400}
-                onComplete={handleTitleDone}
-              />
-            </h1>
-          ) : (
-            <h1
-              className={styles.title}
-              dangerouslySetInnerHTML={{ __html: data.title }}
-            />
-          )}
+          <h1
+            className={styles.title}
+            dangerouslySetInnerHTML={{ __html: data.title }}
+          />
           <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
             {data.sub}
           </p>
@@ -150,14 +130,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
           </div>
         </div>
         <FadeIn className={styles.heroImage}>
-          <Image
-            src="/signage-demo.png"
-            alt="キミテラス サイネージ画面"
-            width={1251}
-            height={872}
-            priority
-            style={{ width: '100%', height: 'auto' }}
-          />
+          <LiveSignage startIndex={variant === 'advertisers' ? 2 : 0} />
         </FadeIn>
       </div>
     </section>
