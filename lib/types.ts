@@ -57,4 +57,6 @@ export interface PartnerCompany {
   logoSrc?: string;
   logoWidth?: number;
   logoHeight?: number;
+  /** 企業サイトURL。指定時はロゴ/社名がリンク（新規タブ）になる */
+  url?: string;
 }

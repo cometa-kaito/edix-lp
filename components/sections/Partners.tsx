@@ -10,21 +10,36 @@ function LogoGroup({ dup }: { dup?: boolean }) {
       className={dup ? `${styles.group} ${styles.dup}` : styles.group}
       aria-hidden={dup || undefined}
     >
-      {PARTNER_COMPANIES.map((partner) => (
-        <li key={partner.name} className={styles.item}>
-          {partner.logoSrc ? (
-            <Image
-              src={partner.logoSrc}
-              alt={partner.name}
-              width={partner.logoWidth ?? 160}
-              height={partner.logoHeight ?? 40}
-              className={styles.logo}
-            />
-          ) : (
-            <span className={styles.name}>{partner.name}</span>
-          )}
-        </li>
-      ))}
+      {PARTNER_COMPANIES.map((partner) => {
+        const content = partner.logoSrc ? (
+          <Image
+            src={partner.logoSrc}
+            alt={partner.name}
+            width={partner.logoWidth ?? 160}
+            height={partner.logoHeight ?? 40}
+            className={styles.logo}
+          />
+        ) : (
+          <span className={styles.name}>{partner.name}</span>
+        );
+        return (
+          <li key={partner.name} className={styles.item}>
+            {partner.url ? (
+              <a
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+                aria-label={`${partner.name}のサイトを開く（新しいタブ）`}
+              >
+                {content}
+              </a>
+            ) : (
+              content
+            )}
+          </li>
+        );
+      })}
     </ul>
   );
 }

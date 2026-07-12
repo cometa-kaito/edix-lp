@@ -234,6 +234,7 @@ export const PARTNER_COMPANIES: PartnerCompany[] = [
     logoSrc: '/partners/tokaitech.png',
     logoWidth: 262,
     logoHeight: 40,
+    url: 'https://www.tokai-tech.net/',
   },
 ];
 
