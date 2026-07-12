@@ -1,0 +1,83 @@
+.marquee {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3333%); }
+}
+
+.group {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  min-height: 72px;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.name {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--text-sub);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.logo {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* 動きを止めるだけでなく、全社が見えるよう折返しの静的表示に切り替える */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+  }
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0;
+  }
+  .dup {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    min-width: 180px;
+    min-height: 60px;
+    padding: var(--space-xs) var(--space-md);
+  }
+  .name {
+    font-size: var(--font-base);
+  }
+  .logo {
+    height: 32px;
+  }
+}

@@ -5,6 +5,7 @@ import type {
   SpecItem,
   FlowStep,
   NavLink,
+  PartnerCompany,
 } from './types';
 
 // ===== Navigation =====
@@ -222,6 +223,16 @@ export const OPERATION_FLOW: FlowStep[] = [
   { num: 1, title: '情報を入力', description: '管理画面から連絡事項や広告を登録' },
   { num: 2, title: 'クラウドで即時反映', description: 'クラウドで全サイネージにリアルタイム配信' },
   { num: 3, title: 'サイネージ表示', description: '教室のモニターに自動で表示・更新' },
+];
+
+// ===== Partners（取引先企業） =====
+// 掲載順は順不同。ロゴ画像を使う場合は /public/partners/ に置いて logoSrc を設定する。
+export const PARTNER_COMPANIES: PartnerCompany[] = [
+  { name: 'アピ株式会社' },
+  { name: 'ギフ加藤製作所' },
+  { name: '株式会社シーテック' },
+  { name: 'トーカイテック株式会社' },
+  { name: '京三エレコス株式会社' },
 ];
 
 // ===== External URLs =====

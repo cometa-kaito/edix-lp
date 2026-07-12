@@ -50,3 +50,11 @@ export interface NavLink {
   label: string;
   highlight?: boolean;
 }
+
+export interface PartnerCompany {
+  name: string;
+  /** /public/partners/ 配下のロゴ画像。未指定時は社名テキストで表示 */
+  logoSrc?: string;
+  logoWidth?: number;
+  logoHeight?: number;
+}
