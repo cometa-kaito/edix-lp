@@ -30,21 +30,29 @@ function LogoGroup({ dup }: { dup?: boolean }) {
 }
 
 export default function Partners() {
+  // 少数のうちはループさせず静的にセンター表示する
+  const isMarquee = PARTNER_COMPANIES.length >= 4;
   return (
     <section className="section-padding" id="partners">
       <div className="container">
         <SectionHeader
           label="Partners"
           title="取引先企業"
-          subtitle="キミテラスに広告を掲載いただいている企業の皆さまです（順不同・一部）。"
+          subtitle="キミテラスに広告を掲載いただいている企業の皆さまです。"
         />
-        <div className={styles.marquee}>
-          <div className={styles.track}>
-            <LogoGroup />
-            <LogoGroup dup />
-            <LogoGroup dup />
+        {isMarquee ? (
+          <div className={styles.marquee}>
+            <div className={styles.track}>
+              <LogoGroup />
+              <LogoGroup dup />
+              <LogoGroup dup />
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className={styles.staticRow}>
+            <LogoGroup />
+          </div>
+        )}
       </div>
     </section>
   );

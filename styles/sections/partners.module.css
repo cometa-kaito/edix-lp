@@ -2,6 +2,17 @@
   overflow: hidden;
 }
 
+.staticRow {
+  display: flex;
+  justify-content: center;
+}
+
+.staticRow .group {
+  padding-right: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .track {
   display: flex;
   width: max-content;

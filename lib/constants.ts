@@ -226,18 +226,15 @@ export const OPERATION_FLOW: FlowStep[] = [
 ];
 
 // ===== Partners（取引先企業） =====
-// 掲載順は順不同。ロゴ画像を使う場合は /public/partners/ に置いて logoSrc を設定する。
+// 掲載は先方の許諾が取れた企業のみ（許諾なしで追加しない）。
+// ロゴ画像は /public/partners/ に置いて logoSrc を設定する。
 export const PARTNER_COMPANIES: PartnerCompany[] = [
-  { name: 'アピ株式会社' },
-  { name: 'ギフ加藤製作所' },
-  { name: '株式会社シーテック' },
   {
     name: 'トーカイテック株式会社',
     logoSrc: '/partners/tokaitech.png',
     logoWidth: 262,
     logoHeight: 40,
   },
-  { name: '京三エレコス株式会社' },
 ];
 
 // ===== External URLs =====
