@@ -51,7 +51,6 @@ export default function Partners() {
     <section className="section-padding" id="partners">
       <div className="container">
         <SectionHeader
-          label="Partners"
           title="取引先企業"
           subtitle="キミテラスに広告を掲載いただいている企業の皆さまです。"
         />

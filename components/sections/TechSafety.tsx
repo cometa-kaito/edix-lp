@@ -23,7 +23,7 @@ export default function TechSafety() {
     <section className="section-padding bg-alt" id="tech">
       <div className="container">
         <SectionHeader
-          label="Technology &amp; Safety"
+          label="技術と安全性"
           title="信頼できる技術基盤と<br>徹底した安全管理"
         />
         <div className={styles.grid}>

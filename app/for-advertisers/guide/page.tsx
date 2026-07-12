@@ -4,6 +4,7 @@ import Image from 'next/image';
 import GuideShell from '@/components/guide/GuideShell';
 import ContactBox from '@/components/guide/ContactBox';
 import CtaBlock from '@/components/guide/CtaBlock';
+import { FileTextIcon } from '@/components/ui/Icon';
 import styles from '@/styles/sections/guide.module.css';
 
 export const metadata: Metadata = {
@@ -491,7 +492,7 @@ export default function GuideTopPage() {
         <h2>PDF版のダウンロード</h2>
         <p>ガイドのPDF版もご用意しています。社内回覧や印刷してご活用ください。</p>
         <a href="/guide/kimiterrace-guide.pdf" className={styles.pdfDownload} download>
-          📄 PDF版をダウンロード（A4 / 約330KB）
+          <FileTextIcon size={18} />PDF版をダウンロード（A4 / 約330KB）
         </a>
       </div>
 

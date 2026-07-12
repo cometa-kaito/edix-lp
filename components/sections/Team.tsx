@@ -7,7 +7,7 @@ export default function Team() {
   return (
     <section className={`section-padding ${styles.section}`} id="team">
       <div className="container">
-        <SectionHeader label="Team" title="学生が学校DXする！" />
+        <SectionHeader label="運営チーム" title="学生が学校DXする！" />
         <FadeIn className="text-center">
           <div className={styles.awardBanner}>
             <div className={styles.awardText}>

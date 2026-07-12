@@ -32,7 +32,7 @@ export default function SchoolBenefits() {
     <section className="section-padding bg-alt" id="schools">
       <div className="container">
         <SectionHeader
-          label="For Schools"
+          label="学校の方へ"
           title="先生の負担を減らし、<br>安全で持続可能なDXを実現"
           labelColor="var(--primary)"
         />

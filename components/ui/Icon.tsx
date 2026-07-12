@@ -71,3 +71,42 @@ export function BookOpenIcon({ size = 24, className, strokeWidth = 2 }: IconProp
     </svg>
   );
 }
+
+export function CheckIcon({ size = 16, className, strokeWidth = 2.5 }: IconProps) {
+  return (
+    <svg {...baseProps(size, strokeWidth, className)}>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
+export function FileTextIcon({ size = 18, className, strokeWidth = 2 }: IconProps) {
+  return (
+    <svg {...baseProps(size, strokeWidth, className)}>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+      <path d="M14 2v6h6" />
+      <path d="M9 13h6" />
+      <path d="M9 17h5" />
+    </svg>
+  );
+}
+
+export function ImageIcon({ size = 18, className, strokeWidth = 2 }: IconProps) {
+  return (
+    <svg {...baseProps(size, strokeWidth, className)}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="9" cy="9" r="1.6" />
+      <path d="m21 15-4.5-4.5L6 21" />
+    </svg>
+  );
+}
+
+export function BarChartIcon({ size = 18, className, strokeWidth = 2 }: IconProps) {
+  return (
+    <svg {...baseProps(size, strokeWidth, className)}>
+      <path d="M6 20v-4" />
+      <path d="M12 20V8" />
+      <path d="M18 20v-8" />
+    </svg>
+  );
+}

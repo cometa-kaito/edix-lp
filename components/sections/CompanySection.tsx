@@ -33,7 +33,6 @@ export default function CompanySection() {
     <section className="section-padding bg-warm" id="company">
       <div className="container">
         <SectionHeader
-          label="About Us"
           title="運営会社"
         />
 

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.logo}>
           <Image src="/logo-text.png" alt="キミテラス" width={160} height={42} />
         </div>
-        <div className={styles.tagline}>School DX Platform — Designed for the Future of Education</div>
+        <div className={styles.tagline}>教室設置型のサイネージで、学校の情報配信を無料に。</div>
         <nav className={styles.footerNav} aria-label="サイトナビゲーション">
           <Link href="/for-schools">学校の方</Link>
           <Link href="/for-advertisers">広告出稿</Link>

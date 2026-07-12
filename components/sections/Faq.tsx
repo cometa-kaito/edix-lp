@@ -40,7 +40,7 @@ export default function Faq({ filter }: FaqProps) {
   return (
     <section className="section-padding bg-alt" id="faq">
       <div className="container">
-        <SectionHeader label="FAQ" title="よくあるご質問" />
+        <SectionHeader title="よくあるご質問" />
         <FadeIn className={styles.list}>
           {Array.from(groups.entries()).map(([category, catItems]) => (
             <div key={category} className={styles.group}>

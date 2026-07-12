@@ -8,9 +8,9 @@ import styles from '@/styles/sections/features.module.css';
 // tone: 青=学校・構造 / 暖色=企業・行動（サイト全体の色の文法に揃える）
 // title はカード幅での折り返しを制御するため意図改行入りの JSX
 const FEATURES = [
-  { Icon: EyeIcon, tone: 'blue', title: <>「見に行く」から<br />「目に入る」へ</>, desc: '既存アプリは生徒が開く必要がある「Pull型」。キミテラスは教室にいるだけで情報が届く「Push型」メディア。伝え漏れをゼロに。' },
-  { Icon: ZapIcon, tone: 'blue', title: <>最短10秒で<br />プリント数十分を削減</>, desc: 'スマホ対応の管理画面から最短10秒で入力完了。プリント印刷・仕分け・配布の手間をまるごとカット。' },
-  { Icon: GraduationCapIcon, tone: 'warm', title: <>生きた<br />キャリア教育教材</>, desc: '地元企業のインターン情報やオープンキャンパス案内を、毎日教室で自然に届ける。進路情報に特化した「教育メディア」。' },
+  { Icon: EyeIcon, tone: 'blue', title: <>「見に行く」から<br />「目に入る」へ</>, desc: 'お知らせアプリは、生徒が自分で開かないと気づけません。キミテラスは教室にいるだけで目に入るので、連絡の見落としが減ります。' },
+  { Icon: ZapIcon, tone: 'blue', title: <>先生の入力は<br />最短10秒</>, desc: 'スマホの管理画面から最短10秒で入力。プリントの印刷・仕分け・配布にかかっていた時間がなくなります。' },
+  { Icon: GraduationCapIcon, tone: 'warm', title: <>進路の情報が<br />毎日、目に入る</>, desc: '地元企業の採用情報やオープンキャンパスの案内を、教室のモニターで日々届けます。進路を考えるきっかけを増やします。' },
 ];
 
 export default function Features() {
@@ -18,9 +18,9 @@ export default function Features() {
     <section className="section-padding" id="features">
       <div className="container">
         <SectionHeader
-          label="What is キミテラス?"
-          title="教室設置型デジタルサイネージ キミテラス"
-          subtitle="学校・広告主・生徒の3者をつなぐ、持続可能な校務DXプラットフォーム"
+          label="キミテラスとは"
+          title="教室の入口に置く、連絡用のモニターです"
+          subtitle="学校からの連絡と、地元企業の採用情報。教室のモニターに毎日映し出します。"
         />
         <div className={styles.grid}>
           {FEATURES.map((f, i) => {
@@ -37,7 +37,7 @@ export default function Features() {
           })}
         </div>
         <FadeIn className="text-center">
-          <h3 className={styles.flowHeading}>かんたん3ステップで運用</h3>
+          <h3 className={styles.flowHeading}>運用は、この3ステップだけ</h3>
         </FadeIn>
         <FadeIn className={styles.flowSteps}>
           {OPERATION_FLOW.map((step, i) => (

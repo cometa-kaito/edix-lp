@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
+import { FileTextIcon } from '@/components/ui/Icon';
 import styles from '@/styles/sections/guide-promo.module.css';
 
 export default function GuidePromo() {
@@ -7,7 +8,7 @@ export default function GuidePromo() {
     <section className={`section-padding ${styles.wrapper}`} id="guide-promo">
       <div className="container">
         <FadeIn className={styles.inner}>
-          <div className={styles.badge}>For Advertisers</div>
+          <div className={styles.badge}>出稿ルール</div>
           <h2 className={styles.heading}>
             ご出稿の前に、<br className={styles.brMobile} />
             まずは出稿ガイドをご覧ください
@@ -46,7 +47,7 @@ export default function GuidePromo() {
               出稿ガイドを読む →
             </Link>
             <a href="/guide/kimiterrace-guide.pdf" className={styles.secondaryBtn} download>
-              📄 PDF版をダウンロード
+              <FileTextIcon size={18} />PDF版をダウンロード
             </a>
           </div>
         </FadeIn>

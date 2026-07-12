@@ -4,6 +4,7 @@ import GuideShell from '@/components/guide/GuideShell';
 import ContactBox from '@/components/guide/ContactBox';
 import CtaBlock from '@/components/guide/CtaBlock';
 import PageNav from '@/components/guide/PageNav';
+import { BarChartIcon, FileTextIcon, ImageIcon } from '@/components/ui/Icon';
 import styles from '@/styles/sections/guide.module.css';
 
 export const metadata: Metadata = {
@@ -278,13 +279,13 @@ export default function CaseBPage() {
 
         <div className={styles.downloadRow}>
           <a href="/guide/template-sample.pptx" className={styles.pdfDownload} download>
-            📊 PowerPoint版（.pptx）
+            <BarChartIcon size={18} />PowerPoint版（.pptx）
           </a>
           <a href="/guide/template-sample.pdf" className={styles.pdfDownload} download>
-            📄 PDF版
+            <FileTextIcon size={18} />PDF版
           </a>
           <a href="/guide/template-sample.png" className={styles.pdfDownload} download>
-            🖼 画像（.png）
+            <ImageIcon size={18} />画像（.png）
           </a>
         </div>
 

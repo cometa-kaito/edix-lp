@@ -9,7 +9,7 @@ export default function Results() {
     <section className="section-padding" id="results">
       <div className="container">
         <SectionHeader
-          label="Results"
+          label="導入実績"
           title="岐阜県立 岐南工業高等学校で<br>運用中"
         />
 

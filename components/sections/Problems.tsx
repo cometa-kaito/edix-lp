@@ -20,7 +20,7 @@ export default function Problems() {
     <section className="section-padding bg-alt" id="problems">
       <div className="container">
         <SectionHeader
-          label="Why キミテラス?"
+          label="現場の課題"
           title="学校と企業、それぞれの課題を<br>ひとつの仕組みで解決"
         />
         <div className={styles.grid}>

@@ -1,7 +1,7 @@
 import FadeIn from './FadeIn';
 
 interface SectionHeaderProps {
-  label: string;
+  label?: string;
   title: string;
   subtitle?: string;
   labelColor?: string;
@@ -11,9 +11,11 @@ interface SectionHeaderProps {
 export default function SectionHeader({ label, title, subtitle, labelColor, titleColor }: SectionHeaderProps) {
   return (
     <FadeIn className="text-center">
-      <span className="section-label" style={labelColor ? { color: labelColor } : undefined}>
-        {label}
-      </span>
+      {label && (
+        <span className="section-label" style={labelColor ? { color: labelColor } : undefined}>
+          {label}
+        </span>
+      )}
       <h2
         className="section-title"
         style={titleColor ? { color: titleColor } : undefined}

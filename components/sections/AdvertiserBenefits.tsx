@@ -6,6 +6,7 @@ import FadeIn from '@/components/ui/FadeIn';
 import CountUp from '@/components/ui/CountUp';
 import TiltCard from '@/components/ui/TiltCard';
 import Phrase from '@/components/ui/Phrase';
+import { CheckIcon } from '@/components/ui/Icon';
 import { AD_SPECS, AD_FLOW_STEPS, PRICING_PLANS, PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/advertisers.module.css';
 
@@ -21,7 +22,7 @@ export default function AdvertiserBenefits() {
     <section className="section-padding" id="advertisers">
       <div className="container">
         <SectionHeader
-          label="For Advertisers"
+          label="広告主の方へ"
           title="教室という、他にないメディアが<br>選ばれる4つの理由"
           labelColor="var(--accent-text)"
         />
@@ -74,7 +75,7 @@ export default function AdvertiserBenefits() {
               <ul className={styles.pricingFeatures}>
                 {plan.features.map((f, j) => (
                   <li key={j} className={styles.featureItem}>
-                    <span className={styles.check}>✔</span> {f}
+                    <span className={styles.check}><CheckIcon size={16} /></span> {f}
                   </li>
                 ))}
               </ul>
