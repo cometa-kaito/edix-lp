@@ -231,7 +231,12 @@ export const PARTNER_COMPANIES: PartnerCompany[] = [
   { name: 'アピ株式会社' },
   { name: 'ギフ加藤製作所' },
   { name: '株式会社シーテック' },
-  { name: 'トーカイテック株式会社' },
+  {
+    name: 'トーカイテック株式会社',
+    logoSrc: '/partners/tokaitech.png',
+    logoWidth: 262,
+    logoHeight: 40,
+  },
   { name: '京三エレコス株式会社' },
 ];
 
