@@ -19,22 +19,16 @@
 
 .group {
   display: flex;
-  align-items: stretch;
-  gap: var(--space-md);
-  padding-right: var(--space-md);
+  align-items: center;
+  gap: var(--space-2xl);
+  padding-right: var(--space-2xl);
 }
 
 .item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 220px;
-  min-height: 72px;
-  padding: var(--space-sm) var(--space-lg);
-  background: var(--white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xs);
+  min-height: 48px;
 }
 
 .name {
@@ -69,10 +63,12 @@
 }
 
 @media (max-width: 768px) {
+  .group {
+    gap: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
   .item {
-    min-width: 180px;
-    min-height: 60px;
-    padding: var(--space-xs) var(--space-md);
+    min-height: 40px;
   }
   .name {
     font-size: var(--font-base);

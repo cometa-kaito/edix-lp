@@ -31,7 +31,7 @@ function LogoGroup({ dup }: { dup?: boolean }) {
 
 export default function Partners() {
   return (
-    <section className="section-padding bg-alt" id="partners">
+    <section className="section-padding" id="partners">
       <div className="container">
         <SectionHeader
           label="Partners"
