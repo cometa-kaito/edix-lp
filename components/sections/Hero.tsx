@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import FadeIn from '@/components/ui/FadeIn';
 import LiveSignage from '@/components/ui/LiveSignage';
+import PartnerLogoRow from '@/components/ui/PartnerLogoRow';
 import { ShieldCheckIcon, CheckCircleIcon } from '@/components/ui/Icon';
 import { PORTAL_APPLY_URL, PARTNER_COMPANIES } from '@/lib/constants';
 import styles from '@/styles/sections/hero.module.css';
@@ -79,38 +79,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
       {showPartnersBand && (
         <div className={styles.partnersBand}>
           <span className={styles.partnersLabel}>取引先企業</span>
-          <ul className={styles.partnersLogos}>
-            {PARTNER_COMPANIES.map((partner) => {
-              const content = partner.logoSrc ? (
-                <Image
-                  src={partner.logoSrc}
-                  alt={partner.name}
-                  width={partner.logoWidth ?? 160}
-                  height={partner.logoHeight ?? 40}
-                  className={styles.partnerLogo}
-                />
-              ) : (
-                <span className={styles.partnerName}>{partner.name}</span>
-              );
-              return (
-                <li key={partner.name}>
-                  {partner.url ? (
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.partnerLink}
-                      aria-label={`${partner.name}のサイトを開く（新しいタブ）`}
-                    >
-                      {content}
-                    </a>
-                  ) : (
-                    content
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+          <PartnerLogoRow companies={PARTNER_COMPANIES} />
         </div>
       )}
       <div className={styles.heroInner}>

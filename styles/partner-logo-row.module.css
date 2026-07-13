@@ -1,0 +1,100 @@
+/* 取引先ロゴ行。収まる間は中央静止、溢れたら自動でマーキー（横スクロール）に切替。
+   切替は JS が実測(コンテンツ幅 > 表示幅)で判定＝画面幅・社数どちらの変化にも追従。 */
+.viewport {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+/* 収まるとき: 中央寄せで静止 */
+.isStatic .track {
+  margin: 0 auto;
+}
+
+/* 溢れたとき: 継ぎ目なくループ（同一リスト2枚を -50% で送る） */
+.isMarquee .track {
+  animation: partnerScroll linear infinite;
+}
+.isMarquee:hover .track {
+  animation-play-state: paused;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* 末尾 gap。translateX(-50%) と一致させ継ぎ目を消す */
+.isMarquee .list {
+  padding-right: 40px;
+}
+
+.item {
+  display: inline-flex;
+}
+
+.logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.name {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--duration-base) ease;
+}
+.link:hover {
+  opacity: 0.72;
+}
+.link:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+@keyframes partnerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .list {
+    gap: 24px;
+  }
+  .isMarquee .list {
+    padding-right: 24px;
+  }
+  .logo {
+    height: 28px;
+  }
+}
+
+/* モーション抑制時: 自動スクロールせず、横スクロール可能な1列にフォールバック */
+@media (prefers-reduced-motion: reduce) {
+  .isMarquee .track {
+    animation: none;
+  }
+  .isMarquee {
+    overflow-x: auto;
+  }
+  .isMarquee .dup {
+    display: none;
+  }
+}

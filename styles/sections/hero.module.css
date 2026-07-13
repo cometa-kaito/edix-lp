@@ -4,15 +4,16 @@
   background: var(--bg-warm);
 }
 
-/* ヒーロー最上部の取引先ロゴ帯（受賞/運用バッジの置き換え）。ファーストビュー内に確実表示 */
+/* ヒーロー最上部の取引先ロゴ帯（受賞/運用バッジの置き換え）。ファーストビュー内に確実表示。
+   ラベルを中央上に置き、ロゴ行(PartnerLogoRow)は収まれば中央静止／溢れれば自動マーキー */
 .partnersBand {
   max-width: var(--max-w);
   margin: 0 auto 28px;
   padding: 0 32px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px 24px;
+  gap: 8px;
 }
 
 .partnersLabel {
@@ -21,45 +22,6 @@
   letter-spacing: 0.12em;
   color: var(--text-sub);
   white-space: nowrap;
-}
-
-.partnersLogos {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 32px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.partnerLogo {
-  width: auto;
-  height: 34px;
-  object-fit: contain;
-}
-
-.partnerName {
-  font-size: var(--font-base);
-  font-weight: 700;
-  color: var(--text-sub);
-  white-space: nowrap;
-}
-
-.partnerLink {
-  display: inline-flex;
-  align-items: center;
-  border-radius: var(--radius-sm);
-  transition: opacity var(--duration-base) ease;
-}
-
-.partnerLink:hover {
-  opacity: 0.72;
-}
-
-.partnerLink:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 4px;
 }
 
 .heroInner {
@@ -233,19 +195,8 @@
   }
 
   .partnersBand {
-    justify-content: center;
     padding: 0 var(--space-md);
     margin-bottom: 20px;
-    gap: 8px 16px;
-  }
-
-  .partnersLogos {
-    justify-content: center;
-    gap: 12px 24px;
-  }
-
-  .partnerLogo {
-    height: 28px;
   }
 
   .heroInner {
