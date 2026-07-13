@@ -1,0 +1,57 @@
+
+> digi-plus-lp@0.1.0 build
+> next build
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\20051\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\20051\Desktop\app\kimiteras-lp\package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.5s
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/23) ...
+  Generating static pages using 11 workers (5/23) 
+  Generating static pages using 11 workers (11/23) 
+  Generating static pages using 11 workers (17/23) 
+✓ Generating static pages using 11 workers (23/23) in 1103.9ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/application
+├ ƒ /api/contact
+├ ƒ /api/sensor-stats
+├ ƒ /api/switchbot-webhook
+├ ƒ /api/tv/config
+├ ƒ /contact
+├ ○ /faq
+├ ○ /for-advertisers
+├ ○ /for-advertisers/guide
+├ ○ /for-advertisers/guide/case-a
+├ ○ /for-advertisers/guide/case-b
+├ ○ /for-advertisers/guide/case-c
+├ ○ /for-advertisers/guide/extras
+├ ○ /for-advertisers/guide/photo
+├ ○ /for-advertisers/guide/submit
+├ ○ /for-schools
+├ ○ /icon.png
+├ ○ /privacy
+├ ○ /robots.txt
+├ ƒ /sensors
+├ ○ /sitemap.xml
+├ ƒ /thanks
+└ ○ /tokutei
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
