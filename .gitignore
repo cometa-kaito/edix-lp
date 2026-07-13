@@ -51,3 +51,7 @@ scripts/__pycache__/
 next-env.d.ts
 
 .vercel
+
+# build/lint 出力（コミットしない）
+build.log
+lint.log
