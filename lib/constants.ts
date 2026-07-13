@@ -236,6 +236,20 @@ export const PARTNER_COMPANIES: PartnerCompany[] = [
     logoHeight: 40,
     url: 'https://www.tokai-tech.net/',
   },
+  {
+    name: '株式会社シーテック',
+    logoSrc: '/partners/ctech.png',
+    logoWidth: 86,
+    logoHeight: 40,
+    url: 'https://www.ctechcorp.co.jp/',
+  },
+  {
+    name: '株式会社ギフ加藤製作所',
+    logoSrc: '/partners/kgk.png',
+    logoWidth: 181,
+    logoHeight: 40,
+    url: 'https://www.kgk.jp/',
+  },
 ];
 
 // ===== External URLs =====
