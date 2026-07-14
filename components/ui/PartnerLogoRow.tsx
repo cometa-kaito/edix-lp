@@ -48,11 +48,14 @@ export default function PartnerLogoRow({ companies }: PartnerLogoRowProps) {
     const viewport = viewportRef.current;
     const list = listRef.current;
     if (!viewport || !list) return;
+    let cancelled = false;
 
     const evaluate = () => {
-      // list は先頭コピー。padding-right(末尾gap)を除いた実コンテンツ幅で判定
+      if (cancelled) return;
+      // list は先頭コピー。実コンテンツ幅 > 表示幅 なら溢れ＝マーキー
       const contentWidth = list.scrollWidth;
       const available = viewport.clientWidth;
+      if (available === 0) return; // レイアウト未確定時は判定しない
       const overflowing = contentWidth > available + 1;
       setMarquee((prev) => (prev === overflowing ? prev : overflowing));
       if (overflowing) {
@@ -62,18 +65,22 @@ export default function PartnerLogoRow({ companies }: PartnerLogoRowProps) {
     };
 
     evaluate();
-    // レイアウト確定直後にもう一度（フォント/画像リフローの取りこぼし防止）
+    // レイアウト/フォント/画像の確定は非同期。RO が届かない環境でも正しく測り直せるよう多重に再評価
     const raf = requestAnimationFrame(evaluate);
+    const timers = [150, 500, 1200].map((ms) => setTimeout(evaluate, ms));
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(evaluate).catch(() => {});
+    }
     const ro = new ResizeObserver(evaluate);
     ro.observe(viewport);
     ro.observe(list);
-    // RO が届かない環境向けフォールバック（画面幅変化に確実に追従）
     window.addEventListener('resize', evaluate);
-    // ロゴ画像の読み込み完了で幅が確定するケースに追従
     const imgs = Array.from(viewport.querySelectorAll('img'));
     imgs.forEach((img) => img.addEventListener('load', evaluate));
     return () => {
+      cancelled = true;
       cancelAnimationFrame(raf);
+      timers.forEach(clearTimeout);
       ro.disconnect();
       window.removeEventListener('resize', evaluate);
       imgs.forEach((img) => img.removeEventListener('load', evaluate));

@@ -250,6 +250,13 @@ export const PARTNER_COMPANIES: PartnerCompany[] = [
     logoHeight: 40,
     url: 'https://www.kgk.jp/',
   },
+  {
+    name: 'USJC',
+    logoSrc: '/partners/usjc.png',
+    logoWidth: 199,
+    logoHeight: 40,
+    url: 'https://www.usjpc.com/',
+  },
 ];
 
 // ===== External URLs =====
