@@ -257,6 +257,11 @@ export const PARTNER_COMPANIES: PartnerCompany[] = [
     logoHeight: 40,
     url: 'https://www.usjpc.com/',
   },
+  // 京三エレコスはロゴ掲載不可・社名テキストのみ可（2026-07-18 先方回答）
+  {
+    name: '京三エレコス株式会社',
+    url: 'https://www.kyosan-elcs.co.jp/',
+  },
 ];
 
 // ===== External URLs =====
