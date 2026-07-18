@@ -48,8 +48,9 @@
   object-fit: contain;
 }
 
+/* ロゴ(高さ34px)の文字部分と光学的に釣り合う大きさに */
 .name {
-  font-size: var(--font-base);
+  font-size: var(--font-xl);
   font-weight: 700;
   color: var(--text-sub);
   white-space: nowrap;
@@ -83,6 +84,9 @@
   }
   .logo {
     height: 28px;
+  }
+  .name {
+    font-size: var(--font-lg);
   }
 }
 
