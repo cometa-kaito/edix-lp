@@ -24,7 +24,6 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     home: {
       badges: [
         { text: 'DigiTechQuest 2025 最優秀賞受賞', gold: true },
-        { text: '岐南工業高校で運用中' },
       ],
       title: `校務DX × 広告で、<br>学校のデジタル化を<br><span class="${highlightClass}">無料で実現</span>`,
       sub: '通知アプリでは届かない情報を、教室の全員に届ける。広告モデルで学校の費用負担ゼロ。',
