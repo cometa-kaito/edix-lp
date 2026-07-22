@@ -36,8 +36,11 @@ function LogoItem({ partner }: { partner: PartnerCompany }) {
   );
 }
 
-// 取引先ロゴを中央に静止表示し、表示幅に収まらなくなったら自動でマーキー化する。
-// しきい値は「実測したコンテンツ幅 > 表示幅」。ResizeObserver で画面幅変化にも追従。
+// 取引先ロゴを中央に静止表示。1 行に収まらなくなったら段を増やして（最大 MAX_ROWS 段まで）
+// 全社を見せ、それでも収まらない極端に狭い幅でだけ自動マーキー（横スクロール）へフォールバックする。
+// 判定は実測（各社の実寸から flex-wrap の折返しを再現して必要段数を算出）。ResizeObserver で画面幅変化にも追従。
+const MAX_ROWS = 3;
+
 export default function PartnerLogoRow({ companies }: PartnerLogoRowProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
@@ -52,15 +55,35 @@ export default function PartnerLogoRow({ companies }: PartnerLogoRowProps) {
 
     const evaluate = () => {
       if (cancelled) return;
-      // list は先頭コピー。実コンテンツ幅 > 表示幅 なら溢れ＝マーキー
-      const contentWidth = list.scrollWidth;
       const available = viewport.clientWidth;
       if (available === 0) return; // レイアウト未確定時は判定しない
-      const overflowing = contentWidth > available + 1;
+      const items = Array.from(list.children) as HTMLElement[];
+      if (items.length === 0) return;
+      const colGap = parseFloat(getComputedStyle(list).columnGap) || 0;
+      // flex-wrap の貪欲な折返しを各社の実寸から再現し、必要段数を数える。
+      // 折返し／マーキーどちらの状態でも item は自然幅なので、状態に依存せず安定して数えられる。
+      let rows = 1;
+      let rowWidth = 0;
+      let itemsWidth = 0;
+      for (const el of items) {
+        const w = el.getBoundingClientRect().width;
+        itemsWidth += w;
+        if (rowWidth === 0) {
+          rowWidth = w;
+        } else if (rowWidth + colGap + w <= available + 0.5) {
+          rowWidth += colGap + w;
+        } else {
+          rows += 1;
+          rowWidth = w;
+        }
+      }
+      // 最大段数を超える極端に狭い幅でだけマーキー化。それ以外は最大 MAX_ROWS 段で全社静止表示
+      const overflowing = rows > MAX_ROWS;
       setMarquee((prev) => (prev === overflowing ? prev : overflowing));
       if (overflowing) {
-        // 一定速度(約40px/秒)になるよう周期をコンテンツ幅から算出
-        setDuration(Math.max(12, Math.round(contentWidth / 40)));
+        // 一定速度(約40px/秒)になるよう周期を 1 行分の幅から算出
+        const singleRowWidth = itemsWidth + colGap * Math.max(0, items.length - 1);
+        setDuration(Math.max(12, Math.round(singleRowWidth / 40)));
       }
     };
 
