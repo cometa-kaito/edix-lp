@@ -1,4 +1,4 @@
-/* 教室サイネージのライブデモ。TVフレーム＋3場面クロスフェード＋ティッカー */
+/* 教室サイネージのライブデモ。TVフレーム＋左=校内連絡(3場面クロスフェード)＋右=広告枠(実配信企業ローテ)＋ティッカー */
 
 .wrap {
   position: relative;
@@ -21,6 +21,29 @@
   aspect-ratio: 16 / 9.6;
 }
 
+/* 盤面 = 左(校内連絡 約2/3) ＋ 右(広告枠 約1/3・実運用の 70:30 を再現) */
+.screenBody {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+/* ===== 左: 校内連絡ゾーン ===== */
+.contentZone {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+}
+
+.sceneStack {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
 .screenHeader {
   display: flex;
   justify-content: space-between;
@@ -32,12 +55,6 @@
   letter-spacing: 0.02em;
   padding: 6px 12px;
   flex-shrink: 0;
-}
-
-.screenBody {
-  position: relative;
-  flex: 1;
-  min-height: 0;
 }
 
 /* ヘッダー（時刻）ごと場面に含めてクロスフェードする（時刻と中身のズレ防止） */
@@ -55,21 +72,13 @@
   opacity: 1;
 }
 
-.sceneGrid {
+.sceneBody {
   flex: 1;
   min-height: 0;
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: 8px;
-  padding: 9px 11px;
-}
-
-.colMain,
-.colSide {
-  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 9px 12px;
 }
 
 .blockLabel {
@@ -93,50 +102,17 @@
   background: var(--marker);
 }
 
-.coexistNote {
-  margin-top: auto;
-  font-size: 9px;
-  color: var(--text-sub);
-}
-
-/* B: 学校の道具 — ミニ時間割 */
-.timetable {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 11px;
-  color: var(--text);
-}
-
-.timetable th,
-.timetable td {
-  border: 1px solid var(--border-light);
-  padding: 3px 6px;
-  text-align: left;
-  font-weight: 600;
-}
-
-.timetable th {
-  width: 22px;
-  text-align: center;
-  color: var(--text-sub);
-  background: var(--bg-alt);
-}
-
-.timetableHot td {
-  background: var(--marker);
-}
-
 /* 行事カウントダウン */
 .countdown {
   display: flex;
   align-items: baseline;
   gap: 4px;
-  padding: 4px 2px 2px;
+  padding: 2px 2px 0;
 }
 
 .countdownNum {
   font-family: var(--font-inter), sans-serif;
-  font-size: 46px;
+  font-size: 42px;
   font-weight: 800;
   line-height: 1;
   color: var(--text);
@@ -157,54 +133,164 @@
   margin-left: 4px;
 }
 
-/* 広告スロット（審査済み・枠の中に同居） */
-.adSlot {
-  background: #FFF1E3;
-  border-radius: 6px;
-  padding: 8px 9px;
+/* ===== 右: 広告枠（実運用サイネージと同じ右 1/3 の縦長ゾーン） ===== */
+.adZone {
+  flex: 0 0 34%;
+  min-width: 0;
+  background: #1B2735;
+  display: flex;
+  flex-direction: column;
   gap: 5px;
+  padding: 7px 7px 6px;
 }
 
-.adBadge {
-  align-self: flex-start;
+.adZoneLabel {
+  flex-shrink: 0;
+  text-align: center;
   font-size: 8px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--accent-text);
-  border: 1px solid rgba(180, 83, 9, 0.35);
-  border-radius: var(--radius-full);
-  padding: 1px 7px;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.adCopy {
-  font-size: 13px;
+.adStack {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+/* 広告クリエイティブ（縦型ポスターを実データで再現）。社名・業種はキミテラス v2 の岐南広告ロスター準拠 */
+.adCard {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  border-radius: 6px;
+  padding: 9px 9px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.adCardActive {
+  opacity: 1;
+}
+
+.adCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.adKicker {
+  font-size: 8px;
   font-weight: 800;
-  color: #4A2A12;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  background: var(--accent-cta);
+  border-radius: var(--radius-full);
+  padding: 2px 7px;
+}
+
+.adChecked {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--accent-text);
+  white-space: nowrap;
+}
+
+.adCardBody {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.adCompany {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.adIndustry {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-sub);
   line-height: 1.45;
 }
 
-.adMeta {
-  font-size: 9px;
-  font-weight: 600;
+.adGroup {
+  align-self: flex-start;
+  font-size: 8px;
+  font-weight: 700;
   color: var(--accent-text);
+  background: #FFF1E3;
+  border-radius: var(--radius-full);
+  padding: 2px 8px;
+}
+
+.adCardFoot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .adQr {
-  margin-top: auto;
-  align-self: flex-end;
   width: 26px;
   height: 26px;
-  border: 2px solid #4A2A12;
+  flex-shrink: 0;
+  border: 2px solid var(--text);
   border-radius: 3px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  font-weight: 700;
-  color: #4A2A12;
+  font-weight: 800;
+  color: var(--text);
 }
 
-/* ティッカー */
+.adCta {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--accent-text);
+  line-height: 1.35;
+}
+
+.adDots {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.adDot,
+.adDotActive {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background var(--duration-base) ease;
+}
+
+.adDotActive {
+  background: var(--accent-biz);
+}
+
+/* ===== ティッカー（左ゾーン下部） ===== */
 .ticker {
   flex-shrink: 0;
   background: var(--bg-tertiary);
@@ -294,6 +380,20 @@
   50% { opacity: 0.45; transform: scale(0.8); }
 }
 
+@media (max-width: 640px) {
+  .adCompany {
+    font-size: 12px;
+  }
+
+  .adIndustry {
+    font-size: 9px;
+  }
+
+  .countdownNum {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 480px) {
   .chip {
     font-size: 11px;
@@ -304,27 +404,23 @@
     display: none;
   }
 
-  .countdownNum {
-    font-size: 32px;
-  }
-
   /* 最小幅でのクリップ防止に画面内の文字を一段縮める */
   .noticeCard {
     font-size: 11px;
     padding: 5px 8px;
   }
 
-  .timetable {
-    font-size: 10px;
-  }
-
-  .adCopy {
-    font-size: 12px;
-  }
-
   .screenHeader {
     font-size: 11px;
     padding: 5px 10px;
+  }
+
+  .adCard {
+    padding: 7px 7px 6px;
+  }
+
+  .adCompany {
+    font-size: 11px;
   }
 }
 
@@ -335,6 +431,10 @@
   }
 
   .scene {
+    transition: none;
+  }
+
+  .adCard {
     transition: none;
   }
 
