@@ -23,7 +23,6 @@ const KIMITERAS_PROVIDES = [
   '壁掛け or スタンド（設置方法は選択可）',
   '電気工事',
   '管理画面・運用サポート',
-  '教育委員会向け説明資料・ガイドライン',
 ];
 
 export default function SchoolBenefits() {
