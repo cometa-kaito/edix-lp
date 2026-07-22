@@ -201,15 +201,16 @@
 
   .heroInner {
     flex-direction: column;
-    gap: 32px;
+    gap: 36px;
   }
 
+  /* モバイルは見出し→サブ→CTA→盤面デモの順（メッセージ先行）。
+     盤面は LiveSignage のスケール縮小に任せて幅いっぱい使う */
   .heroImage {
     flex: none;
     width: 100%;
-    max-width: 400px;
+    max-width: 430px;
     margin: 0 auto;
-    order: -1;
   }
 
   .heroContent {
@@ -246,17 +247,13 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: calc(var(--header-h) + 8px);
-    padding-bottom: 24px;
+    padding-top: calc(var(--header-h) + 12px);
+    padding-bottom: 28px;
   }
 
   .heroInner {
-    gap: 24px;
+    gap: 28px;
     padding: 0 var(--space-sm);
-  }
-
-  .heroImage {
-    max-width: 320px;
   }
 
   .title {

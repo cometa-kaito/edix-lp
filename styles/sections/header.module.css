@@ -132,22 +132,43 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile nav */
+/* Mobile nav（ソリッド白＋下層をオーバーレイで暗くし、メニューと本文の階層を明確にする） */
+/* 注意: header の backdrop-filter が fixed 子要素の containing block になるため、
+   bottom:0 は効かない。高さは 100dvh 明示で全面を覆う */
+.mobileNavOverlay {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(15, 23, 42, 0.4);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobileNavOverlayActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .mobileNav {
   position: fixed;
   top: var(--header-h);
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px) saturate(180%);
+  background: var(--white);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 16px 24px 24px;
+  padding: 12px 20px 20px;
   z-index: 999;
   opacity: 0;
   transform: translateY(-12px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   border-bottom: 1px solid var(--border-light);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .mobileNavActive {

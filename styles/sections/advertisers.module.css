@@ -342,9 +342,48 @@
     padding: 24px 12px 20px;
   }
 
+  /* モバイルは縦積みカードをやめ「番号チップ＋テキスト」の行形式で密度を上げる（矢印は番号が兼ねる）。
+     column 方向では flex-basis:200px が高さに効いて空白カード化するため basis も打ち消す */
+  .bizFlow :global(.flow-arrow) {
+    display: none;
+  }
+
   .bizFlow {
     flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .bizFlowStep {
+    flex: 0 0 auto;
+    display: flex;
     align-items: center;
+    text-align: left;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+
+  .bizFlowNum {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-base);
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .bizFlowText {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bizFlowTitle {
+    margin-bottom: 2px;
+  }
+
+  .bizFlowDesc {
+    font-size: 13px;
   }
 
   .pricingCard {

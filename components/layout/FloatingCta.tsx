@@ -13,13 +13,15 @@ export default function FloatingCta() {
         setVisible(false);
         return;
       }
-      const contactSection = document.getElementById('contact') || document.getElementById('contact-form');
-      if (contactSection) {
-        const contactTop = contactSection.getBoundingClientRect().top;
-        setVisible(window.scrollY > 600 && contactTop > window.innerHeight);
-      } else {
-        setVisible(window.scrollY > 600);
-      }
+      // コンバージョン面（問い合わせ/申込フォーム）が画面内にある間は隠す（重ね掛け防止）
+      const targets = ['contact', 'contact-form', 'apply']
+        .map((id) => document.getElementById(id))
+        .filter((el): el is HTMLElement => el !== null);
+      const conversionInView = targets.some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight && r.bottom > 0;
+      });
+      setVisible(window.scrollY > 600 && !conversionInView);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -28,7 +30,7 @@ export default function FloatingCta() {
 
   return (
     <div className={`${styles.floatingCta} ${visible ? styles.visible : ''}`}>
-      <Link href="/contact" className="btn btn-primary" style={{ width: '100%', fontSize: 15 }}>
+      <Link href="/contact" className="btn btn-primary">
         お問い合わせ
       </Link>
     </div>

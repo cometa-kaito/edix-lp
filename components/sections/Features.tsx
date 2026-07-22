@@ -45,8 +45,10 @@ export default function Features() {
               {i > 0 && <span className="flow-arrow">→</span>}
               <div className={styles.flowStep}>
                 <div className={styles.flowStepNum}>{step.num}</div>
-                <h4 className={styles.flowStepTitle}>{step.title}</h4>
-                <p className={styles.flowStepDesc}>{step.description}</p>
+                <div className={styles.flowStepText}>
+                  <h4 className={styles.flowStepTitle}>{step.title}</h4>
+                  <p className={styles.flowStepDesc}>{step.description}</p>
+                </div>
               </div>
             </span>
           ))}

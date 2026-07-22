@@ -48,8 +48,10 @@ export default function AdvertiserBenefits() {
                 {i > 0 && <span className="flow-arrow">→</span>}
                 <div className={styles.bizFlowStep}>
                   <div className={styles.bizFlowNum}>{step.num}</div>
-                  <h4 className={styles.bizFlowTitle}>{step.title}</h4>
-                  <p className={styles.bizFlowDesc}>{step.description}</p>
+                  <div className={styles.bizFlowText}>
+                    <h4 className={styles.bizFlowTitle}>{step.title}</h4>
+                    <p className={styles.bizFlowDesc}>{step.description}</p>
+                  </div>
                 </div>
               </span>
             ))}

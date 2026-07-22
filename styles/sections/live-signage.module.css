@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+/* 設計幅(DESIGN_W)未満のコンテナでは JS が width + transform: scale を与える。
+   中身はリフローさせず縮小コピーで見せる（実機盤面の縮小表示と同じ思想） */
+.scaler {
+  transform-origin: top left;
+}
+
 .frame {
   background: #22303F;
   border-radius: var(--radius-lg);
@@ -183,7 +189,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4px;
+  gap: 2px 4px;
+  flex-wrap: wrap;
   flex-shrink: 0;
 }
 
@@ -195,6 +202,7 @@
   background: var(--accent-cta);
   border-radius: var(--radius-full);
   padding: 2px 7px;
+  white-space: nowrap;
 }
 
 .adChecked {
@@ -380,47 +388,12 @@
   50% { opacity: 0.45; transform: scale(0.8); }
 }
 
-@media (max-width: 640px) {
-  .adCompany {
-    font-size: 12px;
-  }
-
-  .adIndustry {
-    font-size: 9px;
-  }
-
-  .countdownNum {
-    font-size: 32px;
-  }
-}
-
+/* 盤面内の文字は設計幅で固定し、狭幅は .scaler の縮小で対応する（個別縮小はしない）。
+   viewport 依存で残すのは盤面外のチップだけ */
 @media (max-width: 480px) {
   .chip {
     font-size: 11px;
     padding: 5px 11px;
-  }
-
-  .chipSpeed {
-    display: none;
-  }
-
-  /* 最小幅でのクリップ防止に画面内の文字を一段縮める */
-  .noticeCard {
-    font-size: 11px;
-    padding: 5px 8px;
-  }
-
-  .screenHeader {
-    font-size: 11px;
-    padding: 5px 10px;
-  }
-
-  .adCard {
-    padding: 7px 7px 6px;
-  }
-
-  .adCompany {
-    font-size: 11px;
   }
 }
 

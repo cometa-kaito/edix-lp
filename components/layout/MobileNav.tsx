@@ -44,6 +44,11 @@ export default function MobileNav() {
         <span className={styles.hamburgerLine} />
         <span className={styles.hamburgerLine} />
       </button>
+      <div
+        className={`${styles.mobileNavOverlay} ${isOpen ? styles.mobileNavOverlayActive : ''}`}
+        onClick={close}
+        aria-hidden="true"
+      />
       <nav className={`${styles.mobileNav} ${isOpen ? styles.mobileNavActive : ''}`}>
         {NAV_LINKS.map((link) => (
           <Link

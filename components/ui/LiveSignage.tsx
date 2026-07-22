@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ShieldCheckIcon } from '@/components/ui/Icon';
 import styles from '@/styles/sections/live-signage.module.css';
 
@@ -11,6 +11,10 @@ interface LiveSignageProps {
 
 const SCENE_MS = 4200;
 const AD_MS = 3400;
+
+/** 盤面の設計幅。これ未満のコンテナでは中身をリフローさせず transform: scale で縮小する
+ *  （狭幅での広告レール文字重なり・ティッカー見切れを構造的に防ぐ。実機モニタの縮小コピーと同じ思想） */
+const DESIGN_W = 430;
 
 /** 実運用サイネージと同じ「右 1/3 の広告枠」に載せる、岐南工業 電子工学科で実際に配信中の地元企業。
  *  出典 = キミテラス v2 の岐南広告ロスター（packages/db seed-ginan-ads / add-usjc）。
@@ -76,6 +80,35 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
   // WCAG 2.2.2: hover/focus 中はローテーションを一時停止できる
   const [paused, setPaused] = useState(false);
 
+  // コンテナが設計幅より狭い時だけ縮小率を計算（広い時は 1 = 従来どおり自然リフロー）
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const scalerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+  const [scaledH, setScaledH] = useState<number | null>(null);
+
+  useEffect(() => {
+    const wrap = wrapRef.current;
+    const scaler = scalerRef.current;
+    if (!wrap || !scaler) return;
+    const update = () => {
+      const w = wrap.clientWidth;
+      if (w >= DESIGN_W || w === 0) {
+        setScale(1);
+        setScaledH(null);
+        return;
+      }
+      const s = w / DESIGN_W;
+      setScale(s);
+      // transform はレイアウト高さに影響しないため、縮小後の実高さを明示する
+      setScaledH(scaler.offsetHeight * s);
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(wrap);
+    ro.observe(scaler);
+    return () => ro.disconnect();
+  }, []);
+
   useEffect(() => {
     if (paused) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -89,14 +122,21 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
 
   return (
     <div
+      ref={wrapRef}
       className={styles.wrap}
       role="img"
       aria-label="教室サイネージの表示イメージ。左側に校内連絡・時間割・行事が切り替わって表示され、右側の枠には岐南工業高校で実際に配信中の地元企業（京三エレコス・シーテック・ギフ加藤製作所・トーカイテック・USJC）の審査済み広告がローテーションで表示されます"
+      style={scaledH != null ? { height: scaledH } : undefined}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
+      <div
+        ref={scalerRef}
+        className={styles.scaler}
+        style={scale < 1 ? { width: DESIGN_W, transform: `scale(${scale})` } : undefined}
+      >
       <div className={styles.frame}>
         <div className={styles.screen}>
           <div className={styles.screenBody}>
@@ -168,6 +208,7 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
             <span key={i} className={i === active ? styles.dotActive : styles.dot} />
           ))}
         </div>
+      </div>
       </div>
       <span className={`${styles.chip} ${styles.chipLive}`}>
         <span className={styles.liveDot} aria-hidden="true" />
