@@ -36,7 +36,7 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     schools: {
       badges: [{ text: '学校関係者の方へ' }],
       title: `先生の負担を減らし、<br>安全で持続可能な<br><span class="${highlightClass}">DXを無料で実現</span>`,
-      sub: 'Google Classroom等では届かない「全員の目に入る連絡」を実現。機材無償・教育委員会対応支援付き。',
+      sub: 'Google Classroom等では届かない「全員の目に入る連絡」を実現。機材無償。',
       buttons: [
         { href: '#benefits', label: 'メリットを見る', variant: 'primary' },
         { href: '/contact?category=学校関係者', label: '導入のご相談', variant: 'secondary' },

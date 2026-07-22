@@ -21,7 +21,7 @@ export default function SectionHeader({ label, title, subtitle, labelColor, titl
         style={titleColor ? { color: titleColor } : undefined}
         dangerouslySetInnerHTML={{ __html: title }}
       />
-      {subtitle && <p className="section-subtitle">{subtitle}</p>}
+      {subtitle && <p className="section-subtitle" dangerouslySetInnerHTML={{ __html: subtitle }} />}
     </FadeIn>
   );
 }
