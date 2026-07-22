@@ -47,7 +47,7 @@ export default function ApplicationSection() {
                 marginBottom: 'var(--space-md)',
               }}
             >
-              募集中の枠・価格・入稿規格を確認しながら、1分でお申し込みが完了します。
+              空き枠・価格・入稿規格を確認しながら、1分でお申し込みが完了します。
             </p>
             <a href={PORTAL_APPLY_URL} target="_blank" rel="noopener" className="btn btn-accent">
               空き枠を確認して申し込む →

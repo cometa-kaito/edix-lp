@@ -105,7 +105,7 @@ export default function AdvertiserBenefits() {
         </FadeIn>
         <FadeIn className={styles.pricingNote}>
           <p>生徒が毎日長時間を過ごす教室という、企業にとって他にない貴重な情報発信の場。属性100%特定済みのため「無駄打ちゼロ」。</p>
-          <p>※ 募集枠には限りがあります &ensp; ※ 料金の詳細はお問い合わせください</p>
+          <p>※ 料金の詳細はお問い合わせください</p>
         </FadeIn>
 
         {/* Flow */}

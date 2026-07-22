@@ -117,7 +117,7 @@ export default function GuideTopPage() {
         <p>応募・見学・面談・面接などのアクションは、すべて <strong>学校（進路指導の先生）を通して</strong> 行われます。企業から生徒へ、サイネージ上で直接呼びかけることはできません。</p>
 
         <h3>② 7月1日の求人解禁</h3>
-        <p>毎年 <strong>7月1日</strong> までは、リクルート活動そのものが解禁されません。「採用」「募集」「応募」「面接」「説明会」「会社見学」といった <strong>リクルートを直接連想させる言葉</strong> は、配信期間中（6〜9月）すべてを通じて使用できません。</p>
+        <p>毎年 <strong>7月1日</strong> までは、リクルート活動そのものが解禁されません。「採用」「募集」「応募」「面接」「説明会」「会社見学」といった <strong>リクルートを直接連想させる言葉</strong> は、配信期間中すべてを通じて使用できません。</p>
 
         <h3>③ 「まずは○○から」型のアクション誘導はNG</h3>
         <p>「まずは工場見学から」「お気軽にお越しください」「お問い合わせは○○まで」など、生徒からのアクションを促す表現は使えません。読み終わったときに生徒が <strong>「いい会社だな、覚えておこう」</strong> と思える、そこまでがゴールです。</p>
@@ -291,23 +291,23 @@ export default function GuideTopPage() {
       {/* 価格・スケジュール */}
       <div className={`${styles.card} ${styles.priceCard}`}>
         <h2>料金・スケジュール</h2>
-        <p>2026年度は、岐南工業高校での3か月配信をご利用いただけます。募集枠には限りがあり、<strong>料金はお問い合わせ</strong>ください。</p>
+        <p>岐南工業高校・電子工学科の3クラスで運用中です。<strong>料金・空き枠はお問い合わせ</strong>ください。</p>
 
         <div className={styles.priceGrid}>
           <div className={styles.priceItem}>
             <div className={styles.priceItemLabel}>料金</div>
             <div className={styles.priceItemValue} style={{ fontSize: '0.55em' }}>お問い合わせ</div>
-            <div className={styles.priceItemUnit}>3か月総額（税抜）</div>
+            <div className={styles.priceItemUnit}>個別見積り（税抜）</div>
           </div>
           <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>配信期間</div>
-            <div className={styles.priceItemValue}>3<span style={{ fontSize: '0.6em' }}>か月</span></div>
-            <div className={styles.priceItemUnit}>2026/6〜9</div>
+            <div className={styles.priceItemLabel}>掲出時間</div>
+            <div className={styles.priceItemValue}>120<span style={{ fontSize: '0.6em' }}>分/日</span></div>
+            <div className={styles.priceItemUnit}>教室常設・毎日配信</div>
           </div>
           <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>枠数</div>
-            <div className={styles.priceItemValue}>20<span style={{ fontSize: '0.6em' }}>社</span></div>
-            <div className={styles.priceItemUnit}>募集枠</div>
+            <div className={styles.priceItemLabel}>到達</div>
+            <div className={styles.priceItemValue}>30<span style={{ fontSize: '0.6em' }}>名/クラス</span></div>
+            <div className={styles.priceItemUnit}>電子工学科 在籍</div>
           </div>
           <div className={styles.priceItem}>
             <div className={styles.priceItemLabel}>配信先</div>
@@ -320,26 +320,22 @@ export default function GuideTopPage() {
         <table className={styles.table}>
           <tbody>
             <tr>
-              <th style={{ width: '180px' }}>申込期間</th>
-              <td>〜 2026年5月18日（月）</td>
+              <th style={{ width: '180px' }}>お申込み</th>
+              <td>随時受付中です。空き枠状況はお問い合わせください。</td>
             </tr>
             <tr>
               <th>原稿・写真の入稿</th>
-              <td>2026年5月25日（月）を目安としています。<br /><strong>入稿期限については柔軟に対応いたしますので、間に合いそうにない場合はお気軽にご相談ください。</strong></td>
+              <td>お申込み後にご入稿ください。<br /><strong>入稿期限については柔軟に対応いたしますので、間に合いそうにない場合はお気軽にご相談ください。</strong></td>
             </tr>
             <tr>
               <th>配信開始</th>
-              <td>2026年6月1日（月）</td>
-            </tr>
-            <tr>
-              <th>配信終了</th>
-              <td>2026年9月30日（水）</td>
+              <td>入稿・審査の完了後、最短2週間で配信を開始します。</td>
             </tr>
           </tbody>
         </table>
 
         <div className={styles.note}>
-          今期の配信終了後の本格運用では、別途ティア制プラン（スタンダード／プレミアム／エンタープライズ）をご用意する予定です。
+          掲載規模に応じて、ティア制プラン（スタンダード／プレミアム／エンタープライズ）もご用意しています。詳しくはお問い合わせください。
         </div>
       </div>
 
