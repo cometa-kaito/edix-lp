@@ -260,6 +260,7 @@
 .bizFlowStep {
   text-align: center;
   flex: 0 0 200px;
+  align-self: stretch;
   padding: 28px 20px;
   background: var(--white);
   border-radius: var(--radius-lg);
