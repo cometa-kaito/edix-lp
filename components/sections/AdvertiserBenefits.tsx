@@ -1,13 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
-import CountUp from '@/components/ui/CountUp';
 import TiltCard from '@/components/ui/TiltCard';
 import Phrase from '@/components/ui/Phrase';
-import { CheckIcon } from '@/components/ui/Icon';
-import { AD_SPECS, AD_FLOW_STEPS, PRICING_PLANS, PORTAL_APPLY_URL } from '@/lib/constants';
+import { AD_FLOW_STEPS, PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/advertisers.module.css';
 
 const MERITS = [
@@ -37,72 +34,6 @@ export default function AdvertiserBenefits() {
           ))}
         </FadeIn>
 
-        {/* Specs — 媒体データ（放送局の数字盤のように、墨色の大数字で見せる） */}
-        <FadeIn className={styles.specBoard}>
-          <div className={styles.specHead}>
-            <span className={styles.specHeadTitle}>媒体データ</span>
-            <span className={styles.specHeadNote}>岐阜県立岐南工業高等学校・運用中</span>
-          </div>
-          <div className={styles.specGrid}>
-            {AD_SPECS.map((s, i) => (
-              <div key={i} className={styles.specItem}>
-                <div className={styles.specNum}>
-                  <CountUp target={Number(s.num)} duration={2} />
-                  <span className={styles.specUnit}>{s.unit}</span>
-                </div>
-                <div className={styles.specLabel}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-
-        {/* Pricing */}
-        <FadeIn className="text-center" id="pricing">
-          <h3 className={styles.pricingHeading}>広告掲載プラン</h3>
-        </FadeIn>
-        <FadeIn className={styles.pricingCards}>
-          {PRICING_PLANS.map((plan, i) => (
-            <TiltCard key={i} className={`${styles.pricingCard} ${plan.recommended ? styles.recommended : ''}`}>
-              <div className={styles.pricingLabel}>{plan.label}</div>
-              <div className={styles.pricingName}>{plan.name}</div>
-              <div className={styles.pricingPrice}>
-                {plan.oldPrice && (
-                  <><span className={styles.oldPriceText}>{plan.oldPrice}</span><br /></>
-                )}
-                <span className={styles.amount}>{plan.price}</span>
-                <span className={styles.unit}>{plan.unit}</span>
-              </div>
-              <ul className={styles.pricingFeatures}>
-                {plan.features.map((f, j) => (
-                  <li key={j} className={styles.featureItem}>
-                    <span className={styles.check}><CheckIcon size={16} /></span> {f}
-                  </li>
-                ))}
-              </ul>
-              {plan.conditions && (
-                <div className={styles.conditions}>
-                  <h4 className={styles.conditionsTitle}>適用条件</h4>
-                  <div className={styles.condBadges}>
-                    {plan.conditions.map((c, j) => (
-                      <span key={j} className={styles.condBadge}>{c}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              <div className="text-center" style={{ marginTop: 'auto' }}>
-                {plan.ctaHref.startsWith('http') ? (
-                  <a href={plan.ctaHref} target="_blank" rel="noopener" className={`btn btn-${plan.ctaVariant}`}>
-                    {plan.ctaText}
-                  </a>
-                ) : (
-                  <Link href={plan.ctaHref} className={`btn btn-${plan.ctaVariant}`}>
-                    {plan.ctaText}
-                  </Link>
-                )}
-              </div>
-            </TiltCard>
-          ))}
-        </FadeIn>
         <FadeIn className={styles.pricingNote}>
           <p>生徒が毎日長時間を過ごす教室という、企業にとって他にない貴重な情報発信の場。属性100%特定済みのため「無駄打ちゼロ」。</p>
           <p>※ 料金の詳細はお問い合わせください</p>

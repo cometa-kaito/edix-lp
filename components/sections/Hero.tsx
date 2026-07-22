@@ -43,11 +43,8 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       ],
     },
     advertisers: {
-      badges: [
-        { text: '岐南工業高校で運用中', gold: true },
-      ],
       title: `若年層への確実なリーチと<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
-      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。岐南工業高校・電子工学科の3クラスで運用中です。料金・空き枠はお問い合わせください。',
+      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。料金・空き枠はお問い合わせください。',
       buttons: [
         { href: PORTAL_APPLY_URL, label: '空き枠を見て申し込む →', variant: 'accent' },
       ],

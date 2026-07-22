@@ -291,30 +291,7 @@ export default function GuideTopPage() {
       {/* 価格・スケジュール */}
       <div className={`${styles.card} ${styles.priceCard}`}>
         <h2>料金・スケジュール</h2>
-        <p>岐南工業高校・電子工学科の3クラスで運用中です。<strong>料金・空き枠はお問い合わせ</strong>ください。</p>
-
-        <div className={styles.priceGrid}>
-          <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>料金</div>
-            <div className={styles.priceItemValue} style={{ fontSize: '0.55em' }}>お問い合わせ</div>
-            <div className={styles.priceItemUnit}>個別見積り（税抜）</div>
-          </div>
-          <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>掲出時間</div>
-            <div className={styles.priceItemValue}>120<span style={{ fontSize: '0.6em' }}>分/日</span></div>
-            <div className={styles.priceItemUnit}>教室常設・毎日配信</div>
-          </div>
-          <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>到達</div>
-            <div className={styles.priceItemValue}>30<span style={{ fontSize: '0.6em' }}>名/クラス</span></div>
-            <div className={styles.priceItemUnit}>電子工学科 在籍</div>
-          </div>
-          <div className={styles.priceItem}>
-            <div className={styles.priceItemLabel}>配信先</div>
-            <div className={styles.priceItemValue}>3<span style={{ fontSize: '0.6em' }}>クラス</span></div>
-            <div className={styles.priceItemUnit}>岐南工業 電子工学科</div>
-          </div>
-        </div>
+        <p><strong>料金・空き枠はお問い合わせ</strong>ください。掲載内容・期間に応じて個別にお見積もりいたします。</p>
 
         <h3>スケジュール</h3>
         <table className={styles.table}>
