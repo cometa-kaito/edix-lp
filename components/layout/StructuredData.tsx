@@ -4,7 +4,9 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: 'キミテラス',
     description: '校務DX×広告による持続可能な学校デジタル化プラットフォーム',
-    url: '',
+    url: 'https://www.school-signage.net',
+    logo: 'https://www.school-signage.net/logo-full.png',
+    sameAs: ['https://rebounder.jp'],
     founder: {
       '@type': 'Person',
       name: '奥村魁斗',

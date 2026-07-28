@@ -77,8 +77,9 @@ export default function ApplicationForm() {
         <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1 }} aria-hidden="true" />
 
         <div className={styles.formGroup}>
-          <label>会社名 / 団体名<span className={styles.required}>*</span></label>
+          <label htmlFor="app-company">会社名 / 団体名<span className={styles.required}>*</span></label>
           <input
+            id="app-company"
             type="text"
             name="company"
             required
@@ -89,8 +90,9 @@ export default function ApplicationForm() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label>ご担当者名<span className={styles.required}>*</span></label>
+          <label htmlFor="app-name">ご担当者名<span className={styles.required}>*</span></label>
           <input
+            id="app-name"
             type="text"
             name="name"
             required
@@ -101,20 +103,23 @@ export default function ApplicationForm() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label>メールアドレス<span className={styles.required}>*</span></label>
+          <label htmlFor="app-email">メールアドレス<span className={styles.required}>*</span></label>
           <input
+            id="app-email"
             type="email"
             name="email"
             required
             autoComplete="email"
+            spellCheck={false}
             placeholder="example@company.com"
             className={errors.email ? styles.error : ''}
             onChange={() => setErrors((prev) => ({ ...prev, email: false }))}
           />
         </div>
         <div className={styles.formGroup}>
-          <label>広告の目的（任意）</label>
-          <select name="purpose">
+          {/* 「（任意）」表記は全面共通ルールで全廃（必須のみ朱＊・2026-07-24） */}
+          <label htmlFor="app-purpose">広告の目的</label>
+          <select id="app-purpose" name="purpose">
             <option value="">選択してください</option>
             <option value="採用・求人">採用・求人</option>
             <option value="オープンキャンパス案内">オープンキャンパス案内</option>
@@ -124,8 +129,8 @@ export default function ApplicationForm() {
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label>備考（任意）</label>
-          <textarea name="message" placeholder="ご質問やご要望があればお書きください" />
+          <label htmlFor="app-message">備考</label>
+          <textarea id="app-message" name="message" placeholder="ご質問やご要望があればお書きください" />
         </div>
 
         {sendError && (

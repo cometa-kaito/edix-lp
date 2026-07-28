@@ -10,7 +10,7 @@
   padding: 36px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-light);
-  transition: all var(--duration-base) ease;
+  transition: box-shadow var(--duration-base) ease, transform var(--duration-base) ease;
 }
 
 .card:hover {

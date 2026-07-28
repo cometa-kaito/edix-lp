@@ -13,7 +13,7 @@
   box-shadow: var(--shadow-xs);
   border: none;
   border-left: 4px solid var(--primary);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .meritCard:hover {

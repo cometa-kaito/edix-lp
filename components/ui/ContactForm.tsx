@@ -78,8 +78,9 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
         <input type="text" name="_honey" tabIndex={-1} autoComplete="off" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1 }} aria-hidden="true" />
 
         <div className={styles.formGroup}>
-          <label>お名前<span className={styles.required}>*</span></label>
+          <label htmlFor="contact-name">お名前<span className={styles.required}>*</span></label>
           <input
+            id="contact-name"
             type="text"
             name="name"
             required
@@ -90,20 +91,23 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
           />
         </div>
         <div className={styles.formGroup}>
-          <label>メールアドレス<span className={styles.required}>*</span></label>
+          <label htmlFor="contact-email">メールアドレス<span className={styles.required}>*</span></label>
           <input
+            id="contact-email"
             type="email"
             name="email"
             required
             autoComplete="email"
+            spellCheck={false}
             placeholder="example@company.com"
             className={errors.email ? styles.error : ''}
             onChange={() => setErrors((prev) => ({ ...prev, email: false }))}
           />
         </div>
         <div className={styles.formGroup}>
-          <label>ご種別<span className={styles.required}>*</span></label>
+          <label htmlFor="contact-category">ご種別<span className={styles.required}>*</span></label>
           <select
+            id="contact-category"
             name="category"
             required
             value={category}
@@ -120,8 +124,8 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label>お問い合わせ内容</label>
-          <textarea name="message" placeholder="ご質問やご相談内容をお書きください" />
+          <label htmlFor="contact-message">お問い合わせ内容</label>
+          <textarea id="contact-message" name="message" placeholder="ご質問やご相談内容をお書きください" />
         </div>
 
         {sendError && (

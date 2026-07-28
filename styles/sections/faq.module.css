@@ -30,7 +30,7 @@
   box-shadow: var(--shadow-xs);
   overflow: hidden;
   border: 1px solid var(--border-light);
-  transition: all var(--duration-base) ease;
+  transition: box-shadow var(--duration-base) ease;
 }
 
 .item:hover {

@@ -1,6 +1,3 @@
-'use client';
-
-import { useMemo } from 'react';
 import { loadDefaultJapaneseParser } from 'budoux';
 
 const parser = loadDefaultJapaneseParser();
@@ -11,8 +8,11 @@ interface PhraseProps {
   className?: string;
 }
 
+// Server Component（'use client' なし）: BudouX の分かち書きは静的テキストに対する
+// 純関数なのでサーバー側で実行し、辞書＋パーサをクライアント bundle から外す。
+// クライアントコンポーネントから import された場合もそのまま動く（API 不変）。
 export default function Phrase({ children, as: Tag = 'span', className }: PhraseProps) {
-  const segments = useMemo(() => parser.parse(children), [children]);
+  const segments = parser.parse(children);
 
   return (
     <Tag className={className} style={{ wordBreak: 'keep-all', overflowWrap: 'anywhere' }}>
