@@ -1,0 +1,13 @@
+.videoWrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 44px rgba(30, 41, 59, 0.2);
+  background: var(--primary-dusk, #20307c);
+}
