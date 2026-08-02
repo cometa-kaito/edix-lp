@@ -16,7 +16,9 @@ const AD_MS = 3400;
  *  （狭幅での広告レール文字重なり・ティッカー見切れを構造的に防ぐ。実機モニタの縮小コピーと同じ思想） */
 const DESIGN_W = 430;
 
-/** 実運用サイネージと同じ「右 1/3 の広告枠」に載せる、岐南工業 電子工学科で実際に配信中の地元企業。
+/** 実運用サイネージと同じ「右 1/3 の広告枠」に載せる、岐南工業 電子工学科で実際に配信中の企業。
+ *  ⚠ 公開文言（見出し・aria-label 等）では特定校名を出さない＝「岐阜県の工業高校」に統一する
+ *  （PV制作-コンセプト正本-2026-07-28.md §4）。このコメントはデータ出典の明示なので校名を残す。
  *  出典 = キミテラス v2 の岐南広告ロスター（packages/db seed-ginan-ads / add-usjc）。
  *  LP に社名を公開できる取引先 5 社のみ（日本クロージャー=停止中／アピ=非公開 は載せない）。
  *  クリエイティブ画像は掲載許諾が社名テキストに限られるため、実データ（社名・業種）で枠を再現する。 */
@@ -29,7 +31,7 @@ const ADS = [
 ] as const;
 
 /** 教室の一日（朝→昼→放課後）を3場面でローテーションする製品デモ。
- *  校内連絡は表示イメージ（誇大な数値は使わない）。右枠の広告は実配信中の地元企業を再現。 */
+ *  校内連絡は表示イメージ（誇大な数値は使わない）。右枠の広告は実配信中の企業を再現。 */
 const SCENES = [
   {
     time: '8:25 朝のHR',
@@ -125,7 +127,7 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
       ref={wrapRef}
       className={styles.wrap}
       role="img"
-      aria-label="教室サイネージの表示イメージ。左側に校内連絡・時間割・行事が切り替わって表示され、右側の枠には岐南工業高校で実際に配信中の地元企業（京三エレコス・シーテック・ギフ加藤製作所・トーカイテック・USJC）の審査済み広告がローテーションで表示されます"
+      aria-label="教室サイネージの表示イメージ。左側に校内連絡・時間割・行事が切り替わって表示され、右側の枠には岐阜県の工業高校で実際に配信中の企業（京三エレコス・シーテック・ギフ加藤製作所・トーカイテック・USJC）の審査済み広告がローテーションで表示されます"
       style={scaledH != null ? { height: scaledH } : undefined}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -164,7 +166,7 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
               </div>
             </div>
 
-            {/* 右 1/3: 広告枠（実配信中の地元企業をローテーション） */}
+            {/* 右 1/3: 広告枠（実配信中の企業をローテーション） */}
             <aside className={styles.adZone} aria-hidden="true">
               <span className={styles.adZoneLabel}>広告</span>
               <div className={styles.adStack}>
@@ -174,7 +176,7 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
                     className={`${styles.adCard} ${i === adActive ? styles.adCardActive : ''}`}
                   >
                     <div className={styles.adCardTop}>
-                      <span className={styles.adKicker}>地元企業・採用</span>
+                      <span className={styles.adKicker}>採用情報</span>
                       <span className={styles.adChecked}>
                         <ShieldCheckIcon size={11} strokeWidth={2.4} />
                         審査済み

@@ -14,7 +14,7 @@ export default function ForAdvertisersPage() {
   return (
     <>
       <Hero variant="advertisers" />
-      <PvSection />
+      <PvSection variant="advertisers" />
       <AdvertiserBenefits />
       <GuidePromo />
       <ApplicationSection />

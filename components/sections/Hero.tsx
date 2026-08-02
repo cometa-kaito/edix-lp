@@ -25,8 +25,8 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       badges: [
         { text: 'DigiTechQuest 2025 最優秀賞受賞', gold: true },
       ],
-      title: `校務DX × 広告で、<br>学校のデジタル化を<br><span class="${highlightClass}">無料で実現</span>`,
-      sub: '通知アプリでは届かない情報を、教室の全員に届ける。広告モデルで学校の費用負担ゼロ。',
+      title: `校務DX × 広告で、<br>学校のデジタル化を<br><span class="${highlightClass}">費用負担ゼロで実現</span>`,
+      sub: '通知アプリでは届かない情報を、教室の全員に届ける。機材は無償提供、学校のご負担は電気代と通信費のみ。',
       buttons: [
         { href: '/for-schools', label: '学校関係者の方はこちら', variant: 'primary' },
         { href: '/for-advertisers', label: '広告出稿をご検討の方', variant: 'accent' },
@@ -34,8 +34,8 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
     },
     schools: {
       badges: [{ text: '学校関係者の方へ' }],
-      title: `先生の負担を減らし、<br>安全で持続可能な<br><span class="${highlightClass}">DXを無料で実現</span>`,
-      sub: 'Google Classroom等では届かない「全員の目に入る連絡」を実現。機材無償。',
+      title: `先生の負担を減らし、<br>安全で持続可能なDXを<br><span class="${highlightClass}">費用負担ゼロで実現</span>`,
+      sub: 'Google Classroom等では届かない「全員の目に入る連絡」を実現。機材は無償提供、ご負担は電気代と通信費のみ。',
       buttons: [
         { href: '#benefits', label: 'メリットを見る', variant: 'primary' },
         { href: '/contact?category=学校関係者', label: '導入のご相談', variant: 'secondary' },

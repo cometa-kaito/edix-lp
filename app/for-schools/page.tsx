@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { siteMetadata } from '@/lib/metadata';
 import Hero from '@/components/sections/Hero';
 import SchoolBenefits from '@/components/sections/SchoolBenefits';
+import PvSection from '@/components/sections/PvSection';
 import Faq from '@/components/sections/Faq';
 import ContactSection from '@/components/sections/ContactSection';
 
@@ -11,6 +12,8 @@ export default function ForSchoolsPage() {
   return (
     <>
       <Hero variant="schools" />
+      {/* 学校向け(2:21)。Heroのボタンが「メリットを見る」なので、その手前に置くと流れが自然 */}
+      <PvSection variant="schools" />
       <SchoolBenefits />
       <Faq filter={['school']} />
       <ContactSection defaultCategory="学校関係者" />

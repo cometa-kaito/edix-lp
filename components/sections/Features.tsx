@@ -10,7 +10,7 @@ import styles from '@/styles/sections/features.module.css';
 const FEATURES = [
   { Icon: EyeIcon, tone: 'blue', title: <>「見に行く」から<br />「目に入る」へ</>, desc: 'お知らせアプリは、生徒が自分で開かないと気づけません。キミテラスは教室にいるだけで目に入るので、連絡の見落としが減ります。' },
   { Icon: ZapIcon, tone: 'blue', title: <>先生の入力は<br />最短10秒</>, desc: 'スマホの管理画面から最短10秒で入力。プリントの印刷・仕分け・配布にかかっていた時間がなくなります。' },
-  { Icon: GraduationCapIcon, tone: 'warm', title: <>進路の情報が<br />毎日、目に入る</>, desc: '地元企業の採用情報やオープンキャンパスの案内を、教室のモニターで日々届けます。進路を考えるきっかけを増やします。' },
+  { Icon: GraduationCapIcon, tone: 'warm', title: <>進路の情報が<br />毎日、目に入る</>, desc: '企業の採用情報やオープンキャンパスの案内を、教室のモニターで日々届けます。進路を考えるきっかけを増やします。' },
 ];
 
 export default function Features() {
@@ -20,7 +20,7 @@ export default function Features() {
         <SectionHeader
           label="キミテラスとは"
           title="教室の入口に置く、連絡用のモニターです"
-          subtitle="学校からの連絡と、地元企業の採用情報。教室のモニターに毎日映し出します。"
+          subtitle="学校からの連絡と、企業の採用情報。教室のモニターに毎日映し出します。"
         />
         <div className={styles.grid}>
           {FEATURES.map((f, i) => {

@@ -92,7 +92,7 @@ export default function GuideTopPage() {
           <tbody>
             <tr>
               <th style={{ width: '180px' }}>生徒にとって</th>
-              <td>地元に「面白そうな会社がある」という気づきが、進路を選ぶ前の早い段階で生まれます。</td>
+              <td>「面白そうな会社がある」という気づきが、進路を選ぶ前の早い段階で生まれます。</td>
             </tr>
             <tr>
               <th>企業にとって</th>

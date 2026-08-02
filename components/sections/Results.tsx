@@ -10,12 +10,12 @@ export default function Results() {
       <div className="container">
         <SectionHeader
           label="導入実績"
-          title="岐阜県立<br>岐南工業高等学校"
+          title="岐阜県の工業高校から<br>広がっています"
         />
 
         <div className={styles.content}>
           <FadeIn className={styles.highlight}>
-            <h3 className={styles.highlightTitle}>岐南工業高等学校</h3>
+            <h3 className={styles.highlightTitle}>岐阜県の工業高校で稼働中</h3>
             <Phrase as="p" className={styles.highlightDesc}>校長先生へ説明・確認のうえ、教室にサイネージを導入いただきました。</Phrase>
           </FadeIn>
 
