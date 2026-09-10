@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import SectionHeader from '@/components/ui/SectionHeader';
 import FadeIn from '@/components/ui/FadeIn';
 import styles from '@/styles/sections/company.module.css';
@@ -52,8 +51,9 @@ export default function CompanySection() {
 
         <FadeIn className={styles.profile}>
           <div className={styles.logoWrap}>
-            <Image
-              src="/rebounder-logo.png"
+            {/* ロゴはベクター。next/image は SVG を既定でブロックするので素の img で出す。 */}
+            <img
+              src="/rebounder-logo.svg"
               alt="株式会社Rebounder ロゴ"
               width={80}
               height={80}
