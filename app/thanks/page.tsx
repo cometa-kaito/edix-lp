@@ -18,7 +18,7 @@ export default async function ThanksPage({ searchParams }: ThanksPageProps) {
     : 'お問い合わせを\n受け付けました';
 
   const lead = isApplication
-    ? 'お申し込みありがとうございます。担当者より2営業日以内にご連絡し、契約書をお送りいたします。'
+    ? 'お申し込みありがとうございます。担当者より2営業日以内にご連絡し、お申し込み内容の確認と広告掲載規約への同意のページをご案内いたします。'
     : 'お問い合わせありがとうございます。担当者より2営業日以内にご返信いたします。';
 
   return (
@@ -63,7 +63,7 @@ export default async function ThanksPage({ searchParams }: ThanksPageProps) {
                   ご質問内容に応じて、オンライン面談（30分）または資料送付の形でご対応いたします
                 </li>
                 {isApplication && (
-                  <li>契約書を電子送付し、ご署名後に正式受付となります</li>
+                  <li>ご案内するページで広告掲載規約をご確認のうえ同意いただき、正式受付となります</li>
                 )}
               </ol>
             </div>
@@ -71,8 +71,8 @@ export default async function ThanksPage({ searchParams }: ThanksPageProps) {
             <div className={styles.contact}>
               <p>お急ぎの場合はメールでも直接ご連絡いただけます：</p>
               <p>
-                <a href="mailto:rebounder@googlegroups.com" className={styles.contactLink}>
-                  rebounder@googlegroups.com
+                <a href="mailto:info@rebounder.jp" className={styles.contactLink}>
+                  info@rebounder.jp
                 </a>
               </p>
             </div>

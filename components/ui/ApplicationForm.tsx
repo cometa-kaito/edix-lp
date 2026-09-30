@@ -70,7 +70,7 @@ export default function ApplicationForm() {
     <div className={styles.wrapper} id="application-form">
       <h3 className={styles.formTitle}>広告掲載 お申し込みフォーム</h3>
       <p style={{ textAlign: 'center', color: 'var(--text-sub)', fontSize: 'var(--font-sm)', marginBottom: 'var(--space-md)' }}>
-        お申し込み後、担当者よりご連絡のうえ契約書をお送りいたします。<br />
+        お申し込み後、担当者よりご連絡のうえ、広告掲載規約への同意のページをご案内いたします。<br />
         本フォームの送信をもって契約成立とはなりません。
       </p>
       <form onSubmit={handleSubmit}>

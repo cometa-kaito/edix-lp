@@ -102,7 +102,7 @@ export async function POST(req: NextRequest) {
   <p style="color: #64748B; font-size: 12px;">
     送信日時: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}<br>
     Source: <a href="https://www.school-signage.net/for-advertisers" style="color: #0f4c81;">https://www.school-signage.net/for-advertisers</a><br>
-    ※ 本フォームの送信をもって契約成立とはなりません。担当者よりご連絡し契約書をお送りいたします。
+    ※ 本フォームの送信をもって契約成立とはなりません。担当者よりご連絡し、広告掲載規約への同意ページをご案内します。
   </p>
 </div>`.trim();
 
