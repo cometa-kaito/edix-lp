@@ -49,6 +49,13 @@
   margin-top: 0;
 }
 
+.section h3 {
+  font-size: var(--font-base);
+  font-weight: 700;
+  margin: var(--space-md) 0 var(--space-xs);
+  color: var(--text);
+}
+
 .section p,
 .section li {
   font-size: var(--font-base);
