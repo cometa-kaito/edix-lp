@@ -5,6 +5,7 @@ import GuideShell from '@/components/guide/GuideShell';
 import ContactBox from '@/components/guide/ContactBox';
 import CtaBlock from '@/components/guide/CtaBlock';
 import { FileTextIcon } from '@/components/ui/Icon';
+import { PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/guide.module.css';
 
 export const metadata: Metadata = {
@@ -291,14 +292,16 @@ export default function GuideTopPage() {
       {/* 価格・スケジュール */}
       <div className={`${styles.card} ${styles.priceCard}`}>
         <h2>料金・スケジュール</h2>
-        <p><strong>料金・空き枠はお問い合わせ</strong>ください。掲載内容・期間に応じて個別にお見積もりいたします。</p>
+        <p>
+          <strong>空き枠と料金は、<a href={PORTAL_APPLY_URL} target="_blank" rel="noopener">申込ページ</a>でその場でご確認いただけます</strong>（学校ごとに表示）。学科を絞った配信や複数校への掲載は、内容・期間に応じて個別にお見積もりいたします。
+        </p>
 
         <h3>スケジュール</h3>
         <table className={styles.table}>
           <tbody>
             <tr>
               <th style={{ width: '180px' }}>お申込み</th>
-              <td>随時受付中です。空き枠状況はお問い合わせください。</td>
+              <td>随時受付中です。空き枠は<a href={PORTAL_APPLY_URL} target="_blank" rel="noopener">申込ページ</a>でご確認いただけます。</td>
             </tr>
             <tr>
               <th>原稿・写真の入稿</th>

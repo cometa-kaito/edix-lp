@@ -46,9 +46,9 @@ export default function TokuteiPage() {
 
             <dt>販売価格</dt>
             <dd>
-              別途お見積もり（個別にご案内）
+              申込ページ（<a href="https://kimiteras.rebounder.jp/apply" target="_blank" rel="noopener">kimiteras.rebounder.jp/apply</a>）に、学校ごとの料金（税別）を表示しています。
               <div className={styles.note}>
-                広告掲載枠の料金は、配信内容・期間に応じて個別にお見積もりいたします。詳細はお問い合わせください。
+                学科を絞った配信・複数校への掲載など、上記以外の内容は、配信内容・期間に応じて個別にお見積もりいたします。
               </div>
             </dd>
 

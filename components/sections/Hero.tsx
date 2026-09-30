@@ -46,7 +46,8 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       badges: [{ text: '広告主の方へ' }],
       // 見出しが長いので一段小さく組む（titleLong）。PC で「リーチと」だけ1行に残っていた
       title: `若年層への確実なリーチと、<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
-      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。料金・空き枠はお問い合わせください。',
+      // 料金・空き枠は申込ページ（ポータル）で公開している＝「お問い合わせください」は使わない（2026-09-30 本人決定）
+      sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。空き枠と料金は、申込ページでその場でご確認いただけます。',
       buttons: [
         { href: PORTAL_APPLY_URL, label: '空き枠を見て申し込む →', variant: 'accent' },
       ],
