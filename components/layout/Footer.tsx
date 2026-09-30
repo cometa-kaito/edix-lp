@@ -22,7 +22,8 @@ export default function Footer() {
           <Link href="/tokutei">特定商取引法に基づく表記</Link>
         </nav>
         <div className={styles.companyMeta}>
-          <span>株式会社Rebounder</span>
+          {/* 運営会社のサイトへ（会社HP 側にもキミテラスへのリンクがある＝相互リンク） */}
+          <a href="https://rebounder.jp/" target="_blank" rel="noopener">株式会社Rebounder</a>
           <span className={styles.metaDivider} aria-hidden="true">／</span>
           <span>東京都文京区</span>
         </div>

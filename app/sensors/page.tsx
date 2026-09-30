@@ -143,7 +143,7 @@ export default async function Page({
 
   if (!expectedKey || providedKey !== expectedKey) {
     return (
-      <main style={{ padding: 32, fontFamily: 'sans-serif', background: '#0a0a0a', color: '#eee', minHeight: '100vh' }}>
+      <main style={{ padding: 'calc(var(--header-h) + 32px) 32px 32px', fontFamily: 'sans-serif', background: '#0a0a0a', color: '#eee', minHeight: '100vh' }}>
         <h1>🔒 認証が必要です</h1>
         <p>URL の <code>?key=</code> に正しいシークレットを指定してください。</p>
       </main>

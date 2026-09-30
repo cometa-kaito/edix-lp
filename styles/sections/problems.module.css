@@ -48,7 +48,7 @@
 
 .biz .colTitle {
   border-color: var(--accent-biz);
-  color: var(--accent-biz);
+  color: var(--accent-text);  /* 文字は AA 充足の濃い橙（#F08A45 の文字は 2.5:1） */
 }
 
 .item {

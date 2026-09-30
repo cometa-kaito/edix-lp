@@ -75,6 +75,11 @@ const SCENES = [
   },
 ];
 
+// 「株式会社」の前後に折り返し位置（ZWSP）を置く。.adCompany は keep-all なのでここでしか折れない
+function breakableName(name: string): string {
+  return name.replace(/(.)株式会社$/, '$1\u200B株式会社').replace(/^株式会社(.)/, '株式会社\u200B$1');
+}
+
 export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
   const total = SCENES.length;
   const [active, setActive] = useState(() => ((startIndex % total) + total) % total);
@@ -183,7 +188,7 @@ export default function LiveSignage({ startIndex = 0 }: LiveSignageProps) {
                       </span>
                     </div>
                     <div className={styles.adCardBody}>
-                      <span className={styles.adCompany}>{ad.name}</span>
+                      <span className={styles.adCompany}>{breakableName(ad.name)}</span>
                       <span className={styles.adIndustry}>{ad.industry}</span>
                       {ad.group ? <span className={styles.adGroup}>{ad.group}</span> : null}
                     </div>

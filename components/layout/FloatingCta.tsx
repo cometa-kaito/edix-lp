@@ -2,10 +2,25 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/floating-cta.module.css';
+
+// ページの読み手に合わせて行き先を変える。以前はどのページでも /contact 固定で、
+// 広告主ページや出稿ガイドでも空き枠（申込）ではなく問い合わせへ誘導していた
+function ctaFor(pathname: string) {
+  if (pathname.startsWith('/for-advertisers')) {
+    return { href: PORTAL_APPLY_URL, label: '空き枠を見て申し込む', external: true };
+  }
+  if (pathname.startsWith('/for-schools')) {
+    return { href: '/contact?category=学校関係者', label: '導入のご相談', external: false };
+  }
+  return { href: '/contact', label: 'お問い合わせ', external: false };
+}
 
 export default function FloatingCta() {
   const [visible, setVisible] = useState(false);
+  const cta = ctaFor(usePathname() || '/');
 
   useEffect(() => {
     // scroll ごとの getBoundingClientRect は layout 読み取り＝ジャンクの原因なので
@@ -40,9 +55,15 @@ export default function FloatingCta() {
 
   return (
     <div className={`${styles.floatingCta} ${visible ? styles.visible : ''}`}>
-      <Link href="/contact" className="btn btn-primary">
-        お問い合わせ
-      </Link>
+      {cta.external ? (
+        <a href={cta.href} target="_blank" rel="noopener" className="btn btn-accent" tabIndex={visible ? 0 : -1}>
+          {cta.label}
+        </a>
+      ) : (
+        <Link href={cta.href} className="btn btn-primary" tabIndex={visible ? 0 : -1}>
+          {cta.label}
+        </Link>
+      )}
     </div>
   );
 }

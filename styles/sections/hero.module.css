@@ -1,27 +1,7 @@
 .hero {
-  padding-top: calc(var(--header-h) + 24px);
-  padding-bottom: 72px;
+  padding-top: calc(var(--header-h) + 56px);
+  padding-bottom: 56px;
   background: var(--bg-warm);
-}
-
-/* ヒーロー最上部の取引先ロゴ帯（受賞/運用バッジの置き換え）。ファーストビュー内に確実表示。
-   ラベルを中央上に置き、ロゴ行(PartnerLogoRow)は収まれば中央静止／溢れれば自動マーキー */
-.partnersBand {
-  max-width: var(--max-w);
-  margin: 0 auto 28px;
-  padding: 0 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.partnersLabel {
-  font-size: var(--font-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-sub);
-  white-space: nowrap;
 }
 
 .heroInner {
@@ -29,6 +9,7 @@
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 48px;
 }
@@ -45,6 +26,33 @@
   box-shadow: none;
   border: none;
   background: transparent;
+}
+
+/* ヒーロー下の取引先ロゴ帯（受賞/運用バッジの置き換え）。ファーストビュー内に確実表示。
+   PC: 見出し・盤面の下に全幅で「ラベル｜ロゴ列」。ロゴ行(PartnerLogoRow)は収まれば静止／溢れれば自動マーキー */
+.partnersBand {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-warm);
+}
+
+.partnersLabel {
+  flex-shrink: 0;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-sub);
+  white-space: nowrap;
+  padding: 6px 40px 6px 0;
+  border-right: 1px solid var(--border-warm);
+}
+
+.partnersLogos {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .heroBadges {
@@ -95,6 +103,12 @@
   margin-bottom: 24px;
   letter-spacing: -0.03em;
   color: var(--text);
+}
+
+/* 長い見出し（広告主ページ）。2行に収まる大きさ */
+.titleLong {
+  font-size: clamp(1.75rem, 2.6vw, 2.5rem);
+  line-height: 1.35;
 }
 
 /* キーワードを照らすマーカー。単色のlinear-gradientは塗り面として使用（装飾グラデではない） */
@@ -172,9 +186,12 @@
   flex-wrap: wrap;
 }
 
-.buttons .btn {
+/* .btn はグローバルクラス。CSS Modules では素の `.btn` もハッシュ化されて一致しないので :global が要る
+   （以前はこの指定が効いておらず、PC で2つの CTA が縦に積まれていた） */
+.buttons :global(.btn) {
   font-size: 15px;
   padding: 14px 28px;
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
@@ -190,23 +207,42 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: calc(var(--header-h) + 16px);
+    padding-top: calc(var(--header-h) + 28px);
     padding-bottom: 40px;
-  }
-
-  .partnersBand {
-    padding: 0 var(--space-md);
-    margin-bottom: 20px;
   }
 
   .heroInner {
     flex-direction: column;
-    gap: 36px;
+    flex-wrap: nowrap;
+    gap: 32px;
+  }
+
+  /* モバイルは CTA → 取引先 → 盤面 の順（取引先をファーストビュー内に残す） */
+  .heroContent {
+    order: 1;
+  }
+
+  .partnersBand {
+    order: 2;
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+  }
+
+  .partnersLabel {
+    padding: 0;
+    border-right: none;
+  }
+
+  .partnersLogos {
+    width: 100%;
   }
 
   /* モバイルは見出し→サブ→CTA→盤面デモの順（メッセージ先行）。
      盤面は LiveSignage のスケール縮小に任せて幅いっぱい使う */
   .heroImage {
+    order: 3;
     flex: none;
     width: 100%;
     max-width: 430px;
@@ -230,14 +266,16 @@
 
   .trustPoints {
     justify-content: center;
+    margin-bottom: 28px;
   }
 
   .buttons {
     flex-direction: column;
   }
 
-  .buttons .btn {
+  .buttons :global(.btn) {
     width: 100%;
+    min-height: 52px;
   }
 
   .heroBadges {
@@ -247,8 +285,8 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: calc(var(--header-h) + 12px);
-    padding-bottom: 28px;
+    padding-top: calc(var(--header-h) + 24px);
+    padding-bottom: 32px;
   }
 
   .heroInner {
@@ -285,5 +323,11 @@
 
   .highlight {
     animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleLong {
+    font-size: var(--font-2xl);
   }
 }

@@ -3,6 +3,7 @@ import { siteMetadata } from '@/lib/metadata';
 import { FAQ_ITEMS } from '@/lib/constants';
 import { FaqSchema } from '@/components/layout/StructuredData';
 import Faq from '@/components/sections/Faq';
+import AudienceCta from '@/components/sections/AudienceCta';
 
 export const metadata: Metadata = siteMetadata.faq;
 
@@ -11,6 +12,7 @@ export default function FaqPage() {
     <>
       <div style={{ paddingTop: 'var(--header-h)' }} />
       <Faq />
+      <AudienceCta warm />
       <FaqSchema items={FAQ_ITEMS} />
     </>
   );

@@ -139,6 +139,9 @@ export default function ApplicationForm() {
           </div>
         )}
 
+        <p className={styles.privacyNote}>
+          ご入力いただいた情報は<a href="/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>に沿って取り扱います。
+        </p>
         <div className={styles.formSubmit}>
           <button type="submit" className="btn btn-accent" disabled={submitting} aria-busy={submitting}>
             {submitting ? '送信中…' : '広告掲載を申し込む'}

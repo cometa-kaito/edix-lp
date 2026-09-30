@@ -36,13 +36,16 @@ function getHeroData(variant: HeroVariant, highlightClass: string) {
       badges: [{ text: '学校関係者の方へ' }],
       title: `先生の負担を減らし、<br>安全で持続可能なDXを<br><span class="${highlightClass}">費用負担ゼロで実現</span>`,
       sub: 'Google Classroom等では届かない「全員の目に入る連絡」を実現。機材は無償提供、ご負担は電気代と通信費のみ。',
+      // 本命（導入のご相談）を塗り、ページ内移動を枠線に。#benefits は存在しないアンカーだった
       buttons: [
-        { href: '#benefits', label: 'メリットを見る', variant: 'primary' },
-        { href: '/contact?category=学校関係者', label: '導入のご相談', variant: 'secondary' },
+        { href: '/contact?category=学校関係者', label: '導入のご相談', variant: 'primary' },
+        { href: '#schools', label: 'メリットを見る', variant: 'secondary' },
       ],
     },
     advertisers: {
-      title: `若年層への確実なリーチと<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
+      badges: [{ text: '広告主の方へ' }],
+      // 見出しが長いので一段小さく組む（titleLong）。PC で「リーチと」だけ1行に残っていた
+      title: `若年層への確実なリーチと、<br><span class="${highlightClass}">教育貢献によるブランディング</span>`,
       sub: '教室に常設されたサイネージで、高校生全員に確実にリーチ。料金・空き枠はお問い合わせください。',
       buttons: [
         { href: PORTAL_APPLY_URL, label: '空き枠を見て申し込む →', variant: 'accent' },
@@ -66,18 +69,12 @@ export default function Hero({ variant = 'home' }: HeroProps) {
     };
   }, []);
 
-  // ホームはヒーロー最上部に取引先ロゴ帯を出す（ファーストビュー内で確実に見せる）。
+  // ホームはヒーロー内に取引先ロゴ帯を出す（ファーストビュー内で確実に見せる）。
   // 受賞/運用バッジはこの帯に置き換える。他バリアントは従来どおりバッジを表示。
   const showPartnersBand = variant === 'home';
 
   return (
     <section className={styles.hero}>
-      {showPartnersBand && (
-        <div className={styles.partnersBand}>
-          <span className={styles.partnersLabel}>取引先企業</span>
-          <PartnerLogoRow companies={PARTNER_COMPANIES} />
-        </div>
-      )}
       <div className={styles.heroInner}>
         <div className={styles.heroContent}>
           {!showPartnersBand && data.badges && (
@@ -94,7 +91,7 @@ export default function Hero({ variant = 'home' }: HeroProps) {
             </div>
           )}
           <h1
-            className={styles.title}
+            className={`${styles.title} ${variant === 'advertisers' ? styles.titleLong : ''}`}
             dangerouslySetInnerHTML={{ __html: data.title }}
           />
           <p className={`${styles.sub} ${phase >= 2 ? styles.visible : styles.hidden}`}>
@@ -139,6 +136,16 @@ export default function Hero({ variant = 'home' }: HeroProps) {
         <FadeIn className={styles.heroImage}>
           <LiveSignage startIndex={variant === 'advertisers' ? 2 : 0} />
         </FadeIn>
+        {/* 取引先の帯。PC は見出し・盤面の下に全幅で「ラベル｜ロゴ列」、モバイルは CTA の直後
+            （盤面より先）に出す＝どちらもファーストビュー内（取引先ロゴ掲載-手順.md の決まり） */}
+        {showPartnersBand && (
+          <div className={styles.partnersBand}>
+            <span className={styles.partnersLabel}>取引先企業</span>
+            <div className={styles.partnersLogos}>
+              <PartnerLogoRow companies={PARTNER_COMPANIES} compact />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -2,11 +2,29 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NAV_LINKS } from '@/lib/constants';
+import { isCurrentNav } from './NavLinks';
 import styles from '@/styles/sections/header.module.css';
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname() || '/';
+
+  // メニューを開いている間は背景をスクロールさせない。Esc で閉じる
+  useEffect(() => {
+    if (!isOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [isOpen]);
 
   // Close mobile nav on route change
   useEffect(() => {
@@ -38,7 +56,9 @@ export default function MobileNav() {
       <button
         className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
         onClick={toggle}
-        aria-label="メニューを開く"
+        aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'}
+        aria-expanded={isOpen}
+        aria-controls="mobile-nav"
       >
         <span className={styles.hamburgerLine} />
         <span className={styles.hamburgerLine} />
@@ -49,17 +69,26 @@ export default function MobileNav() {
         onClick={close}
         aria-hidden="true"
       />
-      <nav className={`${styles.mobileNav} ${isOpen ? styles.mobileNavActive : ''}`}>
-        {NAV_LINKS.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={styles.mobileNavLink}
-            onClick={close}
-          >
-            {link.label}
-          </Link>
-        ))}
+      <nav
+        id="mobile-nav"
+        className={`${styles.mobileNav} ${isOpen ? styles.mobileNavActive : ''}`}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
+      >
+        {NAV_LINKS.map((link) => {
+          const current = isCurrentNav(link.href, pathname);
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={current ? 'page' : undefined}
+              className={`${styles.mobileNavLink}${current ? ` ${styles.mobileNavCurrent}` : ''}`}
+              onClick={close}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
         <Link href="/contact" className="btn btn-primary" onClick={close} style={{ marginTop: 12, width: '100%', borderRadius: 10, justifyContent: 'center' }}>
           お問い合わせ
         </Link>

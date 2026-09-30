@@ -77,6 +77,20 @@
   outline-offset: 4px;
 }
 
+/* compact: ヒーロー下の帯。ロゴを一段小さく、PC では帯の幅いっぱいに均等配置 */
+.compact .logo {
+  height: 30px;
+}
+.compact .name {
+  font-size: var(--font-lg);
+}
+@media (min-width: 1025px) {
+  .compact.isStatic .list {
+    justify-content: space-between;
+    column-gap: 32px;
+  }
+}
+
 @keyframes partnerScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -92,10 +106,12 @@
   .isMarquee .list {
     padding-right: 24px;
   }
-  .logo {
+  .logo,
+  .compact .logo {
     height: 28px;
   }
-  .name {
+  .name,
+  .compact .name {
     font-size: var(--font-lg);
   }
 }

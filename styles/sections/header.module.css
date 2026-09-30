@@ -85,6 +85,35 @@
   color: #92400E;
 }
 
+/* 現在地: 文字色＋下線（色だけに頼らない） */
+.navCurrent {
+  color: var(--primary);
+}
+.navCurrent::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+.navHighlight.navCurrent {
+  color: #92400E;
+  position: relative;
+}
+.navHighlight.navCurrent::after {
+  left: 20px;
+  right: 20px;
+  bottom: 3px;
+}
+
+.mobileNavCurrent {
+  color: var(--primary);
+  background: rgba(43, 74, 203, 0.06);
+}
+
 .headerCta {
   font-size: 14px !important;
   padding: 12px 28px !important;
@@ -100,7 +129,9 @@
   cursor: pointer;
   background: none;
   border: none;
-  padding: 10px;
+  /* タップ領域 44px 以上（線 22px ＋ 余白） */
+  padding: 13px 11px;
+  margin-right: -11px;
   border-radius: var(--radius-sm);
   transition: background var(--duration-fast);
 }

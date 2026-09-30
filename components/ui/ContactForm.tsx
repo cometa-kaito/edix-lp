@@ -134,6 +134,9 @@ export default function ContactForm({ category, onCategoryChange }: ContactFormP
           </div>
         )}
 
+        <p className={styles.privacyNote}>
+          ご入力いただいた情報は<a href="/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>に沿って取り扱います。
+        </p>
         <div className={styles.formSubmit}>
           <button type="submit" className="btn btn-primary" disabled={submitting} aria-busy={submitting}>
             {submitting ? '送信中…' : '送信する'}

@@ -35,7 +35,7 @@
   display: inline-block;
   font-size: var(--font-sm);
   letter-spacing: 0.08em;
-  color: var(--accent-biz);
+  color: var(--accent-text);
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -80,8 +80,18 @@
 .card ul, .card ol { padding-left: 1.4em; margin-bottom: 14px; color: var(--text); }
 .card ul li, .card ol li { margin-bottom: 6px; }
 .card ul { list-style: disc; }
+/* .card ul の disc が .checklist に勝って「•」と「□」が二重に出ていた */
+.card .checklist { list-style: none; padding-left: 0; }
 .card ol { list-style: decimal; }
-.card strong { color: var(--primary-dark); font-weight: 700; }
+/* 強調は黒の太字＋マーカー。青はリンク専用（以前は強調も青で、リンクと見分けがつかなかった） */
+.card strong {
+  color: var(--text);
+  font-weight: 700;
+  background-image: linear-gradient(var(--marker), var(--marker));  /* 単色の塗り面（グラデではない） */
+  background-repeat: no-repeat;
+  background-size: 100% 0.4em;
+  background-position: 0 90%;
+}
 
 /* Quote / example boxes */
 .quote {
@@ -118,10 +128,10 @@
 /* Philosophy / 想い card — orange left accent + subtle warm bg */
 .philosophy {
   border-left: 5px solid var(--accent-biz);
-  background: linear-gradient(to right, #fff8f1 0%, var(--white) 40%);
+  background: var(--bg-warm);  /* グラデ禁止＝単色 */
 }
 .philosophy h2 {
-  color: #c46a2e;
+  color: var(--accent-text);
 }
 .philosophy p {
   font-size: var(--font-lg);
@@ -207,7 +217,7 @@
 .branchLabel {
   display: inline-block;
   font-size: var(--font-xs);
-  background: var(--accent-biz);
+  background: var(--accent-cta);
   color: var(--white);
   padding: 3px 10px;
   border-radius: var(--radius-full);
@@ -228,7 +238,7 @@
 .branchArrow {
   margin-top: 12px;
   font-size: var(--font-sm);
-  color: var(--accent-biz);
+  color: var(--accent-text);
   font-weight: 700;
 }
 
@@ -343,6 +353,13 @@
   padding: 10px 14px;
   text-align: left;
   vertical-align: top;
+  /* body の overflow-wrap:anywhere のままだと「No.」「STEP」が1文字ずつ縦に割れる */
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+.table th:first-child,
+.table td:first-child {
+  white-space: nowrap;
 }
 .table th {
   background: var(--bg-tertiary);
@@ -373,22 +390,22 @@
 }
 .navBtn:hover {
   border-color: var(--accent-biz);
-  color: var(--accent-biz);
+  color: var(--accent-text);
 }
 .navBtn.primary {
-  background: var(--accent-biz);
-  border-color: var(--accent-biz);
+  background: var(--accent-cta);
+  border-color: var(--accent-cta);
   color: var(--white);
 }
 .navBtn.primary:hover {
-  background: #d97633;
-  border-color: #d97633;
+  background: var(--accent-cta-hover);
+  border-color: var(--accent-cta-hover);
   color: var(--white);
 }
 
 /* CTA block — primary call to action */
 .ctaBlock {
-  background: linear-gradient(135deg, #fff4e9 0%, #ffe9d6 100%);
+  background: var(--bg-warm);  /* グラデ禁止＝単色 */
   border: 2px solid var(--accent-biz);
   border-radius: var(--radius-lg);
   padding: var(--space-xl) var(--space-lg);
@@ -399,7 +416,7 @@
   font-size: var(--font-2xl);
   font-weight: 700;
   margin: 0 0 12px;
-  color: #b85e25;
+  color: var(--accent-text);
 }
 .ctaText {
   font-size: var(--font-base);
@@ -411,7 +428,7 @@
 .ctaButton {
   display: inline-block;
   padding: 14px 32px;
-  background: var(--accent-biz);
+  background: var(--accent-cta);
   color: var(--white);
   font-weight: 700;
   font-size: var(--font-base);
@@ -421,7 +438,7 @@
   transition: background-color var(--duration-base), transform var(--duration-base), box-shadow var(--duration-base), color var(--duration-base);
 }
 .ctaButton:hover {
-  background: #d97633;
+  background: var(--accent-cta-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
   color: var(--white);
@@ -513,7 +530,7 @@
   text-align: center;
 }
 .branchStep.entry { background: var(--primary); color: var(--white); border-color: var(--primary); }
-.branchStep.action { background: var(--accent-biz); color: var(--white); border-color: var(--accent-biz); }
+.branchStep.action { background: var(--accent-cta); color: var(--white); border-color: var(--accent-cta); }
 .branchArrowDown {
   font-size: 20px;
   color: var(--text-sub);

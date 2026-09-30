@@ -22,12 +22,15 @@ ul { list-style: none; }
   --primary-light: #4F6FE8;
   --accent-school: #22C55E;
   --accent-biz: #F08A45;
-  --accent-cta: #EA580C;        /* 白文字CTA専用・AA充足(UIUX-00 §5)。装飾用 --accent-biz(#F08A45) は据置 */
-  --accent-cta-hover: #C2410C;
+  /* 白文字CTA専用。白文字で 4.53:1（AA 4.5:1 充足）。旧 #EA580C は 3.56:1 で「AA充足」の注記が誤っていた
+     （太字 18px は大きい文字の扱いにならない＝4.5:1 が要る）。明るさを残せるぎりぎりの値にしてある。
+     装飾用 --accent-biz(#F08A45) は据置（白文字・小さい文字には使わない） */
+  --accent-cta: #CF4A0C;
+  --accent-cta-hover: #A93A0B;  /* 6.4:1 */
   --accent-investor: #EAB308;
   --accent-text: #B45309;       /* 白地上の小さいオレンジ文字用（AA充足）。#F08A45/#EA580Cは小文字AA未達 */
   --text: #1E293B;
-  --text-sub: #64748B;
+  --text-sub: #5B6B80;          /* 補足文。暖色・生成り地でも 5:1（旧 #64748B は暖色地で 4.3:1 と AA 未達） */
   --white: #FFFFFF;
 
   /* 「教室に差す光」デザイン言語（2026-06-12） */

@@ -31,7 +31,7 @@ export default function SchoolBenefits() {
       <div className="container">
         <SectionHeader
           label="学校の方へ"
-          title="先生の負担を減らし、<br>安全で持続可能なDXを実現"
+          title="学校にとっての4つのメリット"
           labelColor="var(--primary)"
         />
         <div className={styles.meritGrid}>
@@ -43,7 +43,9 @@ export default function SchoolBenefits() {
           ))}
         </div>
         <FadeIn className={styles.costHighlight}>
-          <h3 className={styles.costTitle}>学校側の費用負担 = 電気代 + 通信費のみ</h3>
+          <h3 className={styles.costTitle}>
+            学校側の費用負担 = <span style={{ whiteSpace: 'nowrap' }}>電気代 + 通信費のみ</span>
+          </h3>
           <p className={styles.costDesc}>スマートテレビ（43〜55インチ）・スタンドは無償提供。故障・破損時は2週間以内に交換対応。費用はキミテラス側が全額負担。</p>
         </FadeIn>
         <FadeIn className={styles.infoGrid}>

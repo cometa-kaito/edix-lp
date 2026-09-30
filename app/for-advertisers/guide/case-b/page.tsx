@@ -117,22 +117,22 @@ export default function CaseBPage() {
           <strong>大垣未来精工株式会社</strong><br />
           CAREER NAVI　《勤務地》大垣市内
 
-          <h3 style={{ marginTop: '1em', color: '#c46a2e' }}>キャッチコピー</h3>
+          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>キャッチコピー</h3>
           モノづくりって、こんなにスマートだ！
 
-          <h3 style={{ marginTop: '1em', color: '#c46a2e' }}>01 どんな会社？</h3>
+          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>01 どんな会社？</h3>
           <strong>大垣から世界へ！最新マシンを操る精密部品メーカー</strong><br />
           油まみれの工場はもう古い！冷暖房完備の超クリーンな職場で、世界中の自動車を支える最先端のモノづくり。同じ高校の先輩たちも、ゼロからプロになって活躍中！
 
-          <h3 style={{ marginTop: '1em', color: '#c46a2e' }}>02 どんな仕事をするの？</h3>
+          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>02 どんな仕事をするの？</h3>
           <strong>最新マシンで、世界を走る車の部品を削り出す！</strong><br />
           ゲーム感覚で最新のNCマシンをプログラミング。ミクロン単位の超精密パーツをスマートに作る仕事です！
 
-          <h3 style={{ marginTop: '1em', color: '#c46a2e' }}>03 どんな高校生が向いている？</h3>
+          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>03 どんな高校生が向いている？</h3>
           <strong>プラモ、ゲーム、スマホいじり。それが最高の才能！</strong><br />
           「実習が一番好き」「ゲームの攻略を考えるのが得意」「メカの構造にワクワクする」。1つでも当てはまれば適性100％！そのこだわりや探究心が、最先端マシンを動かす最大の武器になります。
 
-          <h3 style={{ marginTop: '1em', color: '#c46a2e' }}>会社DATA</h3>
+          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>会社DATA</h3>
           ３年間離職率 ０％　｜　有給休暇取得率 １００％　｜　ゲーム手当 ５０００円
         </div>
 

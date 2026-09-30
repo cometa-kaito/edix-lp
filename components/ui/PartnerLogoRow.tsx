@@ -7,6 +7,8 @@ import styles from '@/styles/partner-logo-row.module.css';
 
 interface PartnerLogoRowProps {
   companies: PartnerCompany[];
+  /** ヒーロー下の帯用。ロゴを一段小さくし、PC では帯の幅いっぱいに均等配置する */
+  compact?: boolean;
 }
 
 function LogoItem({ partner }: { partner: PartnerCompany }) {
@@ -41,7 +43,7 @@ function LogoItem({ partner }: { partner: PartnerCompany }) {
 // 判定は実測（各社の実寸から flex-wrap の折返しを再現して必要段数を算出）。ResizeObserver で画面幅変化にも追従。
 const MAX_ROWS = 3;
 
-export default function PartnerLogoRow({ companies }: PartnerLogoRowProps) {
+export default function PartnerLogoRow({ companies, compact = false }: PartnerLogoRowProps) {
   const viewportRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const [marquee, setMarquee] = useState(false);
@@ -113,7 +115,9 @@ export default function PartnerLogoRow({ companies }: PartnerLogoRowProps) {
   return (
     <div
       ref={viewportRef}
-      className={`${styles.viewport} ${marquee ? styles.isMarquee : styles.isStatic}`}
+      className={`${styles.viewport} ${marquee ? styles.isMarquee : styles.isStatic}${
+        compact ? ` ${styles.compact}` : ''
+      }`}
     >
       <div
         className={styles.track}

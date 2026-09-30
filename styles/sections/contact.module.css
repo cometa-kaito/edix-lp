@@ -140,9 +140,24 @@
   margin-top: var(--space-lg);
 }
 
-.formSubmit .btn {
+/* .btn はグローバルクラスなので :global が要る（素の .btn だとハッシュ化されて効いていなかった） */
+.formSubmit :global(.btn) {
   width: 100%;
   max-width: 360px;
+}
+
+.privacyNote {
+  margin-top: var(--space-md);
+  text-align: center;
+  font-size: var(--font-xs);
+  color: #475569;
+  line-height: 1.7;
+}
+
+.privacyNote a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .contactInfo {

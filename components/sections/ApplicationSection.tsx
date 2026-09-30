@@ -50,7 +50,7 @@ export default function ApplicationSection() {
               空き枠・価格・入稿規格を確認しながら、1分でお申し込みが完了します。
             </p>
             <a href={PORTAL_APPLY_URL} target="_blank" rel="noopener" className="btn btn-accent">
-              空き枠を確認して申し込む →
+              空き枠を見て申し込む →
             </a>
           </div>
         </FadeIn>
@@ -65,7 +65,7 @@ export default function ApplicationSection() {
               marginBottom: 'var(--space-md)',
             }}
           >
-            ご質問や相談しながら進めたい方は、こちらのフォームからどうぞ。
+            担当者とやり取りしながら申し込みたい方は、こちらのフォームから（担当者からご連絡します）。
           </p>
           <ApplicationForm />
         </FadeIn>

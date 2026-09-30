@@ -10,9 +10,11 @@
   pointer-events: none;
 }
 
-.floatingCta .btn {
-  font-size: 14px;
-  padding: 13px 34px;
+/* .btn はグローバルクラス。CSS Modules では :global が要る（以前は素の .btn で効いていなかった） */
+.floatingCta :global(.btn) {
+  font-size: 15px;
+  padding: 14px 32px;
+  min-height: 50px;
   box-shadow: var(--shadow-lg);
 }
 

@@ -119,9 +119,15 @@
   .section {
     padding: calc(var(--header-h) + var(--space-xl)) 0 var(--space-3xl);
   }
+  /* スマホは枠を外して本文幅を確保（枠＋内側の余白で約310pxしかなく、改行がガタついていた） */
+  .section {
+    background: var(--white);
+  }
   .wrapper {
-    padding: 36px 24px;
-    border-radius: var(--radius-lg);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
   }
   .title {
     font-size: var(--font-2xl);

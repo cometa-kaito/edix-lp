@@ -224,12 +224,16 @@
   gap: 4px;
 }
 
+/* 社名は「株式会社」の前後でだけ折り返す（「京三エレコス株／式会社」と割れていた）。
+   折り返し位置は描画側で ZWSP を入れて作る */
 .adCompany {
   font-size: 14px;
   font-weight: 800;
   color: var(--text);
   line-height: 1.3;
   letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .adIndustry {
@@ -370,8 +374,9 @@
   right: 14px;
 }
 
+/* 盤面の外（下辺）に出す。以前は bottom:-2px で流れる文字（ticker）に重なっていた */
 .chipSpeed {
-  bottom: -2px;
+  bottom: -16px;
   left: 14px;
 }
 
