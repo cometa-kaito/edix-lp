@@ -77,7 +77,8 @@
   outline-offset: 4px;
 }
 
-/* compact: ヒーロー下の帯。ロゴを一段小さく、PC では帯の幅いっぱいに均等配置 */
+/* compact: ヒーロー下の帯。ロゴを一段小さく、PC では帯の幅いっぱいに均等配置
+   （oneRow ＝ JS の実測で1行に収まっているときだけ。折り返した2行目が左に寄らないように） */
 .compact .logo {
   height: 30px;
 }
@@ -85,7 +86,7 @@
   font-size: var(--font-lg);
 }
 @media (min-width: 1025px) {
-  .compact.isStatic .list {
+  .compact.oneRow.isStatic .list {
     justify-content: space-between;
     column-gap: 32px;
   }

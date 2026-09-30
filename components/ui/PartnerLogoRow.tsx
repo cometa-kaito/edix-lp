@@ -47,6 +47,8 @@ export default function PartnerLogoRow({ companies, compact = false }: PartnerLo
   const viewportRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const [marquee, setMarquee] = useState(false);
+  // 1行に収まっているか（compact の均等配置は1行のときだけ。折り返した2行目が左に寄るのを防ぐ）
+  const [oneRow, setOneRow] = useState(true);
   const [duration, setDuration] = useState(20);
 
   useEffect(() => {
@@ -81,6 +83,7 @@ export default function PartnerLogoRow({ companies, compact = false }: PartnerLo
       }
       // 最大段数を超える極端に狭い幅でだけマーキー化。それ以外は最大 MAX_ROWS 段で全社静止表示
       const overflowing = rows > MAX_ROWS;
+      setOneRow((prev) => (prev === (rows === 1) ? prev : rows === 1));
       setMarquee((prev) => (prev === overflowing ? prev : overflowing));
       if (overflowing) {
         // 一定速度(約40px/秒)になるよう周期を 1 行分の幅から算出
@@ -117,7 +120,7 @@ export default function PartnerLogoRow({ companies, compact = false }: PartnerLo
       ref={viewportRef}
       className={`${styles.viewport} ${marquee ? styles.isMarquee : styles.isStatic}${
         compact ? ` ${styles.compact}` : ''
-      }`}
+      }${oneRow ? ` ${styles.oneRow}` : ''}`}
     >
       <div
         className={styles.track}
