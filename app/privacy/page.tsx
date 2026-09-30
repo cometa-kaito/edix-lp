@@ -152,7 +152,7 @@ export default function PrivacyPage() {
             本ポリシーは、法令の改正・サービスの変更等に応じて改定する場合があります。改定後の内容は本ページに掲載した時点から有効となります。重要な変更を行う場合は、導入校に事前にお知らせします。
           </p>
 
-          <span className={styles.meta}>制定日：2026年5月20日／改定日：2026年10月1日</span>
+          <span className={styles.meta}>制定日：2026年5月20日／改定日：2026年9月30日</span>
         </article>
       </div>
     </section>

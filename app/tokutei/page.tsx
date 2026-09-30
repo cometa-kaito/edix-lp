@@ -86,7 +86,7 @@ export default function TokuteiPage() {
 
           </dl>
 
-          <span className={styles.meta}>制定日：2026年5月20日／改定日：2026年10月1日</span>
+          <span className={styles.meta}>制定日：2026年5月20日／改定日：2026年9月30日</span>
         </article>
       </div>
     </section>
