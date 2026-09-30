@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <div style={{ paddingTop: 'var(--header-h)' }}>
       <Results />
-      <Partners />
+      <Partners band />
       <CompanySection />
       <AudienceCta />
     </div>

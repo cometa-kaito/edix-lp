@@ -1,5 +1,5 @@
 .wrapper {
-  background: var(--bg-secondary);  /* グラデ禁止＝単色 */
+  background: var(--white);  /* 前後（青の帯・暖色）と交互にするため白 */
 }
 
 .inner {

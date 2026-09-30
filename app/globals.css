@@ -34,7 +34,10 @@ ul { list-style: none; }
   --white: #FFFFFF;
 
   /* 「教室に差す光」デザイン言語（2026-06-12） */
-  --bg-warm: #FFF8F1;           /* 朝光の地色。ヒーロー・交互セクション背景 */
+  --bg-warm: #FFF3E7;           /* 朝光の地色。ヒーロー・交互セクション背景。旧 #FFF8F1 はスマホで白と見分けにくかった */
+  /* 淡い青の帯。白・暖色と交互に塗ってセクションの切れ目を見せる（2026-09-30 本人指摘：
+     スマホで区切りが分かりにくい）。色の文法どおり 青=仕組み・説明 の面に使う */
+  --bg-band: #EDF1FB;
   --marker: #FFD9AC;            /* 見出しキーワードのマーカーハイライト（=照らす） */
   --primary-dusk: #20307C;      /* 夕方の教室。最終セクション（問い合わせ）の色面 */
   --border-warm: #EDE0D0;       /* 暖色地の上で使う罫線 */
@@ -112,6 +115,7 @@ ul { list-style: none; }
 .section-padding { padding: var(--space-3xl) 0; }
 .bg-alt { background: var(--bg-alt); }
 .bg-warm { background: var(--bg-warm); }
+.bg-band { background: var(--bg-band); }
 .text-center { text-align: center; }
 
 /* ===== Section Labels & Titles ===== */
@@ -329,7 +333,7 @@ textarea:focus-visible {
 }
 
 @media (max-width: 480px) {
-  .section-padding { padding: var(--space-lg) 0; }
+  .section-padding { padding: 40px 0; }
   .section-title { font-size: var(--font-xl); }
   .section-subtitle { font-size: var(--font-sm); }
 }

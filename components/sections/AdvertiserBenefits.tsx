@@ -16,7 +16,7 @@ const MERITS = [
 
 export default function AdvertiserBenefits() {
   return (
-    <section className="section-padding" id="advertisers">
+    <section className="section-padding bg-band" id="advertisers">
       <div className="container">
         <SectionHeader
           label="広告主の方へ"

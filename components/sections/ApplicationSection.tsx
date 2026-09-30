@@ -4,7 +4,7 @@ import { PORTAL_APPLY_URL } from '@/lib/constants';
 
 export default function ApplicationSection() {
   return (
-    <section className="section-padding bg-alt" id="apply">
+    <section className="section-padding bg-warm" id="apply">
       <div className="container">
         {/* 主導線: ポータルで空き枠を見てその場で申し込む（摩擦最小） */}
         <FadeIn>

@@ -27,7 +27,7 @@ const KIMITERAS_PROVIDES = [
 
 export default function SchoolBenefits() {
   return (
-    <section className="section-padding bg-alt" id="schools">
+    <section className="section-padding bg-band" id="schools">
       <div className="container">
         <SectionHeader
           label="学校の方へ"

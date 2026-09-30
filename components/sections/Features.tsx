@@ -15,7 +15,7 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section className="section-padding" id="features">
+    <section className="section-padding bg-band" id="features">
       <div className="container">
         <SectionHeader
           label="キミテラスとは"

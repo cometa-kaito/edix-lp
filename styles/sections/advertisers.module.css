@@ -10,7 +10,7 @@
 .meritCard {
   text-align: center;
   padding: 40px 24px;
-  background: var(--bg-warm);
+  background: var(--white);  /* セクションが青の帯なので白で浮かせる */
   border-radius: var(--radius-lg);
   box-shadow: none;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);

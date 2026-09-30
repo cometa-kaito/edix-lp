@@ -5,9 +5,9 @@
   margin-bottom: var(--space-3xl);
 }
 
-/* 脱・罫線カード: 暖色の面で「教室の光」をセクションに引き込む */
+/* セクションが青の帯（bg-band）なので、カードは白で浮かせる */
 .card {
-  background: var(--bg-warm);
+  background: var(--white);
   border-radius: var(--radius-lg);
   padding: 40px 32px;
   box-shadow: none;
@@ -64,7 +64,7 @@
   align-items: center;
   gap: 16px;
   text-align: left;
-  background: var(--bg-alt);
+  background: var(--white);
   border-radius: var(--radius-md);
   padding: 22px 24px;
   box-shadow: none;
