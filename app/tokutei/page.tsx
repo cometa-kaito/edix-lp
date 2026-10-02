@@ -35,7 +35,7 @@ export default function TokuteiPage() {
 
             <dt>連絡先</dt>
             <dd>
-              <a href="mailto:info@rebounder.jp">info@rebounder.jp</a>
+              <a href="mailto:rebounder@googlegroups.com">rebounder@googlegroups.com</a>
               <div className={styles.note}>
                 ※ お電話でのご連絡をご希望の場合は、上記メールアドレスまでお申し出ください。折り返しご案内いたします。
               </div>

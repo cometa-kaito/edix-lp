@@ -71,8 +71,8 @@ export default async function ThanksPage({ searchParams }: ThanksPageProps) {
             <div className={styles.contact}>
               <p>お急ぎの場合はメールでも直接ご連絡いただけます：</p>
               <p>
-                <a href="mailto:info@rebounder.jp" className={styles.contactLink}>
-                  info@rebounder.jp
+                <a href="mailto:rebounder@googlegroups.com" className={styles.contactLink}>
+                  rebounder@googlegroups.com
                 </a>
               </p>
             </div>
