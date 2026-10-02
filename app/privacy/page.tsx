@@ -150,7 +150,7 @@ export default function PrivacyPage() {
             <br />
             所在地：東京都文京区本郷6丁目25番14号
             <br />
-            メール：<a href="mailto:info@rebounder.jp">info@rebounder.jp</a>
+            メール：<a href="mailto:rebounder@googlegroups.com">rebounder@googlegroups.com</a>
           </p>
 
           <h2>10. 改定</h2>
