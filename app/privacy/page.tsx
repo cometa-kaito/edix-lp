@@ -71,7 +71,7 @@ export default function PrivacyPage() {
 
           <h2>3. 生徒の情報を広告に使いません</h2>
           <p>
-            当社は、<strong>生徒を特定できる情報および校内のデータを広告主に提供せず、広告配信の対象を絞り込む目的（ターゲティング）にも用いません。</strong>広告主にお伝えするのは、表示回数などの統計情報に限ります。
+            当社は、<strong>生徒を特定できる情報および校内のデータを広告主に提供せず、広告配信の対象を絞り込む目的（ターゲティング）にも用いません。</strong>広告主にお伝えするのは、学校ごとの表示回数などの統計情報に限ります。
           </p>
 
           <h2>4. サイネージ運用における重要事項</h2>
@@ -91,7 +91,9 @@ export default function PrivacyPage() {
           </p>
           <dl className={styles.dlGrid}>
             <dt>サーバー・データベース</dt>
-            <dd>Google Cloud（東京リージョン）、Vercel Inc.（米国・シンガポール）、Supabase Inc.（シンガポール）、Turso</dd>
+            <dd>
+              Google Cloud（東京リージョン。ログイン認証・端末への通知・Google Cloud の設定変更の記録など一部の機能はGoogleのグローバルな基盤で処理されます）、Vercel Inc.（米国・シンガポール）、Supabase Inc.（シンガポール）、Turso（米国の事業者。人感センサーの検知記録と教室テレビの設定の保存に使用し、生徒・教職員の個人情報は含みません）
+            </dd>
 
             <dt>メール送信</dt>
             <dd>Resend（米国）</dd>
@@ -100,10 +102,12 @@ export default function PrivacyPage() {
             <dd>Stripe（米国）</dd>
 
             <dt>業務連絡・会計</dt>
-            <dd>Slack（米国）、株式会社マネーフォワード、Dropbox（米国）</dd>
+            <dd>Slack（米国）、株式会社マネーフォワード（日本）、Dropbox（米国）</dd>
 
-            <dt>文書の読み取り（AI）</dt>
-            <dd>Google Cloud（Vertex AI・Cloud Vision、東京リージョン）。教職員が登録した文書の読み取りに使います。</dd>
+            <dt>生成AI</dt>
+            <dd>
+              Google Cloud（Vertex AI、東京リージョン）。教職員が登録した文書・画像・行事予定表の読み取り、連絡文の下書き、掲示内容に関する生徒・教職員からの質問への回答に使います。文章は送信前に電話番号・メールアドレス等を伏せます（画像は読み取りのためそのまま送ります）。送信した情報は、当社が許可しない限り、Googleのモデルの学習には使われません。
+            </dd>
 
             <dt>アクセス解析</dt>
             <dd>Google Analytics（Google LLC、米国）</dd>
@@ -129,7 +133,9 @@ export default function PrivacyPage() {
           <ul>
             <li>データベースは学校ごとにアクセスを分け、他校の情報を閲覧できない仕組みにしています。</li>
             <li>管理画面へのアクセスは権限のある者に限り、操作を記録しています。</li>
-            <li>通信は暗号化（HTTPS）しています。</li>
+            <li>サイネージ基盤（教職員向け管理画面・サイネージ）の操作の記録は書き換えや削除ができず、改ざんがないかを毎日確認しています。</li>
+            <li>サイネージ基盤の運営者アカウントには、多要素認証を必須にしています。</li>
+            <li>通信は暗号化（HTTPS）しています。サイネージ基盤のデータベースは毎日バックアップしています。</li>
             <li>個人情報を取り扱う者に、取り扱いのルールを守るよう指導しています。</li>
           </ul>
 
@@ -152,7 +158,7 @@ export default function PrivacyPage() {
             本ポリシーは、法令の改正・サービスの変更等に応じて改定する場合があります。改定後の内容は本ページに掲載した時点から有効となります。重要な変更を行う場合は、導入校に事前にお知らせします。
           </p>
 
-          <span className={styles.meta}>制定日：2026年5月20日／改定日：2026年9月30日</span>
+          <span className={styles.meta}>制定日：2026年5月20日／改定日：2026年10月2日</span>
         </article>
       </div>
     </section>
