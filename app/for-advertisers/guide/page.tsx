@@ -5,7 +5,7 @@ import GuideShell from '@/components/guide/GuideShell';
 import ContactBox from '@/components/guide/ContactBox';
 import CtaBlock from '@/components/guide/CtaBlock';
 import { FileTextIcon } from '@/components/ui/Icon';
-import { PORTAL_APPLY_URL, POSTING_STANDARDS_PDF_URL } from '@/lib/constants';
+import { BOOKING_URL, PORTAL_APPLY_URL, POSTING_STANDARDS_PDF_URL } from '@/lib/constants';
 import styles from '@/styles/sections/guide.module.css';
 
 export const metadata: Metadata = {
@@ -349,6 +349,7 @@ export default function GuideTopPage() {
           <li>お申込みは随時。入稿・審査が済んでから、最短2週間で掲載を始めます。</li>
           <li>入稿の期限は相談できます。</li>
         </ul>
+        <a href={BOOKING_URL} target="_blank" rel="noopener" className={styles.bookingBtn}>オンラインで相談する（30分・日時を選んで予約）→</a>
       </section>
 
       {/* ===== なぜこのルールか ===== */}

@@ -173,6 +173,8 @@ export const FAQ_ITEMS: FaqItem[] = [
 // 申込導線は自社ポータル（枠在庫・価格・入稿規格をその場で確認して申込）に統一。
 export const PORTAL_APPLY_URL = 'https://kimiteras.rebounder.jp/apply';
 // 広告掲載基準の正本PDF（portal が最新版を返す。改定してもURLは変わらない）
+// 商談の予約ページ（Googleカレンダーの予約スケジュール。授業時間帯は出さない）
+export const BOOKING_URL = 'https://calendar.app.google/WeFL7PukMjc7jh3T9';
 export const POSTING_STANDARDS_PDF_URL = 'https://kimiteras.rebounder.jp/api/policy/posting_standards';
 
 // 旧 PRICING_PLANS / AD_SPECS はどこからも描画されていない死にコードだったため削除（2026-07-28）。

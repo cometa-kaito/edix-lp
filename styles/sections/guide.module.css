@@ -820,3 +820,9 @@
   .makeRow { grid-template-columns: 1fr; }
   .sampleFigure { max-width: 240px; margin: 0 auto; }
 }
+.bookingBtn {
+  display: inline-block; margin-top: 8px;
+  background: var(--primary); color: var(--white); font-weight: 700;
+  padding: 12px 20px; border-radius: var(--radius-full);
+}
+.bookingBtn:hover { background: var(--primary-dark); }
