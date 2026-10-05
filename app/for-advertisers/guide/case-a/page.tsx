@@ -49,15 +49,16 @@ export default function CaseAPage() {
       <div className={styles.card}>
         <h2>入稿前セルフチェックリスト</h2>
         <p>
-          本サイネージは <strong>採用広告ではなく企業認知広告</strong> です。高校生求人の特殊なルール（学校経由原則・7月1日解禁）に従い、リクルートを連想させる表現が含まれていないかを中心に確認します。
+          本サイネージは <strong>採用広告ではなく企業認知広告</strong> です。<a href="/for-advertisers/guide" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>（2026年10月1日発効）に沿って確認します。
         </p>
 
         <ul className={styles.checklist}>
-          <li className={styles.group}>A. リクルート系の表現が含まれていないか（最重要）</li>
-          <li><strong>「採用」「募集」「応募」「面接」「面談」「説明会」</strong> などの語が一切含まれていない</li>
-          <li><strong>「見学」「会社見学」「工場見学」</strong> といった、来社・接触を促す語が含まれていない</li>
-          <li><strong>「まずは○○から」「お気軽にお越しください」「お問い合わせは○○まで」</strong> のような、生徒へのアクション誘導が含まれていない</li>
-          <li>給与・賞与・休日・福利厚生・残業時間などの <strong>労働条件</strong> が記載されていない（求人票に書く要素はサイネージには載せません）</li>
+          <li className={styles.group}>A. 掲載基準に合っているか（最重要）</li>
+          <li><strong>職種名と、その仕事で何をするか</strong> が文字で入っている（「社員」「スタッフ」だけでは足りません）</li>
+          <li>見出しか主な写真の少なくとも一方が、<strong>働く人・仕事の場面</strong> になっている（製品やサービスだけの広告ではない）</li>
+          <li>価格・キャンペーン・購入や資料請求の呼びかけがない</li>
+          <li><strong>6月30日までの掲載</strong> では、「採用」「募集職種」「初任給」などの求人情報と、求人ページへの誘導がない（7月1日以降は、求人票と同じ内容なら載せられます。会社説明会・職場見学・インターンシップの案内は時期を問わず可）</li>
+          <li>生徒が企業へ直接応募できるフォームに誘導していない（応募は学校経由）</li>
 
           <li className={styles.group}>B. 4ブロック構成になっているか（推奨）</li>
           <li>ヘッダーに <strong>会社名・業種・事業エリア</strong> がある</li>
@@ -93,9 +94,9 @@ export default function CaseAPage() {
       <div className={styles.card}>
         <h2>チェックが付かない項目があった場合</h2>
         <ul>
-          <li><strong>Aは入稿の絶対条件</strong> です。リクルート系の語が一つでも残っていると、本サイネージでは配信できません。書き換えをお願いします。</li>
+          <li><strong>Aは入稿の絶対条件</strong> です。満たしていない項目があると配信できません。どの項目かをお伝えしますので、書き換えをお願いします。</li>
           <li><strong>B（4ブロック構成）</strong> が満たせない場合、ご用意しているテンプレートの利用も検討してください。</li>
-          <li><strong>Dのホームページ確認</strong> は、企業の責任で必ず行ってください。求人ページが残った状態での配信は、厚生労働省の指導対象となります。</li>
+          <li><strong>Dのホームページ確認</strong> は、企業の責任で必ず行ってください。6月30日までは、QRコード・URLの飛び先が求人情報中心のページであってはいけません。</li>
           <li>写真の修正・撮り直しが必要 → <a href="/for-advertisers/guide/photo" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>写真の撮り方ガイド</a></li>
           <li>書き換えに自信がない → <a href="/for-advertisers/guide/extras#review" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>添削サポート</a></li>
         </ul>

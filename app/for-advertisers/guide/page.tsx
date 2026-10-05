@@ -5,12 +5,13 @@ import GuideShell from '@/components/guide/GuideShell';
 import ContactBox from '@/components/guide/ContactBox';
 import CtaBlock from '@/components/guide/CtaBlock';
 import { FileTextIcon } from '@/components/ui/Icon';
-import { PORTAL_APPLY_URL } from '@/lib/constants';
+import { PORTAL_APPLY_URL, POSTING_STANDARDS_PDF_URL } from '@/lib/constants';
 import styles from '@/styles/sections/guide.module.css';
 
 export const metadata: Metadata = {
-  title: '教室サイネージ 出稿ガイド｜キミテラス',
-  description: '工業高校の教室サイネージへ広告を出稿するための作成・入稿ガイド。原稿の書き方、写真の撮り方、入稿チェックリストを案内します。',
+  title: '出稿ガイド（広告掲載基準 第2版）｜キミテラス',
+  description:
+    '工業高校の教室サイネージに載せられる広告のルールを、3分で読める形にまとめました。広告掲載基準 第2版（2026年10月1日発効）にもとづく、業種の早見表・時期のルール・画面の仕様・審査の流れ。',
 };
 
 const CRUMBS = [
@@ -19,23 +20,34 @@ const CRUMBS = [
   { label: '出稿ガイド' },
 ];
 
+const TOC = [
+  { href: '#points', label: '3つの要点' },
+  { href: '#category', label: '載せられる業種' },
+  { href: '#content', label: '広告の中身' },
+  { href: '#timing', label: '時期のルール' },
+  { href: '#expression', label: '表現の注意' },
+  { href: '#spec', label: '画面の仕様' },
+  { href: '#review', label: '審査の流れ' },
+  { href: '#make', label: '原稿の作り方' },
+];
+
 const BRANCHES = [
   {
     label: 'ケースA',
-    title: '既に広告原稿をお持ちの方',
-    desc: '自社で作成済みの広告データを、そのまま入稿したい場合。チェックリストで適合確認します。',
+    title: '広告原稿をお持ちの方',
+    desc: '作成済みの原稿を、チェックリストで確認してから入稿します。',
     href: '/for-advertisers/guide/case-a',
   },
   {
     label: 'ケースB',
-    title: 'テンプレで作る',
-    desc: '一から作るが、決まった型に沿いたい方。ヒアリング → テンプレ流し込み。',
+    title: 'テンプレートで作る',
+    desc: 'ヒアリングシートにご記入いただき、当社が型に流し込みます。',
     href: '/for-advertisers/guide/case-b',
   },
   {
     label: 'ケースC',
-    title: '自由形式で作る',
-    desc: 'デザインも自社で組みたい方。ヒアリング → 自由執筆。',
+    title: '自由な形式で作る',
+    desc: 'デザインも自社で組みたい方向けの書き方です。',
     href: '/for-advertisers/guide/case-c',
   },
 ];
@@ -44,310 +56,276 @@ export default function GuideTopPage() {
   return (
     <GuideShell
       eyebrow="For Advertisers"
-      title="教室サイネージ 出稿ガイド"
-      lead="工業高校の教室サイネージへ広告を出稿するための、作成と入稿の手引きです。本サイネージは「採用広告」ではなく「企業認知広告」という独特の方針で運営されています。まずは上から順番にご確認いただき、最後に「あなたの状況を選んでください」のセクションから、ご自身に近いケースへお進みください。"
+      title="出稿ガイド"
+      lead="教室に流れる広告のルールを、3分で読める形にまとめました。もとになっているのは「キミテラス 広告掲載基準 第2版」です。"
       crumbs={CRUMBS}
     >
-      {/* このガイドにこめた想い */}
-      <div className={`${styles.card} ${styles.philosophy}`}>
-        <h2>このガイドにこめた想い</h2>
-        <p>
-          このガイドは、岐南工業高校の進路指導の先生方へのヒアリングを重ねるなかで形にしました。
-        </p>
-        <p>
-          「やりがいに惹かれて入った生徒が、数か月で辞めてしまう」「採用に費用をかけても、続かなければ意味がない」——先生方から何度もうかがった言葉です。人材の流動性が非常に高い今、その負担を一番背負っているのは、求人を出されている <strong>企業のみなさま</strong> です。
-        </p>
-        <p>
-          求人広告の世界では長らく、「広く・きれいに・万人に」が当たり前とされてきました。けれども、その当たり前が入社後の「聞いていた話と違う」を生み、結果として企業も、生徒も、先生も、誰ひとり得をしないループになってしまっています。
-        </p>
-        <p>
-          <strong>キミテラスは、この現状を本気で変えたいと思っています。</strong>
-        </p>
-        <p>
-          万人ではなく、その仕事に本当に合う一人に届く広告を。きれいごとではなく、入ってから後悔させない正直な広告を。そういう広告だけを、生徒が毎日過ごす教室という場で流していきたい。
-        </p>
-        <p>
-          このガイドの一つひとつの基準は、すべてその想いから生まれています。少し書きづらく感じるルールもあるかもしれません。けれども、それは「採用にかけたお金が無駄にならない」「生徒が辞めずに長く働ける職場と出会える」、その2つを同時に実現したい、という願いの裏返しです。
-        </p>
-        <p>
-          誠実な企業認知広告で、企業と工業高校生をきちんと結び直していく——どうか、その挑戦にご一緒いただけたら嬉しく思います。
-        </p>
-        <span className={styles.signature}>キミテラス事業 / 株式会社 Rebounder</span>
+      <div className={styles.versionBar}>
+        <span className={styles.versionTag}>広告掲載基準 第2版</span>
+        <span>2026年10月1日発効</span>
+        <a href={POSTING_STANDARDS_PDF_URL} target="_blank" rel="noopener" className={styles.versionLink}>
+          <FileTextIcon size={16} />全文（PDF）
+        </a>
       </div>
 
-      {/* これは採用広告ではなく企業認知広告 */}
-      <div className={styles.card}>
-        <h2>これは「採用広告」ではなく「企業認知広告」です</h2>
-        <p>
-          まず最初に、本サイネージで作る広告の <strong>位置づけ</strong> をご理解いただきたく思います。
-        </p>
-        <p>
-          高校生の求人は、職業安定法をはじめとする法令により、<strong>すべて学校を通すこと</strong> が大原則となっています。企業が生徒に直接、応募・見学・面接といったアクションを呼びかけることは、原則できません。さらに、求人活動そのものが <strong>毎年7月1日まで解禁されない</strong> という独特のルールがあります。
-        </p>
-        <p>
-          そのため、本サイネージで掲載するのは、いわゆる「採用広告」ではなく、<strong>会社・仕事・働く人を紹介する「企業認知広告」</strong> です。配信のゴールは、生徒に「この会社、いいな」「ここで働いてみたいな」と思っていただくところまで。実際の応募や見学のアクションは、進路指導の先生を通じて、7月1日以降に行われます。
-        </p>
+      <nav className={styles.toc} aria-label="このページの目次">
+        {TOC.map((t) => (
+          <a key={t.href} href={t.href}>{t.label}</a>
+        ))}
+      </nav>
 
-        <h3>三者すべてにメリットのある仕組み</h3>
-        <table className={styles.table}>
-          <tbody>
-            <tr>
-              <th style={{ width: '180px' }}>生徒にとって</th>
-              <td>「面白そうな会社がある」という気づきが、進路を選ぶ前の早い段階で生まれます。</td>
-            </tr>
-            <tr>
-              <th>企業にとって</th>
-              <td>7月の求人解禁時に、生徒や先生の頭の中に「あの会社」として残っている状態を作れます。長い接点が、ミスマッチの少ない採用につながります。</td>
-            </tr>
-            <tr>
-              <th>学校と先生にとって</th>
-              <td>生徒との進路相談のなかで「実はこういう会社があるよ」と紹介できる、生きた素材になります。</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      {/* 高校生求人の特別なルール */}
-      <div className={styles.card}>
-        <h2>高校生求人の特別なルール</h2>
-        <p>
-          一般的な求人広告と比べて、高校生求人には独特の厳しいルールがあります。原稿づくりの前に、必ず以下をご確認ください。
-        </p>
-
-        <h3>① 学校経由の原則</h3>
-        <p>応募・見学・面談・面接などのアクションは、すべて <strong>学校（進路指導の先生）を通して</strong> 行われます。企業から生徒へ、サイネージ上で直接呼びかけることはできません。</p>
-
-        <h3>② 7月1日の求人解禁</h3>
-        <p>毎年 <strong>7月1日</strong> までは、リクルート活動そのものが解禁されません。「採用」「募集」「応募」「面接」「説明会」「会社見学」といった <strong>リクルートを直接連想させる言葉</strong> は、配信期間中すべてを通じて使用できません。</p>
-
-        <h3>③ 「まずは○○から」型のアクション誘導はNG</h3>
-        <p>「まずは工場見学から」「お気軽にお越しください」「お問い合わせは○○まで」など、生徒からのアクションを促す表現は使えません。読み終わったときに生徒が <strong>「いい会社だな、覚えておこう」</strong> と思える、そこまでがゴールです。</p>
-
-        <h3>④ ホームページの案内は可、ただし注意</h3>
-        <p>会社ホームページのURL／QRコードを載せること自体は可能です。<strong>ただし、ホームページ内に高卒求人ページが残っている場合、企業もキミテラスも厚生労働省の指導対象となります。</strong> 配信開始前に、貴社サイトに高卒求人情報が露出していないか必ずご確認ください（特に前年度のページが消し忘れになっていないか）。</p>
-
-        <div className={styles.note}>
-          条件提示についても、給与・賞与・休日・福利厚生・残業時間など、「求人票に書かれるような条件」はリクルート扱いになるため、本サイネージでは使用しません。会社の魅力・仕事の魅力・求める人物像・客観的な会社データ、で構成してください。
-        </div>
-      </div>
-
-      {/* 広告感を出さない */}
-      <div className={`${styles.card} ${styles.philosophy}`}>
-        <h2>「広告感」を出さないということ</h2>
-        <p>
-          教室サイネージは、学校・先生方の協力なしには成立しません。生徒たちが毎日過ごす教室に映像が流れる以上、
-          <strong>先生方が違和感なく「これなら大丈夫」と言える広告であること</strong> が、本サイネージの最重要要件です。
-        </p>
-
-        <div className={styles.quote}>
-          学校の先生は、広告が教室で流れることに違和感を感じる人が多いです。<br />
-          <strong>お金の匂いを徹底的に消すこと</strong> ——これが本モデルで一番大事な要素になります。
-          <span style={{ fontSize: '0.85em', color: 'var(--text-sub)', display: 'block', marginTop: '8px' }}>
-            —— 岐南工業高校 進路指導の先生より
-          </span>
-        </div>
-
-        <p>そのために、本サイネージでは以下の3点を徹底します。</p>
-        <ol>
-          <li><strong>リクルート系の表現を一切載せない</strong>（前項の通り）</li>
-          <li><strong>労働条件（給与・休日・残業など）を載せない</strong></li>
-          <li><strong>全体のトーン・方向性を、本ガイドの標準形に揃える</strong></li>
-        </ol>
-
-        <h3>すでに広告データをお持ちの企業さまへ</h3>
-        <p>
-          既存の広告原稿（ケースA）をお持ちの場合でも、デザインや表現がいわゆる「広告」「PR」のトーンに寄っていると、教室で流すには <strong>「お金の匂い」が強すぎる</strong> と判断されることがあります。
-        </p>
-        <p>
-          先生方の理解を得るために、<strong>ご用意いただいた原稿の方向性を本ガイドの4ブロック構成に揃えていただくことを、お願いしています。</strong> デザインの仕上げは岐阜文芸社さんと連携して行いますので、文字組み・配色・写真とのバランスといった見え方の部分はご相談いただけます。
-        </p>
-
-        <div className={styles.note}>
-          この方針が大変なものになりうることは承知しています。けれども、これは <strong>「先生方が違和感なく生徒に紹介できる広告だけが、教室で流れる」</strong> という、本モデルそのものの根幹です。
-        </div>
-      </div>
-
-      {/* コピーの考え方：魅力訴求 */}
-      <div className={styles.card}>
-        <h2>コピーの考え方：魅力で振り向かせる</h2>
-        <p>
-          採用広告のように「残業ほぼなし」「賞与年2回」と <strong>条件を並べる</strong> ことができない以上、勝負どころは <strong>会社・仕事・求める人物像をどう魅力的に描くか</strong> です。
-        </p>
-        <p>
-          特に大事なのが、その学校の生徒に向けた一言です。成績や面接の上手さでは測れない、生徒一人ひとりの「好き」「得意」「コツコツやれること」を、技術や強みに翻訳して見せてあげてください。
-        </p>
-
-        <h3>イメージしづらいキャッチコピー</h3>
-        <div className={styles.bad}>
-          一緒に成長できる仲間を待っています
-        </div>
-        <p>どんな仕事か、どんな会社か、誰に向けたメッセージなのか、一切伝わりません。</p>
-
-        <h3>振り向かせるキャッチコピー</h3>
-        <div className={styles.good}>
-          プラモ、ゲーム、スマホいじり、それが将来の才能！
-        </div>
-        <p>
-          「自分のことだ」と思える生徒がはっきりイメージできます。<strong>万人ではなく、一人に向けた一言</strong> が、教室サイネージでは強く効きます。
-        </p>
-
-        <h3>大変さに触れる場合のルール</h3>
-        <p>仕事の大変さや地道な側面を書くこと自体は問題ありません。ただし、書く場合は <strong>必ず「その先に育つもの」とセット</strong> にしてください。大変さだけが残ると、生徒は不安だけを受け取って広告から離れてしまいます。</p>
-        <div className={styles.quote}>
-          <strong>「条件」より「魅力」。</strong>「不安」より「将来像」。
-        </div>
-      </div>
-
-      {/* 4ブロック構成 */}
-      <div className={styles.card}>
-        <h2>掲載原稿の4ブロック構成</h2>
-        <p>本サイネージの原稿は、岐南工業高校の進路指導の先生にご監修いただいた、以下の4ブロック構成で作成します。</p>
-
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th style={{ width: '40px' }}>No.</th>
-              <th style={{ width: '180px' }}>ブロック</th>
-              <th>内容</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style={{ textAlign: 'center' }}>—</td>
-              <th>ヘッダー</th>
-              <td>会社名 ／ 業種 ／ 事業エリア</td>
-            </tr>
-            <tr>
-              <td style={{ textAlign: 'center' }}>—</td>
-              <th>キャッチコピー</th>
-              <td>その学校の生徒に向けた、一行のメッセージ</td>
-            </tr>
-            <tr>
-              <td style={{ textAlign: 'center' }}>01</td>
-              <th>どんな会社？</th>
-              <td>会社の独自性・特徴を、1行のコピー＋短い本文で</td>
-            </tr>
-            <tr>
-              <td style={{ textAlign: 'center' }}>02</td>
-              <th>どんな仕事をするの？</th>
-              <td>その会社で日々取り組む仕事の魅力・身につく技術を、1行のコピー＋短い本文で</td>
-            </tr>
-            <tr>
-              <td style={{ textAlign: 'center' }}>03</td>
-              <th>どんな高校生が向いている？</th>
-              <td>成績・面接スキル以外で「向いている人」を、生徒が自分ごと化できる切り口で</td>
-            </tr>
-            <tr>
-              <td style={{ textAlign: 'center' }}>—</td>
-              <th>会社DATA</th>
-              <td>設立年・社員数・平均年齢・工業高校卒業生数など、客観的なデータ</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      {/* サンプル原稿 */}
-      <div className={styles.card}>
-        <h2>サンプル原稿</h2>
-        <p>岐南工業高校の進路指導の先生にご監修いただいたサンプルです。実際のサイネージ画面のイメージは以下のとおりです。</p>
-
-        <div className={styles.sampleVisual}>
-          <Image
-            src="/guide/template-sample.png"
-            alt="サンプル原稿の見本：大垣未来精工株式会社"
-            width={360}
-            height={640}
-            sizes="(max-width: 640px) 80vw, 360px"
-            className={styles.sampleImg}
-          />
-        </div>
-
-        <div className={styles.quote}>
-          <strong>大垣未来精工株式会社</strong>　｜　CAREER NAVI　《勤務地》大垣市内
-
-          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>キャッチコピー</h3>
-          モノづくりって、こんなにスマートだ！
-
-          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>01 どんな会社？</h3>
-          <strong>大垣から世界へ！最新マシンを操る精密部品メーカー</strong><br />
-          油まみれの工場はもう古い！冷暖房完備の超クリーンな職場で、世界中の自動車を支える最先端のモノづくり。同じ高校の先輩たちも、ゼロからプロになって活躍中！
-
-          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>02 どんな仕事をするの？</h3>
-          <strong>最新マシンで、世界を走る車の部品を削り出す！</strong><br />
-          ゲーム感覚で最新のNCマシンをプログラミング。ミクロン単位の超精密パーツをスマートに作る仕事です！
-
-          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>03 どんな高校生が向いている？</h3>
-          <strong>プラモ、ゲーム、スマホいじり。それが最高の才能！</strong><br />
-          「実習が一番好き」「ゲームの攻略を考えるのが得意」「メカの構造にワクワクする」。1つでも当てはまれば適性100％！そのこだわりや探究心が、最先端マシンを動かす最大の武器になります。
-
-          <h3 style={{ marginTop: '1em', color: 'var(--accent-text)' }}>会社DATA</h3>
-          ３年間離職率 ０％　｜　有給休暇取得率 １００％　｜　ゲーム手当 ５０００円
-        </div>
-
-        <div className={styles.note}>
-          上のサンプルには「採用」「募集」「見学」「お問い合わせ」などのリクルート系の語が <strong>一切登場しない</strong> 点にご注目ください。これが本サイネージで作る「企業認知広告」の標準形です。
-        </div>
-      </div>
-
-      {/* 価格・スケジュール */}
-      <div className={`${styles.card} ${styles.priceCard}`}>
-        <h2>料金・スケジュール</h2>
-        <p>
-          <strong>空き枠と料金は、<a href={PORTAL_APPLY_URL} target="_blank" rel="noopener">申込ページ</a>でその場でご確認いただけます</strong>（学校ごとに表示）。学科を絞った配信や複数校への掲載は、内容・期間に応じて個別にお見積もりいたします。
-        </p>
-
-        <h3>スケジュール</h3>
-        <table className={styles.table}>
-          <tbody>
-            <tr>
-              <th style={{ width: '180px' }}>お申込み</th>
-              <td>随時受付中です。空き枠は<a href={PORTAL_APPLY_URL} target="_blank" rel="noopener">申込ページ</a>でご確認いただけます。</td>
-            </tr>
-            <tr>
-              <th>原稿・写真の入稿</th>
-              <td>お申込み後にご入稿ください。<br /><strong>入稿期限については柔軟に対応いたしますので、間に合いそうにない場合はお気軽にご相談ください。</strong></td>
-            </tr>
-            <tr>
-              <th>配信開始</th>
-              <td>入稿・審査の完了後、最短2週間で配信を開始します。</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div className={styles.note}>
-          掲載規模に応じて、ティア制プラン（スタンダード／プレミアム／エンタープライズ）もご用意しています。詳しくはお問い合わせください。
-        </div>
-      </div>
-
-      {/* 全体フロー */}
-      <div className={styles.card}>
-        <h2>全体の流れ</h2>
-        <p>出稿は次のような流れになります。原稿の状態によって、途中の進み方が分かれます。</p>
-
-        <div className={styles.branchMap}>
-          <div className={`${styles.branchStep} ${styles.entry}`}>① お申込み</div>
-          <div className={styles.branchArrowDown}>▼</div>
-          <div className={styles.branchStep}>② 出稿目的の確認<br /><span style={{ fontSize: '11px', fontWeight: 400, color: 'var(--text-sub)' }}>求人・企業認知が目的か（商品広告は不可）</span></div>
-          <div className={styles.branchArrowDown}>▼</div>
-          <div className={styles.branchSplitLabel}>原稿の状態で分かれます</div>
-          <div className={styles.branchRow}>
-            <div className={styles.branchStep}>ケースA<br /><span style={{ fontSize: '11px', fontWeight: 400 }}>既存原稿あり</span></div>
-            <div className={styles.branchStep}>ケースB<br /><span style={{ fontSize: '11px', fontWeight: 400 }}>テンプレで作る</span></div>
-            <div className={styles.branchStep}>ケースC<br /><span style={{ fontSize: '11px', fontWeight: 400 }}>自由形式で作る</span></div>
+      {/* ===== 3つの要点 ===== */}
+      <section id="points" className={styles.anchor}>
+        <h2 className={styles.sectionTitle}>まず、この3つだけ</h2>
+        <div className={styles.pointGrid}>
+          <div className={styles.point}>
+            <span className={styles.pointNum}>1</span>
+            <h3>仕事と働く人を紹介する</h3>
+            <p>製品やサービスだけの広告は載せられません。<b>職種名と、何をする仕事か</b>を文字で入れてください。</p>
           </div>
-          <div className={styles.branchArrowDown}>▼</div>
-          <div className={styles.branchStep}>③ 写真のご準備<br /><span style={{ fontSize: '11px', fontWeight: 400, color: 'var(--text-sub)' }}>OK/NGの実例を参考に</span></div>
-          <div className={styles.branchArrowDown}>▼</div>
-          <div className={styles.branchStep}>④ 入稿前最終チェック</div>
-          <div className={styles.branchArrowDown}>▼</div>
-          <div className={`${styles.branchStep} ${styles.action}`}>⑤ 入稿・配信開始</div>
+          <div className={styles.point}>
+            <span className={styles.pointNum}>2</span>
+            <h3>求人の情報は7月1日から</h3>
+            <p>それまでは会社・仕事・働く人の紹介と、見学やインターンシップの案内まで。<b>応募は学校を通します。</b></p>
+          </div>
+          <div className={styles.point}>
+            <span className={styles.pointNum}>3</span>
+            <h3>縦長の静止画1枚・音なし</h3>
+            <p>縦 9:16 の画像1枚を、1回30秒ずつ表示します。<b>動画と音声は使えません。</b></p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* 分岐 */}
-      <div className={styles.card}>
-        <h2>あなたの状況を選んでください</h2>
-        <p>原稿の状態によって、進める道が分かれます。</p>
+      {/* ===== 早見表 ===== */}
+      <section id="category" className={`${styles.card} ${styles.anchor}`}>
+        <h2>載せられる業種（早見表）</h2>
+        <p>
+          企業の採用・企業認知の広告は、<b>業種を問わず掲載できます</b>。ゲーム・化粧品・医薬品などの業種の会社も、ほかの業種と同じ扱いです（医薬品等の効能効果は表示できません）。
+        </p>
+        <div className={styles.verdictGrid}>
+          <div className={`${styles.verdict} ${styles.verdictOk}`}>
+            <div className={styles.verdictHead}><span aria-hidden="true">○</span>掲載できる</div>
+            <ul>
+              <li>企業の採用・企業認知（業種を問わない）</li>
+              <li>大学・短大・専門学校・高専の学生募集、オープンキャンパス</li>
+              <li>国・自治体・公的機関のお知らせ</li>
+              <li>産業団体・商工会議所の催し</li>
+              <li>警察・消防などの公務員の採用</li>
+              <li>資格・検定の受検案内</li>
+            </ul>
+          </div>
+          <div className={`${styles.verdict} ${styles.verdictAsk}`}>
+            <div className={styles.verdictHead}><span aria-hidden="true">△</span>学校の承認が要る</div>
+            <ul>
+              <li>アルバイト求人</li>
+              <li>美容・容姿に関するサービスの会社</li>
+              <li>民間主催の地域の催し・職業体験</li>
+              <li>学習塾・予備校・通信教育の会社</li>
+              <li>金融機関の企業広告</li>
+              <li>宗教系の学校法人の学生募集</li>
+              <li>自衛隊の採用</li>
+            </ul>
+          </div>
+          <div className={`${styles.verdict} ${styles.verdictNg}`}>
+            <div className={styles.verdictHead}><span aria-hidden="true">×</span>掲載できない</div>
+            <ul>
+              <li>成人向け・出会い系、公営競技・賭博</li>
+              <li>酒・たばこ</li>
+              <li>金融商品の勧誘</li>
+              <li>宗教への勧誘、特定の政党・候補者の支持</li>
+              <li>不安や射幸心をあおる表現</li>
+              <li>反社会的勢力・連鎖販売取引など</li>
+            </ul>
+          </div>
+        </div>
+        <p className={styles.small}>
+          どの区分でも、<b>商品・サービスの宣伝</b>（価格・キャンペーン・購入や入会の呼びかけ）は掲載しません。△の業種も、承認の対象は採用・企業認知の広告だけです。
+        </p>
+      </section>
+
+      {/* ===== 広告の中身 ===== */}
+      <section id="content" className={`${styles.card} ${styles.anchor}`}>
+        <h2>広告の中身：仕事と働く人の紹介</h2>
+        <p>
+          この広告は、生徒が地域の仕事と働く人を知るためのものです。画面の<b>見出し（いちばん大きい文字）か、主な写真</b>の少なくとも一方は、働く人・仕事の場面・仕事の説明にしてください。
+        </p>
+
+        <h3>必ず入れるもの</h3>
+        <ul className={styles.checkList}>
+          <li><b>職種名と、その仕事で何をするか</b>（「社員」「スタッフ」「技術者」だけでは足りません）</li>
+          <li>
+            次のうち<b>1つ以上</b>
+            <ul>
+              <li>働く人の姿や言葉</li>
+              <li>仕事の流れ、一日の過ごし方、職場の様子</li>
+              <li>製品が、どの工程・どの役割の仕事で生まれているか</li>
+              <li>学校で学んでいることとのつながり、入社後の成長の道筋</li>
+              <li>その仕事が地域や社会の誰の役に立っているか</li>
+              <li>職場見学・インターンシップ・会社説明会の案内（時期は次の章）</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div className={styles.compare}>
+          <div className={styles.compareNg}>
+            <div className={styles.compareHead}>× 掲載できない例</div>
+            <ul>
+              <li>製品の写真と製品名・性能だけ</li>
+              <li>社名・ロゴ・キャッチコピーと、創業年・社員数だけ</li>
+              <li>設備やロボットの写真と「最先端の技術」だけ</li>
+              <li>見出しが新製品の告知で、働く人が添え物</li>
+              <li>通販サイト・購入ページへの誘導</li>
+            </ul>
+          </div>
+          <div className={styles.compareOk}>
+            <div className={styles.compareHead}>○ 掲載できる例</div>
+            <ul>
+              <li>製品の写真が大きくても、職種・仕事の内容と働く人を添えたもの</li>
+              <li>働く人の写真や言葉と、職種・仕事の内容</li>
+              <li>製品がどの工程・役割でつくられているかの紹介</li>
+              <li>「電気科で学ぶシーケンス制御を、入社3年目の社員がラインの保全で使っている」</li>
+              <li>見学・インターンの案内に、何の仕事を見るのかを添えたもの</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 時期のルール ===== */}
+      <section id="timing" className={`${styles.card} ${styles.anchor}`}>
+        <h2>時期のルール：求人の情報は7月1日から</h2>
+        <p>高校生の求人には解禁日があります。採用・求人の情報は、その年度の<b>7月1日から</b>載せられます。</p>
+        <div className={styles.timeline}>
+          <div className={styles.timelineCol}>
+            <div className={styles.timelineHead}>〜6月30日</div>
+            <ul>
+              <li className={styles.yes}>事業・技術の紹介（仕事・働く人と一緒に）</li>
+              <li className={styles.yes}>働く人・職場の様子</li>
+              <li className={styles.yes}>会社説明会・職場見学の案内（選考を伴わないもの）</li>
+              <li className={styles.yes}>インターンシップの告知</li>
+              <li className={styles.no}>「新卒採用中」「募集職種」「初任給」</li>
+              <li className={styles.no}>「採用サイトはこちら」など求人ページへの誘導</li>
+            </ul>
+          </div>
+          <div className={`${styles.timelineCol} ${styles.timelineAfter}`}>
+            <div className={styles.timelineHead}>7月1日〜</div>
+            <ul>
+              <li className={styles.yes}>左の内容すべて</li>
+              <li className={styles.yes}>募集職種・採用人数</li>
+              <li className={styles.yes}>給与・待遇・勤務地</li>
+              <li className={styles.yes}>応募方法・選考日程</li>
+            </ul>
+          </div>
+        </div>
+        <ul className={styles.ruleList}>
+          <li><b>QRコード・URLの飛び先にも同じルールが適用されます。</b>6月30日までは、求人情報が中心のページへ飛ばせません。</li>
+          <li><b>応募は学校（進路指導の先生）を通します。</b>画面や飛び先に、生徒が直接応募できるフォームを置かないでください。</li>
+          <li>載せる労働条件は、ハローワークの確認を受けた<b>求人票と同じ内容</b>にしてください。</li>
+        </ul>
+      </section>
+
+      {/* ===== 表現の注意 ===== */}
+      <section id="expression" className={`${styles.card} ${styles.anchor}`}>
+        <h2>表現で気をつけること</h2>
+        <div className={styles.doGrid}>
+          <div>
+            <h3>数字と事実</h3>
+            <ul>
+              <li>根拠のない「地域No.1」「業界トップ」は使わない。使うなら調査主体・時点・範囲を画面に</li>
+              <li>仕事や働き方を実態以上に良く見せない</li>
+              <li>性別・年齢で役割を決めつけない。長時間労働を美化しない</li>
+            </ul>
+          </div>
+          <div>
+            <h3>人物と写真</h3>
+            <ul>
+              <li>働く人は実在の社員で、本人の同意を得る</li>
+              <li>モデル・イラスト・生成画像は「写真はイメージです」と表示</li>
+              <li>在校生は起用しない</li>
+              <li>作業の場面は保護具・安全措置をとった状態で</li>
+            </ul>
+          </div>
+          <div>
+            <h3>学校との関係</h3>
+            <ul>
+              <li>「○○高校の先生も推奨」など、学校が勧めていると受け取れる表現はしない</li>
+              <li>校内のお知らせや時間割に見える体裁にしない</li>
+              <li>広告主の名称を画面に出す</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 画面の仕様 ===== */}
+      <section id="spec" className={`${styles.card} ${styles.anchor}`}>
+        <h2>画面の仕様</h2>
+        <table className={styles.table}>
+          <tbody>
+            <tr><th style={{ width: '120px' }}>形式</th><td>静止画のみ（動画・音声は不可。機器は無音で再生します）</td></tr>
+            <tr><th>比率</th><td>縦 9:16</td></tr>
+            <tr><th>解像度</th><td>短辺 960px 以上（推奨 1080×1920px）</td></tr>
+            <tr><th>表示時間</th><td>1回30秒</td></tr>
+            <tr><th>文字の大きさ</th><td>教室の後ろから読めること。目安は主な文言 48px 以上・注記 28px 以上（短辺1080px のとき）</td></tr>
+            <tr><th>QRコード</th><td>1辺 180px 以上が目安。実機で読み取れるか当社が確認します</td></tr>
+            <tr><th>点滅</th><td>1秒に3回を超える点滅・明るさの急な変化は不可</td></tr>
+          </tbody>
+        </table>
+        <p className={styles.small}>数値は目安です。画面の大きさや教室の広さが学校ごとに違うため、可否は入稿時に当社が実機で確認します。詳しい入稿方法は<Link href="/for-advertisers/guide/submit">入稿ガイド</Link>へ。</p>
+      </section>
+
+      {/* ===== 審査の流れ ===== */}
+      <section id="review" className={`${styles.card} ${styles.anchor}`}>
+        <h2>審査の流れ</h2>
+        <ol className={styles.steps}>
+          <li><b>入稿</b><span>広告主さま</span></li>
+          <li><b>基準の確認</b><span>当社・3営業日以内</span></li>
+          <li><b>学校へ承認依頼</b><span>当社</span></li>
+          <li><b>学校の回答</b><span>5営業日以内</span></li>
+          <li><b>掲載開始</b></li>
+        </ol>
+        <ul className={styles.ruleList}>
+          <li>掲載の可否は<b>3段階</b>で決まります。① この基準（全校共通）② 学校ごとの上乗せ基準 ③ 学校による広告ごとの承認。同じ広告が、学校によって掲載・不掲載に分かれることがあります。</li>
+          <li>基準に合わない点があれば、<b>どの項目かを示してお戻しします。</b>直して再入稿できます。</li>
+          <li>学校の判断で掲載されなかった期間の料金は、<b>日割りで発生しません。</b></li>
+        </ul>
+      </section>
+
+      {/* ===== 原稿の作り方 ===== */}
+      <section id="make" className={`${styles.card} ${styles.anchor}`}>
+        <h2>原稿の作り方</h2>
+        <p>
+          迷ったら、この<b>4つのまとまり</b>で作ってください。進路指導の先生に監修いただいた構成で、上の基準を満たしやすくなっています。
+        </p>
+        <div className={styles.makeRow}>
+          <ol className={styles.blockList}>
+            <li><span>ヘッダー</span>会社名・業種・勤務地</li>
+            <li><span>キャッチコピー</span>この学校の生徒に向けた一行</li>
+            <li><span>01 どんな会社？</span>会社の特徴を一行＋短い本文で</li>
+            <li><span>02 どんな仕事をするの？</span>職種名と、何をするか・身につく技術</li>
+            <li><span>03 どんな高校生が向いている？</span>成績や面接以外の「向いている人」</li>
+            <li><span>会社DATA</span>設立年・社員数など、客観的な数字</li>
+          </ol>
+          <figure className={styles.sampleFigure}>
+            <Image
+              src="/guide/template-sample.png"
+              alt="4つのまとまりで作った原稿の見本（架空の会社）"
+              width={240}
+              height={427}
+              sizes="240px"
+              className={styles.sampleImg}
+            />
+            <figcaption>見本（架空の会社）。待遇の数字（有給休暇取得率・手当）は7月1日以降、求人票と同じ内容で載せられます。</figcaption>
+          </figure>
+        </div>
+
+        <h3>写真は「仕事の中身が分かる、明るい一枚」</h3>
+        <ul>
+          <li>作業中の手元や横顔を、明るく撮る</li>
+          <li>保護具は規定どおり。一つでも不備があると掲載できません</li>
+          <li>被写体を左右どちらかに寄せ、文字を載せる余白を空ける</li>
+        </ul>
+        <p className={styles.small}>OK例とNG例は<Link href="/for-advertisers/guide/photo">写真の撮り方ガイド</Link>にまとめています。</p>
+
+        <h3>原稿の状態に合わせて進めてください</h3>
         <div className={styles.branchGrid}>
           {BRANCHES.map((b) => (
             <Link key={b.href} href={b.href} className={styles.branchCard}>
@@ -358,119 +336,32 @@ export default function GuideTopPage() {
             </Link>
           ))}
         </div>
-      </div>
-
-      {/* 写真について */}
-      <div className={styles.card}>
-        <h2>写真について（原則必須）</h2>
-        <p>
-          サンプル原稿のとおり、本サイネージは <strong>写真と文章のセット</strong> で成立する作りです。原稿が良くても、写真が「広告感のある集合写真」や「暗くて何の仕事か分からない一枚」だと、教室では効果が出ません。OK／NGの実例で違いをご確認ください。
+        <p className={styles.small}>
+          素材をお持ちでない場合は、当社が原稿とレイアウトを作成します（写真は現場での撮影が必要です）。業種が製造業以外の場合や、複数の枠を出したい場合は<Link href="/for-advertisers/guide/extras">こんなときは</Link>をご覧ください。
         </p>
+      </section>
 
-        <h3 className={`${styles.photoRowHeading} ${styles.ok}`}>◯ OK例</h3>
-        <div className={styles.photoRowOk}>
-          <div className={`${styles.photoCard} ${styles.ok}`}>
-            <div className={styles.photoCardLabel}>◯ OK例</div>
-            <div className={styles.photoCardImg}>
-              <Image
-                src="/guide/photo-ok.png"
-                alt="OK例：仕事の中身が伝わり、現場の空気も分かる写真"
-                fill
-                sizes="(max-width: 640px) 100vw, 320px"
-              />
-            </div>
-            <div className={styles.photoCardReasons}>
-              <ul>
-                <li>仕事の中身が伝わる</li>
-                <li>現場の空気が分かる</li>
-                <li>明るく撮れている</li>
-                <li>キャッチコピー用の余白がある</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <h3 className={`${styles.photoRowHeading} ${styles.ng}`}>✕ NG例</h3>
-        <div className={styles.photoRowNg}>
-          <div className={`${styles.photoCard} ${styles.ng}`}>
-            <div className={styles.photoCardLabel}>✕ NG例 ①</div>
-            <div className={styles.photoCardImg}>
-              <Image src="/guide/photo-ng-content.png" alt="NG例：仕事の中身が分からない写真" fill sizes="(max-width: 720px) 50vw, 220px" />
-            </div>
-            <div className={styles.photoCardReasons}>
-              <ul>
-                <li>仕事の中身が分からない</li>
-                <li>現場の空気が分からない</li>
-                <li>キャッチコピー用の余白がない</li>
-              </ul>
-            </div>
-          </div>
-          <div className={`${styles.photoCard} ${styles.ng}`}>
-            <div className={styles.photoCardLabel}>✕ NG例 ②</div>
-            <div className={styles.photoCardImg}>
-              <Image src="/guide/photo-ng-safety.png" alt="NG例：安全ルールが守られていない写真" fill sizes="(max-width: 720px) 50vw, 220px" />
-            </div>
-            <div className={styles.photoCardReasons}>
-              <ul>
-                <li>余白がない</li>
-                <li>安全ルール不備</li>
-                <li>背景が雑然</li>
-              </ul>
-            </div>
-          </div>
-          <div className={`${styles.photoCard} ${styles.ng}`}>
-            <div className={styles.photoCardLabel}>✕ NG例 ③</div>
-            <div className={styles.photoCardImg}>
-              <Image src="/guide/photo-ng-bright.png" alt="NG例：暗い写真" fill sizes="(max-width: 720px) 50vw, 220px" />
-            </div>
-            <div className={styles.photoCardReasons}>
-              <ul>
-                <li>余白がない</li>
-                <li>明るくない</li>
-                <li>背景が雑然</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <h3>必ず押さえてほしい3点</h3>
-        <ol>
-          <li><strong>安全ルールは絶対遵守</strong>（最重要）— 保護具の規定どおり着用。一つでも不備があると配信できません</li>
-          <li><strong>コピー用の余白を空ける</strong> — 被写体は画面の左右どちらかに寄せる</li>
-          <li><strong>仕事の中身が伝わる、明るい一枚</strong> — 作業中の手元・横顔を、自然光や照明で明るく</li>
-        </ol>
-
-        <div className={styles.branchGrid}>
-          <Link href="/for-advertisers/guide/photo" className={styles.branchCard}>
-            <span className={styles.branchLabel}>詳細ガイド</span>
-            <div className={styles.branchTitle}>写真の撮り方ガイド（全7ポイント）</div>
-            <div className={styles.branchDesc}>素の表情・明るさ・余白・安全ルール・背景・縦横比など、撮影時の全ポイントを解説。</div>
-            <div className={styles.branchArrow}>詳しく見る →</div>
-          </Link>
-        </div>
-      </div>
-
-      {/* 横断ケース */}
-      <div className={styles.card}>
-        <h2>こんなときは</h2>
-        <p>メインの流れに当てはまらないケースは、まとめて <Link href="/for-advertisers/guide/extras" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>こちら</Link> でご案内しています。</p>
-        <ul>
-          <li>製造業以外の業種（介護・建設・小売など）</li>
-          <li>複数職種・複数枠を出したい</li>
-          <li>過去出稿の内容を差し替えたい</li>
-          <li>原稿の表現にリクルート要素が混ざっていないか不安がある</li>
-          <li>自社で書いたが添削してほしい</li>
+      {/* ===== 料金・申込 ===== */}
+      <section className={`${styles.card} ${styles.priceCard}`}>
+        <h2>料金・空き枠・開始まで</h2>
+        <ul className={styles.ruleList}>
+          <li>空き枠と料金は<a href={PORTAL_APPLY_URL} target="_blank" rel="noopener">申込ページ</a>で学校ごとにその場で確認できます。学科を絞った配信や複数校は個別にお見積もりします。</li>
+          <li>お申込みは随時。入稿・審査が済んでから、最短2週間で掲載を始めます。</li>
+          <li>入稿の期限は相談できます。</li>
         </ul>
-      </div>
+      </section>
 
-      {/* PDF配布 */}
-      <div className={styles.card}>
-        <h2>PDF版のダウンロード</h2>
-        <p>ガイドのPDF版もご用意しています。社内回覧や印刷してご活用ください。</p>
-        <a href="/guide/kimiterrace-guide.pdf" className={styles.pdfDownload} download>
-          <FileTextIcon size={18} />PDF版をダウンロード（A4 / 約330KB）
-        </a>
-      </div>
+      {/* ===== なぜこのルールか ===== */}
+      <details className={styles.why}>
+        <summary>なぜ、このルールなのか</summary>
+        <p>
+          広告は、生徒が毎日過ごす教室に流れます。先生方が「これなら生徒に見せられる」と思える広告であることが、この仕組みの前提です。岐南工業高校の進路指導の先生からは「お金の匂いを徹底的に消すこと」と言われました。
+        </p>
+        <p>
+          そのため、商品を売る広告ではなく、仕事と働く人を紹介する広告だけを載せます。「聞いていた話と違う」で辞めてしまう若手を減らすことが、企業・生徒・先生の三者にとっての得になると考えています。
+        </p>
+        <span className={styles.signature}>キミテラス事業 / 株式会社Rebounder</span>
+      </details>
 
       <CtaBlock />
 
