@@ -49,7 +49,7 @@ export default function CaseAPage() {
       <div className={styles.card}>
         <h2>入稿前セルフチェックリスト</h2>
         <p>
-          本サイネージは <strong>採用広告ではなく企業認知広告</strong> です。<a href="/for-advertisers/guide" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>（2026年10月1日発効）に沿って確認します。
+          本サイネージは <strong>採用広告ではなく企業認知広告</strong> です。<a href="/for-advertisers/guide/standards" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>（2026年10月1日発効）に沿って確認します。
         </p>
 
         <ul className={styles.checklist}>

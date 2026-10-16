@@ -160,7 +160,7 @@ export default function OtherCasesPage() {
       {/* 表現確認 */}
       <div className={styles.card} id="fact-check">
         <h2>表現確認のご相談</h2>
-        <p>原稿に入れてしまいがちな表現と、<a href="/for-advertisers/guide" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>での扱いをまとめます。</p>
+        <p>原稿に入れてしまいがちな表現と、<a href="/for-advertisers/guide/standards" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>での扱いをまとめます。</p>
 
         <table className={styles.table}>
           <thead>

@@ -5,7 +5,7 @@ import GuideShell from '@/components/guide/GuideShell';
 import ContactBox from '@/components/guide/ContactBox';
 import CtaBlock from '@/components/guide/CtaBlock';
 import { FileTextIcon } from '@/components/ui/Icon';
-import { BOOKING_URL, PORTAL_APPLY_URL, POSTING_STANDARDS_PDF_URL } from '@/lib/constants';
+import { BOOKING_URL, PORTAL_APPLY_URL } from '@/lib/constants';
 import styles from '@/styles/sections/guide.module.css';
 
 export const metadata: Metadata = {
@@ -63,9 +63,9 @@ export default function GuideTopPage() {
       <div className={styles.versionBar}>
         <span className={styles.versionTag}>広告掲載基準 第2版</span>
         <span>2026年10月1日発効</span>
-        <a href={POSTING_STANDARDS_PDF_URL} target="_blank" rel="noopener" className={styles.versionLink}>
-          <FileTextIcon size={16} />全文（PDF）
-        </a>
+        <Link href="/for-advertisers/guide/standards" className={styles.versionLink}>
+          <FileTextIcon size={16} />全文を読む（PDFもあります）
+        </Link>
       </div>
 
       <nav className={styles.toc} aria-label="このページの目次">
