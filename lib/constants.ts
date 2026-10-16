@@ -176,6 +176,9 @@ export const PORTAL_APPLY_URL = 'https://kimiteras.rebounder.jp/apply';
 // 商談の予約ページ（Googleカレンダーの予約スケジュール。授業時間帯は出さない）
 export const BOOKING_URL = 'https://calendar.app.google/utLR2ApdioKYwFhy5';
 export const POSTING_STANDARDS_PDF_URL = 'https://kimiteras.rebounder.jp/api/policy/posting_standards';
+// 全文ページ（/for-advertisers/guide/standards）の「PDFをダウンロード」。版を名前に持つ写し（同一ドメインで download 属性を効かせるため）。
+// 中身は portal の上の URL と同一（2026-10-16 sha1 一致）。改定時は全文ページと一緒に差し替える
+export const POSTING_STANDARDS_V2_PDF_PATH = '/files/kimiteras_posting-standards_v2_20261001.pdf';
 
 // 旧 PRICING_PLANS / AD_SPECS はどこからも描画されていない死にコードだったため削除（2026-07-28）。
 // 「広告1ループ5分」「120分/日」は誤り（実仕様＝1スロット30秒 × 掲載社数でループ長は可変）、

@@ -28,7 +28,7 @@ export default function SubmitPage() {
       <div className={styles.card}>
         <h2>最終チェック項目</h2>
         <p>
-          本サイネージは <strong>採用広告ではなく企業認知広告</strong> です。入稿前に、<a href="/for-advertisers/guide" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>（2026年10月1日発効）に合っているかを確認してください。
+          本サイネージは <strong>採用広告ではなく企業認知広告</strong> です。入稿前に、<a href="/for-advertisers/guide/standards" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>広告掲載基準 第2版</a>（2026年10月1日発効）に合っているかを確認してください。
         </p>
         <ul className={styles.checklist}>
           <li className={styles.group}>① 掲載基準に合っている（最重要）</li>
